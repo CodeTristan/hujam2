@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
+    public GameObject optionsmenu;
     public GameObject pausescreen;
+    public GameObject pausemenu;
     void Update()
     {
         if (Input.GetKeyDown("escape") && Time.timeScale !=0)
@@ -17,5 +19,14 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         pausescreen.SetActive(false);
+    }
+    public void OptionsMenu()
+    {
+        optionsmenu.SetActive(true);
+        pausemenu.SetActive(false);
+    }
+    public void Close()
+    {
+        pausemenu.SetActive(true);
     }
 }
