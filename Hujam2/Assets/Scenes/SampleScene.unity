@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickaudio: {fileID: 524698361}
-  clickclips:
+  clips:
   - {fileID: 8300000, guid: d23ce132cfda524428361d79ee4f502a, type: 3}
   - {fileID: 8300000, guid: dd60f8d340fe4c94483ef51004d45a8d, type: 3}
   - {fileID: 8300000, guid: da1ab7855b6eb6748ae41890a11ef070, type: 3}
@@ -616,15 +616,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 119526340}
@@ -897,15 +897,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &270053097
@@ -1170,15 +1170,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 119526342}
@@ -1940,15 +1940,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 119526340}
@@ -2098,15 +2098,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &507995198
@@ -2770,15 +2770,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &616014186
@@ -3039,15 +3039,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 119526338}
@@ -4313,15 +4313,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1085762084
@@ -6080,15 +6080,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1767857233
@@ -6335,15 +6335,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1890107978
@@ -6541,15 +6541,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 119526338}
@@ -6976,15 +6976,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 119526341}
-        m_TargetAssemblyTypeName: ClickSounds, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2112172609
