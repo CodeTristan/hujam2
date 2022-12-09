@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManagment : MonoBehaviour
 {
   public GameObject crewManager;
-  public GameObject[] crewMembers;
 
   public void EventResult(string roleName, float effect) //FUNCTION MADE TO BE USED BY OTHER SCRIPTS WHEN AN EVENT HAS ENDED TO ADJUST MOOD
   {

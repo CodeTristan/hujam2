@@ -9,6 +9,6 @@ namespace Assets.Entity
     interface IMood
     {
         public void ChangeMood(int moodValue);
-        
+
     }
 }
