@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Entity
 {
-   public class TechSupport : Crew, IMood
+   public class TechSupport : Crew
     {
         void Awake()
         {
@@ -15,11 +15,6 @@ namespace Assets.Entity
             this.Name = "Techno";
             this.RoleName = "TechSupport";
             this.Mood = 100;
-        }
-        public void ChangeMood(int moodValue)
-        {
-            this.Mood += moodValue;
-        }
-    
+        }           
     }
 }

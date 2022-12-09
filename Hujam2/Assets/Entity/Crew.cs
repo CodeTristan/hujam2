@@ -8,5 +8,9 @@ public class Crew : MonoBehaviour
     public string Name { get; set; }
     public  string RoleName { get; set; }
     public  int Mood { get; set; }
+    public void ChangeMood(int moodValue)
+    {
+        this.Mood += moodValue;
+    }
 
 }
