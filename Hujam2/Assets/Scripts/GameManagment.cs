@@ -5,18 +5,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
   public GameObject crewManager; //Get crew scripts from the manager game object
+  public Component[] crewScripts;
+  public IMood[] crewInterface;
+  public int day;
 
   void Start()
   {
-    IMood[] crewScripts = crewManger.getComponents<IMood>(); //Get scripts for later use
+    crewScripts = crewManager.GetComponents(typeof(IMood));
+    crewInterface = crewManager.GetComponents<IMood>();
   }
 
   public void EventResult(string crewName, float effect) //FUNCTION MADE TO BE USED BY OTHER SCRIPTS WHEN AN EVENT HAS ENDED TO ADJUST MOOD
   {
-    foreach(IMood script in crewScripts)//Get each script form the list for testing
+    for(int i = 0; i < crewScripts.Length; i++)
     {
-      if(script.name == crewName)//Check names to identify crewmate
-        script.moodEffect(effect);//Effect crewmate mood. Change fucntion name to match interface later on.
+      if(crewScripts[i].name == crewName)
+        crewInterface[i].moodEffect(effect);
     }
   }
+
+
 }
