@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Crew : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Sprite Image{ get; set; }
+    public string Name { get; set; }
+    public  string RoleName { get; set; }
+    public  int Mood { get; set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
