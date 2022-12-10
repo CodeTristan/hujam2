@@ -10,8 +10,12 @@ namespace Assets.Entity
     public class EventOption:MonoBehaviour
     {
         public int TargetEventID{ get; set; }
-        public GameObject FirstCrew{ get; set; }
-        public GameObject SecondCrew{ get; set; }
-        public EventItem MyProperty { get; set; }
+        public int MoodEffect { get; set; }
+        public string OptionText{ get; set; }
+        public Crew PositiveEffectCrew{ get; set; }
+        public Crew NegativeEffectCrew{ get; set; }
+        public EventItem GetItem { get; set; }
+        public EventItem UseItem { get; set; }
+
     }
 }

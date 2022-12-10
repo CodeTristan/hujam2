@@ -10,11 +10,11 @@ namespace Assets.Entity
     public class EventItem:MonoBehaviour
     {
         public int ItemID{ get; set; }
-        public int ItemName{ get; set; }
+        public string ItemName{ get; set; }
         public int ItemCount{ get; set; }
         //todo itemBase event array
-        public Event[] GetItemEvents{ get; set; }
+        public List<int> GetItemEventsID{ get; set; }
         //todo itemBase event array
-        public Event[] UseItemEvents{ get; set; }
+        public List<int> UseItemEventsID{ get; set; }
     }
 }

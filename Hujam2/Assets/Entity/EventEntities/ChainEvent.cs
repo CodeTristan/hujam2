@@ -8,8 +8,8 @@ namespace Assets.Entity.EventEntities
 {
     public class ChainEvent:ItemEvent
     {
-        public ChainEvent PrevEvent{ get; set; }
-        public ChainEvent NextEvent{ get; set; }
+        public int PrevEventID{ get; set; }
+        public int NextEventID{ get; set; }
 
     }
 }
