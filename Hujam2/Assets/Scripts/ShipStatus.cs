@@ -15,16 +15,9 @@ public class ShipStatus : MonoBehaviour
 
     public void StatsPannel()
     {
-      StatPannel.SetActive(true);
-
       Sliders[0].GetComponent<Slider>().value = food/100;
       Sliders[1].GetComponent<Slider>().value = water/100;
       Sliders[2].GetComponent<Slider>().value = fuel/100;
       Sliders[3].GetComponent<Slider>().value = hullIntegrity/100;
-    }
-
-    public void ClosePannel()
-    {
-      StatPannel.SetActive(false);
     }
 }
