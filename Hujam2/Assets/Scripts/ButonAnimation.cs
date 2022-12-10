@@ -6,13 +6,21 @@ using UnityEngine.EventSystems;
 
 public class ButonAnimation : MonoBehaviour
 {
-    public Animator buttonanim;
-    void OnPointerEnter(PointerEventData eventData)
+    Animator buttonanim;
+
+    private void Start()
     {
+        buttonanim = GetComponent<Animator>();
+        Debug.Log("start");
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("imepe in");
         buttonanim.Play("Hover");
     }
-    void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
         buttonanim.Play("UnHover");
+        Debug.Log("imepe out");
     }
 }
