@@ -27,12 +27,10 @@ namespace Assets.Entity.EventArrays
         private List<EventItem> Items;
 
 
-        private void Start()
+        private void Awake()
         {
-            Items = gameObject.GetComponent<AllItems>().Items;
-            Stats = gameObject.GetComponent<AllStats>().Stats;
-            med = new Medic();
-            techE = new TechnicalEngineer();
+            Items = gameObject.GetComponent<AllItems>().getAllItems();
+            Stats = gameObject.GetComponent<AllStats>().getAllShipStats();            
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
@@ -40,16 +38,22 @@ namespace Assets.Entity.EventArrays
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
             Events = getAllItemEvents();
         }
-        private EventItem ItemFinder(string ItemName)
+        private EventItem ItemFinder(int ItemName)
         {
-            for (int i = 0; i < Items.Count; i++)
+            EventItem a = new EventItem();
+            
+            for (int i = 0; i < 5; i++)
             {
-                if (Items[i].ItemName == ItemName)
+                Debug.Log(Items[0].ItemID);
+                Debug.Log(Items[0].ItemName);
+                Debug.Log(Items[0].ItemCount);
+                if (Convert.ToInt32(Items[i].ItemID) == Convert.ToInt32(ItemName))
                 {
-                    return Items[i];
+                    a = Items[i];
+                    return a;
                 }
             }
-            return null;
+            return a;
         }
         private ShipStats statFinder(string StatName)
         {
@@ -86,7 +90,7 @@ namespace Assets.Entity.EventArrays
             op1.PositiveEffectCrew = med;
             op1.NegativeEffectCrew = techE;
             op1.MoodEffect = 20;
-            op1.GetItem = ItemFinder("LifeRadar");
+            op1.GetItem = ItemFinder(1);
             a.EventOptions.Add(op1);
             EventOption op2 = new EventOption();
             op2.OptionText = "Peter haklı böyle bir icat gereksiz malzeme kaybı.   ";
