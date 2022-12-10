@@ -7,8 +7,8 @@ public class Crew : MonoBehaviour
     public Sprite Image{ get; set; }
     public string Name { get; set; }
     public  string RoleName { get; set; }
-    public  int Mood { get; set; }
-    public void ChangeMood(int moodValue)
+    public  float Mood { get; set; }
+    public void ChangeMood(float moodValue)
     {
         this.Mood += moodValue;
     }
