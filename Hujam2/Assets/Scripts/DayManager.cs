@@ -66,14 +66,7 @@ public class DayManager : MonoBehaviour
       AllEvents BEV = new AllEvents(); //Dont add up all the lists later this is for test
       AllItemEvents IEV = new AllItemEvents();
 
-      for(int i = 0; i < BEV.getAllEvents().Count; i++)
-      {
-        allEvents.Add(BEV.getAllEvents()[i]);
-      }
-      for(int i = 0; i < IEV.getAllItemEvents().Count; i++)
-      {
-        allEvents.Add(IEV.getAllItemEvents()[i]);
-      }
+      allEvents = BEV.getAllEvents();
   }
 
   void Start()
