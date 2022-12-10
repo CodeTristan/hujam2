@@ -661,11 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f474d92a1120b7c478e46b70438f6bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - 100
-  - 90
-  - 80
-  - 70
   Sliders:
   - {fileID: 0}
   - {fileID: 0}
@@ -8452,6 +8447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efd396639ea02f4c8ce725b2ce2a719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Items: []
 --- !u!114 &1366147614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8464,11 +8460,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92adcc867b8c0924abd57b19038c40a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScientistP: {fileID: 0}
-  SecurityP: {fileID: 0}
-  MedicP: {fileID: 0}
-  TechSupportP: {fileID: 0}
-  TechnicalEngineerP: {fileID: 0}
+  ScientistP: {fileID: 13804811}
+  SecurityP: {fileID: 264592615}
+  MedicP: {fileID: 519901194}
+  TechSupportP: {fileID: 366046223}
+  TechnicalEngineerP: {fileID: 1511156316}
 --- !u!4 &1366147615
 Transform:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ namespace Assets.Entity.EventArrays
         private List<EventItem> Items;
         private void Awake()
         {
-            Items = gameObject.GetComponent<AllItems>().getAllItems();
+            Items = gameObject.GetComponent<AllItems>().Items;
             med = MedicP.GetComponent<Medic>();
             sec = MedicP.GetComponent<Security>();
             sci = MedicP.GetComponent<Scientist>();
