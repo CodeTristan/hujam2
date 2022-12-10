@@ -10,12 +10,16 @@ public class DayManager : MonoBehaviour
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
     [SerializeField] GameObject eventLister;
+
     private List<ItemEvent> events;
+    private List<Event> allEvents;
+
+    Planet planet;
     int oldDayCount;
     int timeTillPlanet;
+    int habitableChance;
+    int chanceMod;
     bool canShowEvent;
-
-    private List<Event> allEvents;
 
     public void EndDay() //End of day button handling
     {
@@ -57,19 +61,30 @@ public class DayManager : MonoBehaviour
 
     }
 
-    public float GenPlanet() //Generate random planet and return risk amount
+    void GenPlanet() //Generate random planet
     {
-        Planet planet = new Planet();
+        planet = new Planet();
+
         planet.toxicAtmosphere = Random.Range(0, 41);
         planet.waterLevel = Random.Range(0, 21);
         planet.hostileCreatures = Random.Range(0, 2);
 
-        return planet.planetRiskLevel();
+        planet.foodAmount = Random.Range(20,41);
+        planet.waterAmount = Random.Range(planet.waterLevel, 31);
+        planet.fuelAmount = Random.Range(40, 61);
+
+        if(Random.Range(0f,1f)<habitableChance/100)
+          planet.habitable = true;
+        else
+        {
+          planet.habitable = false;
+          habitableChance += chanceMod;
+        }
     }
 
     void Awake()
     {
-        
+
         AllEvents EV = new AllEvents();
         allEvents = EV.getAllEvents(); //Literally all possible events in one list
     }
@@ -80,6 +95,7 @@ public class DayManager : MonoBehaviour
         canShowEvent = true;
         dayCount = 1;
         oldDayCount = 1;
+        habitableChance = 0;
 
         timeTillPlanet = Random.Range(8, 11);//Random assignment for planet arrivel for begining
 
@@ -96,7 +112,10 @@ public class DayManager : MonoBehaviour
 
         if (timeTillPlanet <= 0)
         {
+            GenPlanet();
+
             //Planet Search events
+
             timeTillPlanet = Random.Range(5, 11);
         }
 
