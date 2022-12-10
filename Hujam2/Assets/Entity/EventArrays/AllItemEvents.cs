@@ -17,6 +17,7 @@ namespace Assets.Entity.EventArrays
         [SerializeField] GameObject MedicP;
         [SerializeField] GameObject TechSupportP;
         [SerializeField] GameObject TechnicalEngineerP;
+        public List<ItemEvent> Events;
         private Medic med;
         private Security sec;
         private Scientist sci;
@@ -33,6 +34,7 @@ namespace Assets.Entity.EventArrays
             sci = ScientistP.GetComponent<Scientist>();
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
+            Events = getAllItemEvents();
         }
         private EventItem ItemFinder(string ItemName)
         {
@@ -56,13 +58,16 @@ namespace Assets.Entity.EventArrays
             }
             return null;
         }
+       private List<ItemEvent> temp;
         public List<ItemEvent> getAllItemEvents()
         {
-            List<ItemEvent> temp = new List<ItemEvent>();
-            temp.Add(new ItemEvent()
+            temp = new List<ItemEvent>();
+            ItemEvent a = new ItemEvent()
             {
+                InProgress = false,
+                UseItem = null,
                 EventID = 1,
-                RequiredCrews = {med,techE},
+                RequiredCrews = { med, techE },
                 RequiredDay = 0,
                 RequiredItem = null,
                 EffectedStat = null,
@@ -88,7 +93,9 @@ namespace Assets.Entity.EventArrays
                     NegativeEffectCrew=med,
                     MoodEffect=20,
                 }},
-            });
+            };
+            temp.Add(a);
+
             return temp;
         }
     }

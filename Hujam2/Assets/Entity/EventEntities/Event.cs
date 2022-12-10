@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event : MonoBehaviour
+public class Event 
 {
     public int EventID { get; set; }
     public string Label { get; set; }
