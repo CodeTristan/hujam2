@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,10 @@ public class Notebook : MonoBehaviour
     public GameObject nextpage;
     public GameObject stats;
     public GameObject crewnotes;
+    public TextMeshProUGUI[] crewtexts;
+    public string[] names;
+    public string[] occupations;
+    public string[] descriptions;
     public int page;
     public void NoteBookButton()
     {
@@ -41,16 +46,31 @@ public class Notebook : MonoBehaviour
                 previouspage.SetActive(true);
                 stats.SetActive(false);
                 crewnotes.SetActive(true);
+                crewtexts[0].SetText(names[0]);
+                crewtexts[1].SetText(occupations[0]);
+                crewtexts[2].SetText(descriptions[0]);
                 break;
             case 2:
+                crewtexts[0].SetText(names[1]);
+                crewtexts[1].SetText(occupations[1]);
+                crewtexts[2].SetText(descriptions[1]);
                 break;
             case 3:
+                crewtexts[0].SetText(names[2]);
+                crewtexts[1].SetText(occupations[2]);
+                crewtexts[2].SetText(descriptions[2]);
                 break;
             case 4:
                 nextpage.SetActive(true);
+                crewtexts[0].SetText(names[3]);
+                crewtexts[1].SetText(occupations[3]);
+                crewtexts[2].SetText(descriptions[3]);
                 break;
             case 5:
                 nextpage.SetActive(false);
+                crewtexts[0].SetText(names[4]);
+                crewtexts[1].SetText(occupations[4]);
+                crewtexts[2].SetText(descriptions[4]);
                 break;
 
             default:
