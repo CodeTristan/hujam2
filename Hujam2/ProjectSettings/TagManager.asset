@@ -8,6 +8,7 @@ TagManager:
   - Stats
   - Slider
   - Slider Fill
+  - Day Display
   layers:
   - Default
   - TransparentFX
