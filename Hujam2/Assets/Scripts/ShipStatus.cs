@@ -7,13 +7,14 @@ using UnityEngine.UI;
 
 public class ShipStatus : MonoBehaviour
 {
+    public List<ShipStats> ShipStats;
+    
     [SerializeField] GameObject[] Sliders;
     [SerializeField] GameObject StatPannel;
     [SerializeField] GameObject CrewManager;
     [SerializeField] Image[] SliderFill;
     [SerializeField] Gradient SliderGradient;
 
-    private List<ShipStats> ShipStats;
     private void Awake()
     {
         AllStats st = new AllStats();
