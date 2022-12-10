@@ -13,7 +13,6 @@ namespace Assets.Entity.Items
         private void Awake()
         {
             List<EventItem> Items = new List<EventItem>();
-            Items = getAllItems();
         }
         private List<EventItem> temp;
         public List<EventItem> getAllItems()

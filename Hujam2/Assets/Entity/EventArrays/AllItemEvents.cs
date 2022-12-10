@@ -28,7 +28,8 @@ namespace Assets.Entity.EventArrays
 
         private void Awake()
         {
-            
+            Items = new List<EventItem>();
+            Items = gameObject.GetComponent<AllItems>().getAllItems();
             Stats = gameObject.GetComponent<AllStats>().getAllShipStats();            
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
@@ -39,8 +40,6 @@ namespace Assets.Entity.EventArrays
         private EventItem ItemFinder(int ItemName)
         {
             EventItem a = new EventItem();
-            Items = new List<EventItem>();
-            Items = gameObject.GetComponent<AllItems>().getAllItems();
             for (int i = 0; i < 5; i++)
             {
                 Debug.Log(Items[0].ItemID);
