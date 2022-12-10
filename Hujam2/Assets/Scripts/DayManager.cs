@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Assets.Entity.EventArrays;
 
 public class DayManager : MonoBehaviour
 {
   [SerializeField]int dayCount;
+  [SerializeField]GameObject crewManager;
+
   int oldDayCount;
   int timeTillPlanet;
   bool canShowEvent;
-  int[] eventOptions;
+
+  private List<Event> allEvents;
 
   public void EndDay()
   {
@@ -19,10 +23,29 @@ public class DayManager : MonoBehaviour
     GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
   }
 
-  int ChooseEvent(int dayNumber)
+  Event ChooseEvent(int dayNumber, List<Event> eventOptions)
   {
-    //Event choosing goes here
-    return 1;
+    Event chosenEvent = eventOptions[Random.Range(0, eventOptions.Count)];
+
+    foreach(Crew tested in chosenEvent.RequiredCrews)
+    {
+      if(crewManager.GetComponent(tested.RoleName) == null)
+      {
+        allEvents.Remove(chosenEvent);
+        eventOptions.Remove(chosenEvent);
+        return ChooseEvent(dayNumber, eventOptions);
+      }
+    }
+
+    if(chosenEvent.RequiredDay > dayNumber)
+    {
+      eventOptions.Remove(chosenEvent);
+      return ChooseEvent(dayNumber, eventOptions);
+    }
+
+    else
+      return chosenEvent;
+
   }
 
   float GenPlanet()
@@ -33,6 +56,12 @@ public class DayManager : MonoBehaviour
     planet.hostileCreatures = Random.Range(0,2);
 
     return planet.planetRiskLevel();
+  }
+
+  private void Awake()
+  {
+      AllEvents EV = new AllEvents();
+      allEvents = EV.getAllEvents();
   }
 
   void Start()
@@ -58,6 +87,12 @@ public class DayManager : MonoBehaviour
     {
       //Planet Search events
       timeTillPlanet = Random.Range(5,11);
+    }
+
+    if(canShowEvent)
+    {
+      Debug.Log(ChooseEvent(dayCount, allEvents).EventID);
+      canShowEvent = false;
     }
   }
 }
