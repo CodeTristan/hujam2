@@ -69,13 +69,14 @@ public class DayManager : MonoBehaviour
 
     void Awake()
     {
-        events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
+        
         AllEvents EV = new AllEvents();
         allEvents = EV.getAllEvents(); //Literally all possible events in one list
     }
 
     void Start()
     {
+        events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         canShowEvent = true;
         dayCount = 1;
         oldDayCount = 1;
@@ -106,8 +107,6 @@ public class DayManager : MonoBehaviour
             float value = temp.EventOptions[0].MoodEffect;
             temp.EventOptions[0].NegativeEffectCrew.ChangeMood(-value);
             temp.EventOptions[0].PositiveEffectCrew.ChangeMood(value);
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood);
-            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Mood);
             Debug.Log(ChooseEvent(dayCount, allEvents).EventID); //Debug, duuuh
         }
     }

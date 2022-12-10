@@ -14,7 +14,7 @@ namespace Assets.Entity
             this.Image = gameObject.GetComponent<SpriteRenderer>().sprite;
             this.Name = "Sarah";
             this.RoleName = "Security";
-            this.Mood = 90;
+            this.Mood = 100;
         }
 
     }

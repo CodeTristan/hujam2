@@ -17,7 +17,6 @@ namespace Assets.Entity.EventArrays
         [SerializeField] GameObject MedicP;
         [SerializeField] GameObject TechSupportP;
         [SerializeField] GameObject TechnicalEngineerP;
-        public List<ItemEvent> Events;
         private Medic med;
         private Security sec;
         private Scientist sci;
@@ -29,19 +28,19 @@ namespace Assets.Entity.EventArrays
 
         private void Awake()
         {
-            Items = gameObject.GetComponent<AllItems>().getAllItems();
+            
             Stats = gameObject.GetComponent<AllStats>().getAllShipStats();            
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
-            Events = getAllItemEvents();
         }
         private EventItem ItemFinder(int ItemName)
         {
             EventItem a = new EventItem();
-            
+            Items = new List<EventItem>();
+            Items = gameObject.GetComponent<AllItems>().getAllItems();
             for (int i = 0; i < 5; i++)
             {
                 Debug.Log(Items[0].ItemID);
@@ -90,6 +89,8 @@ namespace Assets.Entity.EventArrays
             op1.PositiveEffectCrew = med;
             op1.NegativeEffectCrew = techE;
             op1.MoodEffect = 20;
+            Debug.Log(MedicP.GetComponent<Medic>().Mood + " allItemDebugCrewMood");
+            Debug.Log(med.Mood + " allItemDebugCrewMood2");
             op1.GetItem = ItemFinder(1);
             a.EventOptions.Add(op1);
             EventOption op2 = new EventOption();
