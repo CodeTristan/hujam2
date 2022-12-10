@@ -25,10 +25,14 @@ namespace Assets.Entity.EventArrays
         private TechnicalEngineer techE;
         private List<ShipStats> Stats;
         private List<EventItem> Items;
-        private void Awake()
+
+
+        private void Start()
         {
             Items = gameObject.GetComponent<AllItems>().Items;
             Stats = gameObject.GetComponent<AllStats>().Stats;
+            med = new Medic();
+            techE = new TechnicalEngineer();
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
@@ -62,38 +66,35 @@ namespace Assets.Entity.EventArrays
         public List<ItemEvent> getAllItemEvents()
         {
             temp = new List<ItemEvent>();
-            ItemEvent a = new ItemEvent()
-            {
-                InProgress = false,
-                UseItem = null,
-                EventID = 1,
-                RequiredCrews = { med, techE },
-                RequiredDay = 0,
-                RequiredItem = null,
-                EffectedStat = null,
-                Label = "Örnek Başlık",
-                Text = "Caitlin, Peter ile beraber bir yaşam ölçme radarı yapmak istiyor fakat Peter buna sıcak bakmıyor. Kimin tarafını tutmalıyım.",
-                EventOptions = {
-                new EventOption
-                {
-                    OptionText="Caitlin haklı radarı kullanmak işimize yarayabilir.",
-                    TargetEventID=1,
-                    PositiveEffectCrew=med,
-                    NegativeEffectCrew=techE,
-                    MoodEffect=20,
-                    GetItem=ItemFinder("LifeRadar")
+            ItemEvent a = new ItemEvent();
 
-                },
-
-                new EventOption
-                {
-                    OptionText="Peter haklı böyle bir icat gereksiz malzeme kaybı.   ",
-                    TargetEventID=1,
-                    PositiveEffectCrew=techE,
-                    NegativeEffectCrew=med,
-                    MoodEffect=20,
-                }},
-            };
+            a.InProgress = false;
+            a.UseItem = null;
+            a.EventID = 1;
+            a.RequiredCrews = new List<Crew>();
+            a.RequiredCrews.Add(med);
+            a.RequiredCrews.Add(techE);
+            a.RequiredDay = 0;
+            a.RequiredItem = null;
+            a.EffectedStat = null;
+            a.Label = "Örnek Başlık";
+            a.Text = "Caitlin, Peter ile beraber bir yaşam ölçme radarı yapmak istiyor fakat Peter buna sıcak bakmıyor. Kimin tarafını tutmalıyım.";
+            EventOption op1 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            op1.OptionText = "Caitlin haklı radarı kullanmak işimize yarayabilir.";
+            op1.TargetEventID = 1;
+            op1.PositiveEffectCrew = med;
+            op1.NegativeEffectCrew = techE;
+            op1.MoodEffect = 20;
+            op1.GetItem = ItemFinder("LifeRadar");
+            a.EventOptions.Add(op1);
+            EventOption op2 = new EventOption();
+            op2.OptionText = "Peter haklı böyle bir icat gereksiz malzeme kaybı.   ";
+            op2.TargetEventID = 1;
+            op2.PositiveEffectCrew = techE;
+            op2.NegativeEffectCrew = med;
+            op2.MoodEffect = 20;
+            a.EventOptions.Add(op2);
             temp.Add(a);
 
             return temp;
