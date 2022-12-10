@@ -18,12 +18,12 @@ namespace Assets.Entity.Items
         public List<EventItem> getAllItems()
         {
             temp = new List<EventItem>();
-            temp.Add(new EventItem() 
-            {
-                ItemCount=0,
-                ItemID=1,
-                ItemName="LifeRadar",                                                
-            });
+            EventItem item1 = new EventItem();
+
+            item1.ItemCount = 0;
+            item1.ItemID = 1;
+            item1.ItemName = "LifeRadar";
+            temp.Add(item1);
             return temp;
         }
     }
