@@ -7,6 +7,8 @@ public class ShipStatus : MonoBehaviour
 {
     public GameObject StatPannel;
     public GameObject[] Sliders;
+    public Image[] SliderFill;
+    public Gradient SliderGradient;
 
     public float food;
     public float water;
@@ -19,5 +21,9 @@ public class ShipStatus : MonoBehaviour
       Sliders[1].GetComponent<Slider>().value = water/100;
       Sliders[2].GetComponent<Slider>().value = fuel/100;
       Sliders[3].GetComponent<Slider>().value = hullIntegrity/100;
+        for(int i = 0; i < Sliders.Length; i++)
+        {
+            SliderFill[i].color = SliderGradient.Evaluate(Sliders[i].GetComponent<Slider>().value);
+        }
     }
 }
