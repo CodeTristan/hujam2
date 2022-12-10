@@ -598,7 +598,7 @@ Transform:
   m_Children:
   - {fileID: 524698362}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &119526340
 MonoBehaviour:
@@ -3676,7 +3676,7 @@ RectTransform:
   - {fileID: 687609304}
   - {fileID: 1014342354}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3810,6 +3810,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 119526339}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &549871159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549871160}
+  m_Layer: 0
+  m_Name: Dialogs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549871160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549871159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.78943276, y: -0.005314648, z: 0.033137463}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1198209081}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565967303
 GameObject:
@@ -4951,7 +4983,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791871667
 GameObject:
@@ -5923,7 +5955,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &968141063
 GameObject:
@@ -6058,7 +6090,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974259945
 GameObject:
@@ -7826,12 +7858,12 @@ GameObject:
   - component: {fileID: 1198209081}
   - component: {fileID: 1198209082}
   m_Layer: 0
-  m_Name: DialogEx
+  m_Name: FirstDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1198209081
 Transform:
   m_ObjectHideFlags: 0
@@ -7839,13 +7871,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198209079}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8093674, y: -0.44698775, z: 0.008267449}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.019934654, y: -0.4416731, z: -0.024870014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 549871160}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1198209082
 MonoBehaviour:
@@ -7859,24 +7891,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Context: 
+  Context: FirstDialog
   dialogs:
-  - Name: Peter
-    sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
-    sentences:
-    - "Merhaba ben Peter bana pit\u0131r derler"
-    - heheheheeyoo
-    - mesaj mesaj masaj mesaj massaj
-  - Name: Sa
+  - Name: 
     sprite: {fileID: 0}
     sentences:
-    - Sa
-    - As
-  - Name: Oyun?
-    sprite: {fileID: 0}
-    sentences:
-    - "Yeti\u015Fir yaaaa bence"
-    - "Belki yani  yeti\u015Fir gibi."
+    - "D\xFCnyay\u0131 terk ettik\u2026Ba\u015Fka bir se\xE7ene\u011Fimiz yoktu."
+    - "\u0130nsanl\u0131\u011F\u0131n son umudu olarak yola \xE7\u0131kt\u0131k.
+      Geriye d\xF6n\xFCp bakt\u0131\u011F\u0131mda sadece mavi bir k\xFCreyi de\u011Fil,
+      arkada\u015Flar\u0131m\u0131, ailemi, t\xFCm insanl\u0131\u011F\u0131 g\xF6r\xFCyorum."
+    - "Ben bu geminin kaptan\u0131y\u0131m. B\xF6yle d\xFC\u015F\xFCncelere dalarsam
+      bu tak\u0131m\u0131 bir arada tutamayabilirim."
+    - "Gemide olabilecek her t\xFCrl\xFC olayda se\xE7im yetkisini bana verdiler.
+      Kanunlara g\xF6re hangi karar\u0131 verirsem tayfam buna uymak zorunda."
+    - "Tabii uzayday\u0131z\u2026 Hi\xE7li\u011Fin ortas\u0131nda ne kadar kanun
+      ge\xE7erli olursa."
+    - "Kaynaklar\u0131m\u0131z t\xFCkenmeden di\u011Fer gezegenlere inmeliyiz ve
+      ya\u015Fanabilir olup olmad\u0131\u011F\u0131n\u0131 test etmeliyiz."
+    - "Gezegenlere inmek riskli de olsa ba\u015Fka bir se\xE7ene\u011Fimiz yok. Hem
+      kaynak a\xE7\u0131s\u0131ndan hem de ya\u015Fanabilir olup olmad\u0131\u011F\u0131n\u0131
+      test etme a\xE7\u0131s\u0131ndan gerekli bir fedak\xE2rl\u0131k."
+    - "Tayfa ile konu\u015Fay\u0131m yolculu\u011Fa \xE7\u0131kt\u0131\u011F\u0131m\u0131zdan
+      beri keyifleri nas\u0131lm\u0131\u015F sormal\u0131y\u0131m."
 --- !u!1 &1307806865
 GameObject:
   m_ObjectHideFlags: 0
@@ -8447,7 +8483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efd396639ea02f4c8ce725b2ce2a719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Items: []
 --- !u!114 &1366147614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8478,7 +8513,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369161844
 GameObject:
@@ -8514,7 +8549,7 @@ Transform:
   - {fileID: 13804812}
   - {fileID: 366046224}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385913701
 GameObject:
@@ -9067,9 +9102,9 @@ MonoBehaviour:
   dialogUI: {fileID: 687609303}
   characterImage: {fileID: 1184545160}
   typeSpeed: 0.02
-  currentDialogs: []
   dialogCount: 0
   maxDialogCount: 0
+  FirstDialog: {fileID: 1198209082}
 --- !u!4 &1528984397
 Transform:
   m_ObjectHideFlags: 0
@@ -9083,7 +9118,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618999776
 GameObject:

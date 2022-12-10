@@ -14,16 +14,23 @@ public class DialogManager : MonoBehaviour
     public Image characterImage;
     public float typeSpeed;
 
-    public Dialog[] currentDialogs;
+    private Dialog[] currentDialogs;
     public int dialogCount;
     public int maxDialogCount;
 
     private Queue<string> sentences;
     private string sentence;
 
+    public DialogTrigger FirstDialog;
+
+
     private void Awake()
     {
         sentences = new Queue<string>();
+    }
+    private void Start()
+    {
+        //FirstDialog.TriggerDialog();
     }
     public void StartDialog(Dialog[] dialog)  //Starts dialog
     {
@@ -35,8 +42,16 @@ public class DialogManager : MonoBehaviour
             EndDialog();
             return;
         }
+
         nameText.text = currentDialogs[dialogCount].Name;
-        characterImage.sprite = currentDialogs[dialogCount].sprite;
+        if (currentDialogs[dialogCount].sprite == null)
+            characterImage.gameObject.SetActive(false);
+        else
+        {
+            characterImage.gameObject.SetActive(true);
+            characterImage.sprite = currentDialogs[dialogCount].sprite;
+        }
+        
         sentences.Clear();
 
         foreach (string sentence in dialog[dialogCount].sentences)  //Adds each string sentence to queue

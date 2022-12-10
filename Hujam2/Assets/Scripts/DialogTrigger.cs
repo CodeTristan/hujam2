@@ -13,7 +13,6 @@ public class DialogTrigger : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<DialogManager>();
-        TriggerDialog();
     }
     public void TriggerDialog()
     {
