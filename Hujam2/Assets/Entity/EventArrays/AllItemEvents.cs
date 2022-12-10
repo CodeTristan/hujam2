@@ -1,5 +1,6 @@
 ﻿using Assets.Entity.EventEntities;
 using Assets.Entity.Items;
+using Assets.Entity.Stats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,16 +22,17 @@ namespace Assets.Entity.EventArrays
         private Scientist sci;
         private TechSupport techSup;
         private TechnicalEngineer techE;
-
+        private List<ShipStats> Stats;
         private List<EventItem> Items;
         private void Awake()
         {
             Items = gameObject.GetComponent<AllItems>().Items;
+            Stats = gameObject.GetComponent<AllStats>().Stats;
             med = MedicP.GetComponent<Medic>();
-            sec = MedicP.GetComponent<Security>();
-            sci = MedicP.GetComponent<Scientist>();
-            techSup = MedicP.GetComponent<TechSupport>();
-            techE = MedicP.GetComponent<TechnicalEngineer>();
+            sec = SecurityP.GetComponent<Security>();
+            sci = ScientistP.GetComponent<Scientist>();
+            techSup = TechSupportP.GetComponent<TechSupport>();
+            techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
         }
         private EventItem ItemFinder(string ItemName)
         {
@@ -39,6 +41,17 @@ namespace Assets.Entity.EventArrays
                 if (Items[i].ItemName == ItemName)
                 {
                     return Items[i];
+                }
+            }
+            return null;
+        }
+        private ShipStats statFinder(string StatName)
+        {
+            for (int i = 0; i < Stats.Count; i++)
+            {
+                if (Stats[i].StatName == StatName)
+                {
+                    return Stats[i];
                 }
             }
             return null;
