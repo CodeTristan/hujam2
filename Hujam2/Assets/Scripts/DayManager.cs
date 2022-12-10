@@ -18,7 +18,6 @@ public class DayManager : MonoBehaviour
 
   public void EndDay() //End of day button handling
   {
-    
     dayCount++;
     timeTillPlanet--;
 
