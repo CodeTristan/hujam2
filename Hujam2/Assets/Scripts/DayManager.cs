@@ -15,7 +15,7 @@ public class DayManager : MonoBehaviour
 
   private List<Event> allEvents;
 
-  public void EndDay()
+  public void EndDay() //End of day button handling
   {
     dayCount++;
     timeTillPlanet--;
@@ -25,30 +25,33 @@ public class DayManager : MonoBehaviour
 
   Event ChooseEvent(int dayNumber, List<Event> eventOptions)
   {
-    Event chosenEvent = eventOptions[Random.Range(0, eventOptions.Count)];
+    Event chosenEvent = eventOptions[Random.Range(0, eventOptions.Count)]; //Chose random event from given list
 
-    foreach(Crew tested in chosenEvent.RequiredCrews)
+    if(chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
     {
-      if(crewManager.GetComponent(tested.RoleName) == null)
+      foreach(Crew tested in chosenEvent.RequiredCrews)
       {
-        allEvents.Remove(chosenEvent);
-        eventOptions.Remove(chosenEvent);
-        return ChooseEvent(dayNumber, eventOptions);
+        if(crewManager.GetComponent(tested.RoleName) == null)
+        {
+          allEvents.Remove(chosenEvent); //Remove event from original list if one or both crew members are dead
+          eventOptions.Remove(chosenEvent); //Remove event from given list for recursion
+          return ChooseEvent(dayNumber, eventOptions); //Call fucntion again
+        }
       }
     }
 
-    if(chosenEvent.RequiredDay > dayNumber)
+    if(chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
     {
-      eventOptions.Remove(chosenEvent);
-      return ChooseEvent(dayNumber, eventOptions);
+      eventOptions.Remove(chosenEvent);//Remove event from given list
+      return ChooseEvent(dayNumber, eventOptions); //Call fucntion again
     }
 
     else
-      return chosenEvent;
+      return chosenEvent; //If every requirement is satisfied return event as Event
 
   }
 
-  float GenPlanet()
+  public float GenPlanet() //Generate random planet and return risk amount
   {
     Planet planet = new Planet();
     planet.toxicAtmosphere = Random.Range(0,41);
@@ -58,10 +61,10 @@ public class DayManager : MonoBehaviour
     return planet.planetRiskLevel();
   }
 
-  private void Awake()
+  void Awake()
   {
       AllEvents EV = new AllEvents();
-      allEvents = EV.getAllEvents();
+      allEvents = EV.getAllEvents(); //Literally all possible events in one list
   }
 
   void Start()
@@ -70,14 +73,14 @@ public class DayManager : MonoBehaviour
     dayCount = 1;
     oldDayCount = 1;
 
-    timeTillPlanet = Random.Range(8,11);
+    timeTillPlanet = Random.Range(8,11);//Random assignment for planet arrivel for begining
 
-    GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
+    GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString(); //Displayes day counter
   }
 
   void Update()
   {
-    if(dayCount != oldDayCount)
+    if(dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
     {
       canShowEvent = true;
       oldDayCount = dayCount;
@@ -91,8 +94,8 @@ public class DayManager : MonoBehaviour
 
     if(canShowEvent)
     {
-      Debug.Log(ChooseEvent(dayCount, allEvents).EventID);
       canShowEvent = false;
+      Debug.Log(ChooseEvent(dayCount, allEvents).EventID); //Debug, duuuh
     }
   }
 }

@@ -725,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayCount: 0
+  crewManager: {fileID: 1369161844}
 --- !u!1 &124617844
 GameObject:
   m_ObjectHideFlags: 0
@@ -8464,6 +8465,7 @@ GameObject:
   - component: {fileID: 1366147615}
   - component: {fileID: 1366147614}
   - component: {fileID: 1366147613}
+  - component: {fileID: 1366147616}
   m_Layer: 0
   m_Name: EventLister
   m_TagString: Untagged
@@ -8515,6 +8517,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366147616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366147612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d6f85916805bb47a983b2c9ccd1d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1369161844
 GameObject:
   m_ObjectHideFlags: 0
