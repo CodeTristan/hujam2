@@ -1,3 +1,5 @@
+using Assets.Entity;
+using Assets.Entity.Stats;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +9,18 @@ public class ShipStatus : MonoBehaviour
 {
     public float[] stats; //food, water, fuel, hull integrity
 
-
+    
     [SerializeField] GameObject[] Sliders;
     [SerializeField] GameObject StatPannel;
     [SerializeField] GameObject CrewManager;
     [SerializeField] Image[] SliderFill;
     [SerializeField] Gradient SliderGradient;
-
+    private List<ShipStats> ShipStats;
+    private void Awake()
+    {
+        AllStats st = new AllStats();
+        ShipStats = st.getAllShipStats();
+    }
     void Start()
     {
       CrewManager = GameObject.FindGameObjectsWithTag("Crew Manager")[0];
