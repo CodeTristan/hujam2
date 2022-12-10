@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ButonAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator buttonanim;
+    void OnPointerEnter(PointerEventData eventData)
     {
-        
+        buttonanim.Play("Hover");
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnPointerExit(PointerEventData eventData)
     {
-        
+        buttonanim.Play("UnHover");
     }
 }
