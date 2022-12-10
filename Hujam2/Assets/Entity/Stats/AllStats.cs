@@ -38,21 +38,6 @@ namespace Assets.Entity.Stats
                 StatName = "Durability",
                 StatValue = 60f,
             });
-            temp.Add(new ShipStats()
-            {
-                StatName = "FoodConsump",
-                StatValue = -5f,
-            });
-            temp.Add(new ShipStats()
-            {
-                StatName = "WaterConsump",
-                StatValue = -5f,
-            });
-            temp.Add(new ShipStats()
-            {
-                StatName = "FuelConsump",
-                StatValue = -5f,
-            });
             return temp;
         }
     }
