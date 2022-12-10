@@ -4,23 +4,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButonAnimation : MonoBehaviour
+public class ButonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     Animator buttonanim;
 
     private void Start()
     {
         buttonanim = GetComponent<Animator>();
-        Debug.Log("start");
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("imepe in");
         buttonanim.Play("Hover");
     }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         buttonanim.Play("UnHover");
-        Debug.Log("imepe out");
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (gameObject.activeInHierarchy==false)
+        {
+            GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
+        }
     }
 }
