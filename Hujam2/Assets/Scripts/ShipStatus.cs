@@ -7,12 +7,12 @@ public class ShipStatus : MonoBehaviour
 {
     public float[] stats; //food, water, fuel, hull integrity
 
-    [SerializeField]
-    public GameObject[] Sliders;
-    public GameObject StatPannel;
-    public GameObject CrewManager;
-    public Image[] SliderFill;
-    public Gradient SliderGradient;
+
+    [SerializeField] GameObject[] Sliders;
+    [SerializeField] GameObject StatPannel;
+    [SerializeField] GameObject CrewManager;
+    [SerializeField] Image[] SliderFill;
+    [SerializeField] Gradient SliderGradient;
 
     void Start()
     {
