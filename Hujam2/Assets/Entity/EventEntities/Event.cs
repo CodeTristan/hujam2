@@ -10,6 +10,7 @@ public class Event : MonoBehaviour
     public string Text { get; set; }
     public int RequiredDay { get; set; }
     public ShipStats EffectedStat { get; set; }
+    public List<Crew> RequiredCrews{ get; set; }
     public List<EventOption> EventOptions { get; set; }
 
 

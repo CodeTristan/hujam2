@@ -22,10 +22,7 @@ namespace Assets.Entity.Items
             {
                 ItemCount=0,
                 ItemID=1,
-                ItemName="LifeRadar",
-                
-                
-                
+                ItemName="LifeRadar",                                                
             });
             return temp;
         }

@@ -49,6 +49,7 @@ namespace Assets.Entity.EventArrays
             temp.Add(new ItemEvent()
             {
                 EventID = 1,
+                RequiredCrews = {med,techE},
                 RequiredDay = 0,
                 RequiredItem = null,
                 EffectedStat = null,
