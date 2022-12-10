@@ -660,6 +660,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f474d92a1120b7c478e46b70438f6bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+  - 100
+  - 90
+  - 80
+  - 70
   Sliders:
   - {fileID: 0}
   - {fileID: 0}
@@ -711,10 +716,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
-  food: 100
-  water: 80
-  fuel: 70
-  hullIntegrity: 60
 --- !u!1 &124617844
 GameObject:
   m_ObjectHideFlags: 0
