@@ -13,7 +13,7 @@ public class DayManager : MonoBehaviour
   int timeTillPlanet;
   bool canShowEvent;
 
-  private List<Event> allEvents;
+  List<Event> allEvents;
 
   public void EndDay() //End of day button handling
   {
@@ -63,8 +63,17 @@ public class DayManager : MonoBehaviour
 
   void Awake()
   {
-      AllEvents EV = new AllEvents();
-      allEvents = EV.getAllEvents(); //Literally all possible events in one list
+      AllEvents BEV = new AllEvents(); //Dont add up all the lists later this is for test
+      AllItemEvents IEV = new AllItemEvents();
+
+      for(int i = 0; i < BEV.getAllEvents().Count; i++)
+      {
+        allEvents.Add(BEV.getAllEvents()[i]);
+      }
+      for(int i = 0; i < IEV.getAllItemEvents().Count; i++)
+      {
+        allEvents.Add(IEV.getAllItemEvents()[i]);
+      }
   }
 
   void Start()
