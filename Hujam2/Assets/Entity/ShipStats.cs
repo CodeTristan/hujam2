@@ -9,6 +9,6 @@ namespace Assets.Entity
     public class ShipStats
     {
         public string StatName{ get; set; }
-        public int StatValue{ get; set; }
+        public float StatValue{ get; set; }
     }
 }

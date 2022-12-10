@@ -19,17 +19,17 @@ namespace Assets.Entity.Stats
             temp.Add(new ShipStats()
             {
                 StatName = "Water",
-                StatValue = 100
+                StatValue = 80
             });
             temp.Add(new ShipStats()
             {
                 StatName = "Fuel",
-                StatValue = 100
+                StatValue = 70
             });
             temp.Add(new ShipStats()
             {
                 StatName = "Durability",
-                StatValue = 100
+                StatValue = 60
             });
             return temp;
         }

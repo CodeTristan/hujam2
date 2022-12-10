@@ -7,14 +7,12 @@ using UnityEngine.UI;
 
 public class ShipStatus : MonoBehaviour
 {
-    public float[] stats; //food, water, fuel, hull integrity
-
-    
     [SerializeField] GameObject[] Sliders;
     [SerializeField] GameObject StatPannel;
     [SerializeField] GameObject CrewManager;
     [SerializeField] Image[] SliderFill;
     [SerializeField] Gradient SliderGradient;
+
     private List<ShipStats> ShipStats;
     private void Awake()
     {
@@ -38,7 +36,7 @@ public class ShipStatus : MonoBehaviour
       for(int i = 0; i < Sliders.Length; i++)
       {
         if(i <= 3)
-          Sliders[i].GetComponent<Slider>().value = stats[i]/100;
+          Sliders[i].GetComponent<Slider>().value = ShipStats[i].StatValue/100;
         else
           Sliders[i].GetComponent<Slider>().value = CrewManager.transform.GetChild(i-4).GetComponent<Crew>().Mood/100;
       }
