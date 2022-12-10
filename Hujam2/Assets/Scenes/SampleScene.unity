@@ -4596,9 +4596,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1198209080}
-        m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
-        m_MethodName: DisplayNewSentence
+      - m_Target: {fileID: 1528984396}
+        m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+        m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6826,7 +6826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1198209081}
-  - component: {fileID: 1198209080}
+  - component: {fileID: 1198209082}
   m_Layer: 0
   m_Name: DialogEx
   m_TagString: Untagged
@@ -6834,30 +6834,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1198209080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198209079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ca9e8d11577294da2d86f74d7779e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1780425950}
-  nameText: {fileID: 1717125427}
-  continueButton: {fileID: 862942586}
-  dialogUI: {fileID: 687609303}
-  characterImage: {fileID: 1184545160}
-  sentences:
-  - "Sa benim ad\u0131m Peter"
-  - "Ben motor ya\u011F\u0131 i\xE7meyi \xE7ok severim"
-  - "Bana ayr\u0131lan vaktin sonuna geldik g\xF6r\xFC\u015F\xFCr\xFCz."
-  Name: Za
-  sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
-  typeSpeed: 0.015
 --- !u!4 &1198209081
 Transform:
   m_ObjectHideFlags: 0
@@ -6873,6 +6849,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1198209082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198209079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: 
+  dialogs:
+  - Name: Peter
+    sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
+    sentences:
+    - "Merhaba ben Peter bana pit\u0131r derler"
+    - heheheheeyoo
+    - mesaj mesaj masaj mesaj massaj
+  - Name: Sa
+    sprite: {fileID: 0}
+    sentences:
+    - Sa
+    - As
+  - Name: Oyun?
+    sprite: {fileID: 0}
+    sentences:
+    - "Yeti\u015Fir yaaaa bence"
+    - "Belki yani  yeti\u015Fir gibi."
 --- !u!1 &1314258048
 GameObject:
   m_ObjectHideFlags: 0
@@ -7696,6 +7702,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1528984395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1528984397}
+  - component: {fileID: 1528984396}
+  m_Layer: 0
+  m_Name: DialogManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1528984396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528984395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bee22fa651567e4aa3f334b5996bb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: 
+  text: {fileID: 1780425950}
+  nameText: {fileID: 1717125427}
+  continueButton: {fileID: 862942586}
+  dialogUI: {fileID: 687609303}
+  characterImage: {fileID: 1184545160}
+  typeSpeed: 0.02
+  currentDialogs: []
+  dialogCount: 0
+  maxDialogCount: 0
+--- !u!4 &1528984397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528984395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.522956, y: -0.62558836, z: 0.029704295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618999776
 GameObject:
   m_ObjectHideFlags: 0
