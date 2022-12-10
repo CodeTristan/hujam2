@@ -25,27 +25,28 @@ public class DialogManager : MonoBehaviour
     {
         sentences = new Queue<string>();
     }
-    public void StartDialog(Dialog[] dialog)
+    public void StartDialog(Dialog[] dialog)  //Starts dialog
     {
         text.text = "";
         dialogUI.SetActive(true);
         currentDialogs = dialog;
-        if (dialogCount == maxDialogCount)
+        if (dialogCount == maxDialogCount) //if there is no more dialog end it.
         {
             EndDialog();
             return;
         }
         nameText.text = currentDialogs[dialogCount].Name;
+        characterImage.sprite = currentDialogs[dialogCount].sprite;
         sentences.Clear();
 
-        foreach (string sentence in dialog[dialogCount].sentences)
+        foreach (string sentence in dialog[dialogCount].sentences)  //Adds each string sentence to queue
         {
             sentences.Enqueue(sentence);
         }
 
         DisplayNextSentence();
     }
-    public IEnumerator Type(string sentence)
+    public IEnumerator Type(string sentence) //Types sentence to screen
     {
         text.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -56,7 +57,7 @@ public class DialogManager : MonoBehaviour
         continueButton.SetActive(true);
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence() //Goes next element of queue
     {
         
         continueButton.SetActive(false);
@@ -65,7 +66,7 @@ public class DialogManager : MonoBehaviour
             EndDialog();
             return;
         }
-        if (sentences.Count == 0)
+        if (sentences.Count == 0) //if dialog is finished starts another one.
         {
             dialogCount++;
             StartDialog(currentDialogs);
