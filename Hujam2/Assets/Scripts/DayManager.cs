@@ -45,10 +45,10 @@ public class DayManager : MonoBehaviour
 
     CosmicEvent ChooseEvent(int dayNumber, List<CosmicEvent> eventOptions, int type)
     {
-      CosmicEvent chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
-
       if(eventOptions.Count > 1)
       {
+        CosmicEvent chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
+
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
           foreach (Crew tested in chosenEvent.RequiredCrews)
@@ -81,7 +81,7 @@ public class DayManager : MonoBehaviour
               itemEvents.Remove(chosenEvent);
               break;
             case 2:
-              chainEvents.Remove(chosenEvent);
+              chainEventsBegin.Remove(chosenEvent);
               break;
           }
 
@@ -188,11 +188,12 @@ public class DayManager : MonoBehaviour
               case 2: //Chain events
                 chainEvent = true;
                 this.chosenEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
-                nextEventID = chosenEvent.NextEventID;
+                if(chosenEvent != null)
+                  nextEventID = chosenEvent.NextEventID;
                 break;
             }
 
-            if(chosenEvent == null)
+            if(chosenEvent != null)
               break;
           }
         }
