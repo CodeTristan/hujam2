@@ -121,6 +121,7 @@ namespace Assets.Entity.EventArrays
             op2.PositiveEffectCrew = techE;
             op2.NegativeEffectCrew = med;
             op2.MoodEffect = 40;
+            op2.UseItem = searcher.ItemFinder(Items, "LifeRadar");
             a.EventOptions.Add(op2);
             temp.Add(a);
             #endregion           

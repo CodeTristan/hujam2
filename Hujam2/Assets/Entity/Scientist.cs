@@ -12,7 +12,7 @@ namespace Assets.Entity
         void Awake()
         {
             this.Image = gameObject.GetComponent<SpriteRenderer>().sprite;
-            this.Name = "Maul";
+            this.Name = "Gauss";
             this.RoleName = "Scientist";
             this.Mood = 100;
         }
