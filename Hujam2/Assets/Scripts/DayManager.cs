@@ -10,7 +10,9 @@ using Assets.Scripts;
 public class DayManager : MonoBehaviour
 {
     public CosmicEvent finalEvent;
+    public CosmicEvent LastEvent;
     public EventOption chosenOption;
+    public EventOption finalOption;
     public Planet aproachingPlanet;
 
     [SerializeField] int dayCount;
@@ -34,8 +36,29 @@ public class DayManager : MonoBehaviour
     {
         dayCount++;
         timeTillPlanet--;
+        //EventOption finalOption = new EventOption();
+        finalOption.TargetEventID = chosenOption.TargetEventID;
+        finalOption.MoodEffect = chosenOption.MoodEffect;
+        finalOption.StatEffect = chosenOption.StatEffect;
+        finalOption.ChainTrigger = chosenOption.ChainTrigger;
+        finalOption.CosmicTrigger = chosenOption.CosmicTrigger;
+        finalOption.OptionText = chosenOption.OptionText;
+        finalOption.PositiveEffectCrew = chosenOption.PositiveEffectCrew;
+        finalOption.NegativeEffectCrew = chosenOption.NegativeEffectCrew;
+        finalOption.GetItem = chosenOption.GetItem;
+        finalOption.UseItem = chosenOption.UseItem;
 
-        //optionExecuter.ExecuteOption(chosenOption, chosenEvent); //Check if there is a bug
+        //CosmicEvent LastEvent = new CosmicEvent();
+        LastEvent.EventID = finalEvent.EventID;
+        LastEvent.isChainTriggered = finalEvent.isChainTriggered;
+        LastEvent.isCosmicTriggered = finalEvent.isCosmicTriggered;
+        //LastEvent.EffectedStat = finalEvent.EffectedStat;
+
+        if (finalOption == null)
+            Debug.Log("FinalOption null");
+        if (LastEvent == null)
+            Debug.Log("finalEvent null");
+        optionExecuter.ExecuteOption(finalOption,LastEvent); //Check if there is a bug
 
         this.GetComponent<ShipStatus>().ShipStats[0].StatValue += this.GetComponent<ShipStatus>().ShipStats[4].StatValue;
         this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue;
@@ -151,7 +174,7 @@ public class DayManager : MonoBehaviour
         repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
         itemEvents = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         chainEvents = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
-
+        optionExecuter = new OptionExecuter();
         chainEventsBegin = new List<CosmicEvent>();
         foreach(CosmicEvent add in chainEvents)
         {
@@ -194,10 +217,16 @@ public class DayManager : MonoBehaviour
           Debug.Log("next event goes here");
           foreach(CosmicEvent test in chainEvents)
           {
-            if(test.EventID == nextEventID && test.isChainTriggered)
+            if(test.EventID == nextEventID)
             {
-              finalEvent = test;
-              Debug.Log(finalEvent.Label);
+                        Debug.Log("Chain Event if 1");
+                        if(test.isChainTriggered)
+                        {
+                            Debug.Log("Chain Event if 2");
+                            finalEvent = test;
+                            Debug.Log(finalEvent.Label);
+                        }
+              
             }
           }
 

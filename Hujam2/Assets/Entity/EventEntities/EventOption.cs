@@ -20,5 +20,7 @@ namespace Assets.Entity
         public EventItem GetItem { get; set; }
         public EventItem UseItem { get; set; }
 
+      
+
     }
 }

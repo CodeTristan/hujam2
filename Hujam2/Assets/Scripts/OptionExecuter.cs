@@ -5,16 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Assets.Entity.EventEntities;
 
 namespace Assets.Scripts
 {
-    public class OptionExecuter
+    public class OptionExecuter : MonoBehaviour
     {/// <summary>
      /// Control Validations and Executing given option.
      /// </summary>
      /// <param name="option">EventOption Object</param>
      /// <param name="control">Event Object</param>
-        public void ExecuteOption(EventOption option, Event control)
+     /// 
+        public EventOption option;
+        public CosmicEvent control;
+        public void ExecuteOption(EventOption option, CosmicEvent control)
         {
             float moodEffect = option.MoodEffect;
             if (IdChecker(option, control))

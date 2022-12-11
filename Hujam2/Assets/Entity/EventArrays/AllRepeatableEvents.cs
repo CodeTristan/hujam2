@@ -55,6 +55,7 @@ namespace Assets.Entity.EventArrays
             #endregion
             #region Event1
             CosmicEvent event1 = new CosmicEvent();
+            event1.EventID = 1;
             event1.RequiredCrews = new List<Crew>();
             event1.RequiredCrews.Add(techE);
             event1.EffectedStat = searcher.statFinder(Stats,"Fuel");
@@ -62,12 +63,15 @@ namespace Assets.Entity.EventArrays
             event1.Text = "Peter yakıtı kendi kişisel amaçları için kullanıyormuş. Tayfamız bunun problem yaratabileceğini söylüyor.";
             EventOption e1op1 = new EventOption();
             event1.EventOptions = new List<EventOption>();
+            e1op1.TargetEventID = 1;
             e1op1.NegativeEffectCrew = techE;
             e1op1.MoodEffect = 20;
             e1op1.OptionText = "Hayır Peter yakıtı içemezsin ";
             event1.EventOptions.Add(e1op1);
             EventOption e1op2 = new EventOption();
+            e1op2.TargetEventID = 1;
             e1op2.PositiveEffectCrew = techE;
+            e1op2.MoodEffect = 20;
             e1op2.StatEffect= -5;
             e1op2.OptionText = "Dikkatli davranmaya özen gösterdiğin sürece seni rahat bırakıyorum. ";
             event1.EventOptions.Add(e1op2);
