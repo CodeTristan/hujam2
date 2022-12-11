@@ -160,11 +160,11 @@ public class DayManager : MonoBehaviour
       {
         canShowEvent = false;
 
-        if(chainEvent == true && chainEvents[nextEventID].isChainTriggered)
+        if(chainEvent == true)
         {
           foreach(CosmicEvent test in chainEvents)
           {
-            if(test.EventID == nextEventID)
+            if(test.EventID == nextEventID && test.isChainTriggered)
               chosenEvent = test;
           }
         }
@@ -178,16 +178,16 @@ public class DayManager : MonoBehaviour
             switch(Random.Range(0,3))
             {
               case 0: //Repetable events
-                chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+                this.chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
                 break;
 
               case 1: //Item events
-                chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
+                this.chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
                 break;
 
               case 2: //Chain events
                 chainEvent = true;
-                chosenEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
+                this.chosenEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
                 nextEventID = chosenEvent.NextEventID;
                 break;
             }
