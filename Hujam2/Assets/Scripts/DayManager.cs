@@ -180,20 +180,26 @@ public class DayManager : MonoBehaviour
               chainEvent = false;
               nextEventID = 0;
 
-              switch(Random.Range(0,3))
+              while(true)
               {
-                case 0: //Repetable events
-                  chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
-                  break;
+                switch(Random.Range(0,3))
+                {
+                  case 0: //Repetable events
+                    chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+                    break;
 
-                case 1: //Item events
-                  chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
-                  break;
+                  case 1: //Item events
+                    chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
+                    break;
 
-                case 2: //Chain events
-                  chainEvent = true;
-                  chosenEvent = ChooseEvent(dayCount, chainEvents, 2);
-                  nextEventID = chainEventsA[chosenEvent.EventID].NextEventID;
+                  case 2: //Chain events
+                    chainEvent = true;
+                    chosenEvent = ChooseEvent(dayCount, chainEvents, 2);
+                    nextEventID = chainEventsA[chosenEvent.EventID].NextEventID;
+                    break;
+                }
+
+                if(chosenEvent != null)
                   break;
               }
             }
