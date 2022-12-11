@@ -30,6 +30,7 @@ namespace Assets.Entity.EventArrays
 
         private EventOption op1;
         private EventOption op2;
+        private ItemEvent a;
 
         #endregion
 
@@ -63,28 +64,11 @@ namespace Assets.Entity.EventArrays
             controlEvent.EventID = 0;
             controlEvent.Label = "This event for control indexing";
             controlEvent.Text = "This is just for control text";
-            //Event Option 1
-            EventOption op001 = new EventOption();
-            op001.OptionText = "Control event option1.";
-            op001.TargetEventID = 0;
-            op001.PositiveEffectCrew = med;
-            op001.NegativeEffectCrew = techE;
-            op001.MoodEffect = 40;
-            op001.GetItem = searcher.ItemFinder(Items, "LifeRadar");
-            controlEvent.EventOptions.Add(op001);
-            //eventOption2
-            EventOption op002 = new EventOption();
-            op002.OptionText = "Control event option2.   ";
-            op002.TargetEventID = 0;
-            op002.PositiveEffectCrew = techE;
-            op002.NegativeEffectCrew = med;
-            op002.MoodEffect = 20;
-            controlEvent.EventOptions.Add(op002);
             temp.Add(controlEvent);
             #endregion
             #region Event1
             //Event 1
-            ItemEvent a = new ItemEvent();
+            a = new ItemEvent();
             a.EventID = 1;
             a.RequiredCrews = new List<Crew>();
             a.RequiredCrews.Add(med);
@@ -114,6 +98,32 @@ namespace Assets.Entity.EventArrays
             #endregion
             #region Event2
             //Event2
+            a = new ItemEvent();
+            a.EventID = 2;
+            a.RequiredCrews = new List<Crew>();
+            a.RequiredCrews.Add(med);
+            a.RequiredCrews.Add(techE);
+            a.Label = "Örnek Başlık";
+            a.Text = "Event 2 hocam bu";
+            //Event Option 1
+            a.EventOptions = new List<EventOption>();
+            op1 = new EventOption();
+            op1.OptionText = "Control event option1.";
+            op1.TargetEventID = 0;
+            op1.PositiveEffectCrew = med;
+            op1.NegativeEffectCrew = techE;
+            op1.MoodEffect = 40;
+            op1.GetItem = searcher.ItemFinder(Items, "LifeRadar");
+            a.EventOptions.Add(op1);
+            //eventOption2
+            op2 = new EventOption();
+            op2.OptionText = "Control event option2.   ";
+            op2.TargetEventID = 0;
+            op2.PositiveEffectCrew = techE;
+            op2.NegativeEffectCrew = med;
+            op2.MoodEffect = 40;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
             #endregion
             Debug.Log(MedicP.GetComponent<Medic>().Name);
             Debug.Log(med.Name);
