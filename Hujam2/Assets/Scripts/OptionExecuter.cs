@@ -65,7 +65,7 @@ namespace Assets.Scripts
 
                 control.isChainTriggered = option.ChainTrigger;
 
-                control.isCosmicTriggered = option.ChainTrigger;
+                control.isCosmicTriggered = option.CosmicTrigger;
             }
             Debug.Log("[OPTIONEXECUTER]option id equals event id :FAILED");
         }
