@@ -18,6 +18,7 @@ public class DayManager : MonoBehaviour
     private List<Event> repeatableEvents;
     private List<Event> itemEvents;
     private List<Event> chainEvents;
+    private List<ChainEvent> chainEventsA;
     private OptionExecuter optionExecuter;
     int oldDayCount;
     int timeTillPlanet;
@@ -39,11 +40,21 @@ public class DayManager : MonoBehaviour
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
     }
 
-    Event ChooseEvent(int dayNumber, List<Event> eventOptions)
+    Event ChooseEvent(int dayNumber, List<Event> eventOptions, int type)
     {
+      Event chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
+
       if(eventOptions.Count > 1)
       {
-        Event chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)]; //Chose random event from given list
+        if(type == 2)
+        {
+          while(true)
+          {
+            chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
+            if(chainEventsA[chosenEvent.EventID].PrevEventID == 0)
+             break;
+          }
+        }
 
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
@@ -55,9 +66,8 @@ public class DayManager : MonoBehaviour
                 }
                 catch
                 {
-                  Debug.Log("Crew mate dead LOOL----------------------------------------");
                   eventOptions.Remove(chosenEvent);
-                  return ChooseEvent(dayNumber, eventOptions);
+                  return ChooseEvent(dayNumber, eventOptions, type);
                 }
             }
         }
@@ -65,11 +75,26 @@ public class DayManager : MonoBehaviour
         if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
         {
             eventOptions.Remove(chosenEvent);//Remove event from given list
-            return ChooseEvent(dayNumber, eventOptions); //Call fucntion again
+            return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
         }
 
         else
-            return chosenEvent; //If every requirement is satisfied return event as Event
+        {
+          switch(type)
+          {
+            case 0:
+              break;
+            case 1:
+              itemEvents.Remove(chosenEvent);
+              break;
+            case 2:
+              chainEvents.Remove(chosenEvent);
+              chainEventsA.RemoveAt(chosenEvent.EventID);
+              break;
+          }
+
+          return chosenEvent; //If every requirement is satisfied return event as Event
+        }
       }
       else
         return null;
@@ -107,7 +132,8 @@ public class DayManager : MonoBehaviour
           itemEvents.Add(add);
 
         chainEvents = new List<Event>();
-        foreach(Event add in eventLister.GetComponent<AllChainEvents>().getAllChainEvents())
+        chainEventsA = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
+        foreach(Event add in chainEventsA)
           chainEvents.Add(add);
 
         canShowEvent = true;
@@ -154,17 +180,17 @@ public class DayManager : MonoBehaviour
               switch(Random.Range(0,3))
               {
                 case 0: //Repetable events
-                  chosenEvent = ChooseEvent(dayCount, repeatableEvents);
+                  chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
                   break;
 
                 case 1: //Item events
-                  chosenEvent = ChooseEvent(dayCount, itemEvents);
+                  chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
                   break;
 
                 case 2: //Chain events
                   chainEvent = true;
-                  chosenEvent = ChooseEvent(dayCount, chainEvents);
-                  nextEventID = eventLister.GetComponent<AllChainEvents>().getAllChainEvents()[chosenEvent.EventID].NextEventID;
+                  chosenEvent = ChooseEvent(dayCount, chainEvents, 2);
+                  nextEventID = chainEventsA[chosenEvent.EventID].NextEventID;
                   break;
               }
             }
