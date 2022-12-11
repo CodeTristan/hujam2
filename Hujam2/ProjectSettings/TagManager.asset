@@ -9,6 +9,11 @@ TagManager:
   - Slider
   - Slider Fill
   - Day Display
+  - TechSupport
+  - Engineer
+  - Security
+  - Scientist
+  - Medic
   layers:
   - Default
   - TransparentFX
