@@ -11,6 +11,7 @@ public class DayManager : MonoBehaviour
 {
     public CosmicEvent finalEvent;
     public EventOption chosenOption;
+    public Planet aproachingPlanet;
 
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
@@ -179,9 +180,7 @@ public class DayManager : MonoBehaviour
 
       if (timeTillPlanet <= 0)
       {
-        GenPlanet();
-
-        //Planet Search events
+        aproachingPlanet = GenPlanet();
 
         timeTillPlanet = Random.Range(5, 11);
       }
@@ -196,7 +195,10 @@ public class DayManager : MonoBehaviour
           foreach(CosmicEvent test in chainEvents)
           {
             if(test.EventID == nextEventID && test.isChainTriggered)
+            {
               finalEvent = test;
+              Debug.Log(finalEvent.Label);
+            }
           }
 
           chainEvent = false;
