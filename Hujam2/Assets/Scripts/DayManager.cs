@@ -14,6 +14,7 @@ public class DayManager : MonoBehaviour
     public EventOption chosenOption;
     public EventOption finalOption;
     public Planet aproachingPlanet;
+    public Crew PlanetSelectedCrew;
 
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
@@ -188,7 +189,6 @@ public class DayManager : MonoBehaviour
 
     void Update()
     {
-      Debug.Log(chosenOption.OptionText);
 
       if(chosenOption.OptionText == null)
         endButton.active = false;
