@@ -9,15 +9,15 @@ using Assets.Scripts;
 
 public class DayManager : MonoBehaviour
 {
+    public Event chosenEvent;
+
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
     [SerializeField] GameObject eventLister;
 
-    private List<ItemEvent> events;
-    private List<Event> repeatableEvent;
-    private List<Event> allEvents;
+    private List<Event> repeatableEvents;
+    private List<Event> itemEvents;
     private OptionExecuter optionExecuter;
-    Planet planet;
     int oldDayCount;
     int timeTillPlanet;
     int habitableChance;
@@ -72,9 +72,9 @@ public class DayManager : MonoBehaviour
         return null;
     }
 
-    /*void GenPlanet() //Generate random planet
+    Planet GenPlanet() //Generate random planet
     {
-        planet = new Planet();
+        Planet planet = new Planet();
 
         planet.toxicAtmosphere = Random.Range(0, 41);
         planet.waterLevel = Random.Range(0, 21);
@@ -91,15 +91,20 @@ public class DayManager : MonoBehaviour
           planet.habitable = false;
           habitableChance += chanceMod;
         }
-    }*/
+
+        return planet;
+    }
 
     void Start()
     {
-        optionExecuter = new OptionExecuter();
-        allEvents = new List<Event>();
-        events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
-        repeatableEvent = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
-        Debug.Log("DayManagerEventCount " + events.Count);
+        repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
+
+        itemEvents = new List<Event>();
+        foreach(Event add in eventLister.GetComponent<AllItemEvents>().getAllItemEvents())
+          itemEvents.Add(add);
+
+        //Chain list will go here
+
         canShowEvent = true;
         dayCount = 1;
         oldDayCount = 1;
@@ -121,7 +126,7 @@ public class DayManager : MonoBehaviour
 
         if (timeTillPlanet <= 0)
         {
-            //GenPlanet();
+            GenPlanet();
 
             //Planet Search events
 
@@ -131,19 +136,20 @@ public class DayManager : MonoBehaviour
         if (canShowEvent)
         {
             canShowEvent = false;
-            Event temp = repeatableEvent[1];
-            EventOption selected = new EventOption();
-            foreach(Event add in events)
-              allEvents.Add(add);
-            selected = ChooseEvent(dayCount, repeatableEvent).EventOptions[0];
-            //selected = temp.EventOptions[0];
-            optionExecuter.ExecuteOption(selected,temp);
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");
-            Debug.Log(temp.EventOptions[0].ChainTrigger + " ~DayManager");
-            Debug.Log(temp.isChainTriggered + " ~DayManager");
-            Debug.Log(temp.RequiredDay + " ~DayManager");
 
+            switch(Random.Range(0,3))
+            {
+              case 0: //repetable events
+                chosenEvent = ChooseEvent(dayCount, repeatableEvents);
+                break;
+
+              case 1: //Item events
+                chosenEvent = ChooseEvent(dayCount, itemEvents);
+                break;
+
+              case 2: //todo Chain events
+                break;
+            }
         }
     }
 }
