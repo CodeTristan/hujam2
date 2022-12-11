@@ -5,6 +5,7 @@ using UnityEngine;
 public class OptionsSave : MonoBehaviour
 {
     public float volume;
+    public float music;
 
     void Start()
     {
