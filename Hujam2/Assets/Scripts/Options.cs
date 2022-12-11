@@ -19,13 +19,13 @@ public class Options : MonoBehaviour
     }
     public void SaveOptions()
     {
+        save.volume = soundoption.value;
         for (int i = 0; i < audiosources.Length; i++)
         {
             audiosources[i].volume = soundoption.value;
         }
-        save.volume = soundoption.value;
     }
-    
+
     public void Close()
     {
         soundoption.value = save.volume;
