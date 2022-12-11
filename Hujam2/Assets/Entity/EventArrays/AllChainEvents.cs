@@ -96,8 +96,7 @@ namespace Assets.Entity.EventArrays
             a.EventOptions = new List<EventOption>();
             a.RequiredCrews = new List<Crew>();
             a.EventID = 2;
-            a.PrevEventID = 1;
-            a.NextEventID = 3;
+            a.PrevEventID = 1;            
             a.EffectedStat = searcher.statFinder(Stats, "FoodConsump");
             a.RequiredCrews.Add(sci);
             a.RequiredCrews.Add(sec);
@@ -119,39 +118,8 @@ namespace Assets.Entity.EventArrays
             a.EventOptions.Add(op2);
             temp.Add(a);
             #endregion
-            #region Event 1.3
-            a = new CosmicEvent();
-            op1 = new EventOption();
-            op2 = new EventOption();
-            EventOption op3 = new EventOption();
-            a.EventOptions = new List<EventOption>();
-            a.RequiredCrews = new List<Crew>();
-            a.EventID = 3;
-            a.PrevEventID = 2;
-            a.RequiredCrews.Add(sci);
-            a.RequiredCrews.Add(sec);
-            a.Label = "Fare Aşısı";
-            a.Text = "Gauss faresini kullanarak bir aşı yaptığını söyledi. Eğer bunu kullanırsak hastalıklara karşı bağışıklık kazanacakmışız. Ama Sarah Gauss’a güvenmediğini ve bunu kullanmamamız gerektiğini söyleyip durdu. Aşıyı kullanalım mı?";
-            op1.TargetEventID = 3;
-            op1.OptionText = "Evet aşı bizi güvende tutar.";
-            op1.MoodEffect = 50;
-            op1.NegativeEffectCrew=sec;
-            op1.PositiveEffectCrew=sci;
-            a.EventOptions.Add(op1);
-            op2.TargetEventID = 3;
-            op2.OptionText = "Hayır bu aşıya güvenemeyiz.";
-            op2.MoodEffect = 50;
-            op2.NegativeEffectCrew = sci;
-            op2.PositiveEffectCrew = sec;
-            a.EventOptions.Add(op2);
-            op3.TargetEventID = 3;
-            op3.OptionText = "Aşıyı sadece Gauss kullansın.";
-            op3.MoodEffect = 20;
-            op3.NegativeEffectCrew = sci;
-            op3.PositiveEffectCrew = sec;
-            a.EventOptions.Add(op3);
-            temp.Add(a);
-            #endregion
+            
+            
             return temp;
         }
     }
