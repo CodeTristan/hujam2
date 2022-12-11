@@ -130,7 +130,7 @@ public class DayManager : MonoBehaviour
             foreach(Event add in events)
               allEvents.Add(add);
 
-            selected = ChooseEvent(dayCount, allEvents).EventOptions[0];
+            selected = ChooseEvent(dayCount, repeatableEvent).EventOptions[0];
 
 
 
@@ -139,11 +139,7 @@ public class DayManager : MonoBehaviour
             //selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
             Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");
-            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Name + " ~DayManager");
-            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Mood + " ~DayManager");
-            Debug.Log(temp.EventOptions[0].GetItem.ItemName + " ~DayManager");
-            Debug.Log(temp.EventOptions[0].GetItem.ItemCount + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");                     
             Debug.Log(temp.EventOptions[0].ChainTrigger + " ~DayManager");
             Debug.Log(temp.isChainTriggered + " ~DayManager");
             Debug.Log(temp.RequiredDay + " ~DayManager");
