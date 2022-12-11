@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class EventPanelManager : MonoBehaviour
 {
@@ -48,6 +49,10 @@ public class EventPanelManager : MonoBehaviour
         }
     }
 
+    public void ChooseOption()
+    {
+        dayManager.chosenOption = dayManager.chosenEvent.EventOptions[System.Convert.ToInt32(EventSystem.current.currentSelectedGameObject.name)];
+    }
     private void closeAllButtons()
     {
         for (int i = 0; i < buttons.Length; i++)

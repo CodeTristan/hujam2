@@ -20,13 +20,7 @@ public class StatAndItemLister : MonoBehaviour
         allItems = new List<EventItem>();
         allStats = new List<ShipStats>();
         allItems = itemScript.getAllItems();
-        Debug.Log("StatItemLister2 " + allItems.Count);
         allStats = statScript.getAllShipStats();
-    }
-    void Awake()
-    {
-        Debug.Log("StatItemLister AWAKE");
-
     }
 
    

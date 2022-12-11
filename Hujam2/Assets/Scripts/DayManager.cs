@@ -10,6 +10,7 @@ using Assets.Scripts;
 public class DayManager : MonoBehaviour
 {
     public Event chosenEvent;
+    public EventOption chosenOption;
 
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
@@ -32,6 +33,8 @@ public class DayManager : MonoBehaviour
     {
         dayCount++;
         timeTillPlanet--;
+
+        optionExecuter.ExecuteOption(chosenOption, chosenEvent); //CHECK IF IT WORKS I DONT KNOW MAYBE THERE IS A BUG
 
         this.GetComponent<ShipStatus>().ShipStats[0].StatValue += this.GetComponent<ShipStatus>().ShipStats[4].StatValue; ;
         this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue; ;
