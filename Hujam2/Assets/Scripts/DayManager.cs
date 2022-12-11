@@ -170,8 +170,6 @@ public class DayManager : MonoBehaviour
         }
         else
         {
-          while(true)
-          {
             chainEvent = false;
             nextEventID = 0;
 
@@ -193,9 +191,8 @@ public class DayManager : MonoBehaviour
                 break;
             }
 
-            if(chosenEvent != null)
-              break;
-          }
+            if(chosenEvent == null)
+              Debug.Log("Returned null");
         }
       }
   }
