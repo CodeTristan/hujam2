@@ -19,9 +19,6 @@ public class DayManager : MonoBehaviour
     private List<CosmicEvent> repeatableEvents;
     private List<CosmicEvent> itemEvents;
     private List<CosmicEvent> chainEvents;
-    private List<CosmicEvent> chainEventsB;
-    private List<CosmicEvent> chainEventsA;
-    private List<CosmicEvent> chainEventsAB;
     private OptionExecuter optionExecuter;
     int oldDayCount;
     int timeTillPlanet;
@@ -83,7 +80,7 @@ public class DayManager : MonoBehaviour
               itemEvents.Remove(chosenEvent);
               break;
             case 2:
-              chainEventsB.Remove(chosenEvent);
+              chainEvents.Remove(chosenEvent);
               break;
           }
 
@@ -120,28 +117,8 @@ public class DayManager : MonoBehaviour
     void Start()
     {
         repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
-
-        itemEvents = new List<CosmicEvent>();
-        foreach(CosmicEvent add in eventLister.GetComponent<AllItemEvents>().getAllItemEvents())
-          itemEvents.Add(add);
-
-        chainEvents = new List<CosmicEvent>();
-        chainEventsB = new List<CosmicEvent>();
-        chainEventsA = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
-        chainEventsAB = new List<CosmicEvent>();
-        Debug.Log("ChainEventA Count" + chainEventsA.Count);
-        foreach (CosmicEvent test in chainEventsA)
-        {
-          if(test.PrevEventID == 0)
-            chainEventsAB.Add(test);
-        }
-        Debug.Log("ChainEventAB Count" + chainEventsAB.Count);
-        foreach(CosmicEvent add in chainEventsAB)
-          chainEventsB.Add(add);
-        Debug.Log("ChainEventB Count" + chainEventsB.Count);
-        foreach (CosmicEvent add in chainEventsA)
-          chainEvents.Add(add);
-        Debug.Log("ChainEvent Count" + chainEvents.Count);
+        itemEvents = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
+        chainEvents = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
 
         dayCount = 1;
         oldDayCount = 1;
@@ -177,7 +154,11 @@ public class DayManager : MonoBehaviour
 
         if(chainEvent == true && chainEvents[nextEventID].isChainTriggered)
         {
-          chosenEvent = chainEvents[nextEventID];
+          foreach(CosmicEvent test in chainEvents)
+          {
+            if(test.EventID == nextEventID)
+              chosenEvent = test;
+          }
         }
         else
         {
@@ -196,9 +177,9 @@ public class DayManager : MonoBehaviour
 
             case 2: //Chain events
               chainEvent = true;
-              chosenEvent = ChooseEvent(dayCount, chainEventsB, 2); Debug.Log("ChosenEventId Chain" + chosenEvent.EventID);
-              nextEventID = chainEventsA[chosenEvent.EventID].NextEventID; Debug.Log("NextId Chain" + chainEventsA[chosenEvent.EventID].NextEventID);
-                        break;
+              chosenEvent = ChooseEvent(dayCount, chainEvents, 2);
+              nextEventID = chosenEvent.NextEventID;
+              break;
           }
         }
       }
