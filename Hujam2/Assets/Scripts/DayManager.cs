@@ -17,11 +17,14 @@ public class DayManager : MonoBehaviour
 
     private List<Event> repeatableEvents;
     private List<Event> itemEvents;
+    private List<Event> chainEvents;
     private OptionExecuter optionExecuter;
     int oldDayCount;
     int timeTillPlanet;
     int habitableChance;
     int chanceMod;
+    int nextEventID;
+    bool chainEvent;
     bool canShowEvent;
 
     public void EndDay() //End of day button handling
@@ -103,7 +106,9 @@ public class DayManager : MonoBehaviour
         foreach(Event add in eventLister.GetComponent<AllItemEvents>().getAllItemEvents())
           itemEvents.Add(add);
 
-        //Chain list will go here
+        chainEvents = new List<Event>();
+        foreach(Event add in eventLister.GetComponent<AllChainEvents>().getAllChainEvents())
+          chainEvents.Add(add);
 
         canShowEvent = true;
         dayCount = 1;
@@ -137,18 +142,31 @@ public class DayManager : MonoBehaviour
         {
             canShowEvent = false;
 
-            switch(Random.Range(0,3))
+            if(chainEvent == true && chainEvents[nextEventID].isChainTriggered)
             {
-              case 0: //repetable events
-                chosenEvent = ChooseEvent(dayCount, repeatableEvents);
-                break;
+              chosenEvent = chainEvents[nextEventID];
+            }
+            else
+            {
+              chainEvent = false;
+              nextEventID = 0;
 
-              case 1: //Item events
-                chosenEvent = ChooseEvent(dayCount, itemEvents);
-                break;
+              switch(Random.Range(0,3))
+              {
+                case 0: //Repetable events
+                  chosenEvent = ChooseEvent(dayCount, repeatableEvents);
+                  break;
 
-              case 2: //todo Chain events
-                break;
+                case 1: //Item events
+                  chosenEvent = ChooseEvent(dayCount, itemEvents);
+                  break;
+
+                case 2: //Chain events
+                  chainEvent = true;
+                  chosenEvent = ChooseEvent(dayCount, chainEvents);
+                  nextEventID = eventLister.GetComponent<AllChainEvents>().getAllChainEvents()[chosenEvent.EventID].NextEventID;
+                  break;
+              }
             }
         }
     }
