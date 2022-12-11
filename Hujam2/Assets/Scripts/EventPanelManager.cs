@@ -60,4 +60,5 @@ public class EventPanelManager : MonoBehaviour
             buttons[i].SetActive(false);
         }
     }
+    
 }
