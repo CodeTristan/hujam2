@@ -12,7 +12,7 @@ namespace Assets.Entity.EventArrays
         {
             List<EventItem> controlList = new List<EventItem>();
             controlList = Items;
-            //Debug.Log(Items.Count + " eventEntitySearcherItemCount");
+            Debug.Log(Items.Count + " eventEntitySearcherItemCount");
             EventItem a = new EventItem();
             for (int i = 0; i < controlList.Count; i++)
             {                

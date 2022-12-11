@@ -38,16 +38,15 @@ namespace Assets.Entity.EventArrays
             Debug.Log(lister.allItems.Count + " allitemEvents itemcount");
             Items = lister.allItems;
             Stats = lister.allStats;
-        }
-        private void Start()
-        {
-            
-            
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
+        }
+        private void Start()
+        {
+            
 
         }
         private List<ItemEvent> temp;
@@ -94,7 +93,9 @@ namespace Assets.Entity.EventArrays
             #region Event2
             //Event2
             #endregion
-
+            Debug.Log(MedicP.GetComponent<Medic>().Name);
+            Debug.Log(med.Name);
+            Debug.Log(op1.NegativeEffectCrew.Name);
             return temp;
         }
     }

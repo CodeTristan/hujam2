@@ -95,6 +95,7 @@ public class DayManager : MonoBehaviour
     {
         optionExecuter = new OptionExecuter();
         events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
+        Debug.Log("DayManagerEventCount " + events.Count);
         canShowEvent = true;
         dayCount = 1;
         oldDayCount = 1;
@@ -131,13 +132,13 @@ public class DayManager : MonoBehaviour
             //todo selected will chosen on ui and setted 
             selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
-            Debug.Log(selected.NegativeEffectCrew.Name+" ~DayManager");
-            Debug.Log(selected.NegativeEffectCrew.Mood + " ~DayManager");
-            Debug.Log(selected.PositiveEffectCrew.Name + " ~DayManager");
-            Debug.Log(selected.PositiveEffectCrew.Mood + " ~DayManager");
-            Debug.Log(selected.GetItem.ItemName + " ~DayManager");
-            Debug.Log(selected.GetItem.ItemCount + " ~DayManager");
-            Debug.Log(selected.ChainTrigger + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
+            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Name + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Mood + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].GetItem.ItemName + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].GetItem.ItemCount + " ~DayManager");
+            Debug.Log(temp.EventOptions[0].ChainTrigger + " ~DayManager");
             Debug.Log(temp.isChainTriggered + " ~DayManager");
             Debug.Log(temp.RequiredDay + " ~DayManager");
             
