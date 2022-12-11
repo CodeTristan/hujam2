@@ -9,7 +9,7 @@ public class EventPanel : MonoBehaviour
     {
         eventpanel.SetActive(true);
     }
-    public void Close()
+    public void Close() //BURAYA IF PLANETEVENT MÝ DÝYE BÝR ÞEY EKLENECEK
     {
         eventpanel.SetActive(false);
     }

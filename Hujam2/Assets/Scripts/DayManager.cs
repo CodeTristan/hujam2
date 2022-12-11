@@ -14,16 +14,19 @@ public class DayManager : MonoBehaviour
     public EventOption chosenOption;
     public EventOption finalOption;
     public Planet aproachingPlanet;
+    public Crew PlanetSelectedCrew;
 
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
     [SerializeField] GameObject eventLister;
+    [SerializeField] GameObject endButton;
 
     private List<CosmicEvent> repeatableEvents;
     private List<CosmicEvent> itemEvents;
     private List<CosmicEvent> chainEvents;
     private List<CosmicEvent> chainEventsBegin;
     private OptionExecuter optionExecuter;
+    private CosmicEvent chainEventNext;
     int oldDayCount;
     int timeTillPlanet;
     int habitableChance;
@@ -36,6 +39,7 @@ public class DayManager : MonoBehaviour
     {
         dayCount++;
         timeTillPlanet--;
+
         //EventOption finalOption = new EventOption();
         finalOption.TargetEventID = chosenOption.TargetEventID;
         finalOption.MoodEffect = chosenOption.MoodEffect;
@@ -54,17 +58,16 @@ public class DayManager : MonoBehaviour
         LastEvent.isCosmicTriggered = finalEvent.isCosmicTriggered;
         //LastEvent.EffectedStat = finalEvent.EffectedStat;
 
-        if (finalOption == null)
-            Debug.Log("FinalOption null");
-        if (LastEvent == null)
-            Debug.Log("finalEvent null");
-        optionExecuter.ExecuteOption(finalOption,LastEvent); //Check if there is a bug
+        chainEventNext = optionExecuter.ExecuteOption(finalOption,LastEvent); //Check if there is a bug
+
+        chosenOption = new EventOption();
 
         this.GetComponent<ShipStatus>().ShipStats[0].StatValue += this.GetComponent<ShipStatus>().ShipStats[4].StatValue;
         this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue;
         this.GetComponent<ShipStatus>().ShipStats[2].StatValue += this.GetComponent<ShipStatus>().ShipStats[6].StatValue;
 
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
+        endButton.active = false;
     }
 
     private List<CosmicEvent> removeFromList(List<CosmicEvent> events, int id)
@@ -80,10 +83,10 @@ public class DayManager : MonoBehaviour
         }
         return newList;
     }
+
     CosmicEvent ChooseEvent(int dayNumber, List<CosmicEvent> eventOptions, int type)
     {
       CosmicEvent chosenEvent;
-      Debug.Log("Fonksyon çalıştı ve 0. indexte şu var: " + eventOptions[0].Label);
 
       if(eventOptions.Count > 1)
       {
@@ -99,9 +102,7 @@ public class DayManager : MonoBehaviour
             }
             catch
             {
-              Debug.Log("Character dead");
-                        eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
-                        //eventOptions.Remove(chosenEvent);
+              eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
               return ChooseEvent(dayNumber, eventOptions, type);
             }
           }
@@ -109,9 +110,7 @@ public class DayManager : MonoBehaviour
 
         if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
         {
-          Debug.Log("Required day not met");
-                eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
-                //eventOptions.Remove(chosenEvent);//Remove event from given list
+          eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
           return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
         }
 
@@ -122,16 +121,11 @@ public class DayManager : MonoBehaviour
             case 0:
               break;
             case 1:
-              Debug.Log("Before removal "+itemEvents.Count);
-                        itemEvents = removeFromList(itemEvents, chosenEvent.EventID);
-                        //itemEvents.Remove(chosenEvent);
-              Debug.Log("After removal "+itemEvents.Count);
+              itemEvents = removeFromList(itemEvents, chosenEvent.EventID);
               break;
             case 2:
-                        chainEventsBegin = removeFromList(chainEventsBegin, chosenEvent.EventID);
-                        //chainEventsBegin.Remove(chosenEvent);
+              chainEventsBegin = removeFromList(chainEventsBegin, chosenEvent.EventID);
               break;
-                    default: Debug.Log("Remove Switch girdi ama case bulamadı"); break;
           }
 
           return chosenEvent;
@@ -139,8 +133,6 @@ public class DayManager : MonoBehaviour
       }
       else
       {
-            Debug.Log("There is no more events in this category");
-            Debug.Log(eventOptions[0].Label + " Bu event yok olmalı");
         chosenEvent = eventOptions[0];
         return chosenEvent;
       }
@@ -171,6 +163,8 @@ public class DayManager : MonoBehaviour
 
     void Start()
     {
+        endButton.SetActive(false);
+
         repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
         itemEvents = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         chainEvents = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
@@ -195,6 +189,12 @@ public class DayManager : MonoBehaviour
 
     void Update()
     {
+
+      if(chosenOption.OptionText == null)
+        endButton.active = false;
+      else
+        endButton.active = true;
+
       if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
       {
         canShowEvent = true;
@@ -217,22 +217,24 @@ public class DayManager : MonoBehaviour
           Debug.Log("next event goes here");
           foreach(CosmicEvent test in chainEvents)
           {
-            if(test.EventID == nextEventID)
+
+            Debug.Log(test.isChainTriggered);
+
+            if(test.EventID == nextEventID && chainEventNext.isChainTriggered)
             {
-                        Debug.Log("Chain Event if 1");
-                        if(test.isChainTriggered)
-                        {
-                            Debug.Log("Chain Event if 2");
-                            finalEvent = test;
-                            Debug.Log(finalEvent.Label);
-                        }
-              
+              chainEvent = true;
+              Debug.Log("Chain Event if 2");
+              finalEvent = test;
+              Debug.Log(finalEvent.Label);
+            }
+            else
+            {
+              chainEvent = false;
             }
           }
-
-          chainEvent = false;
         }
-        else
+
+        if(!chainEvent)
         {
           while(true)
           {
@@ -245,19 +247,15 @@ public class DayManager : MonoBehaviour
             {
               case 0: //Repetable events
                 finalEvent = ChooseEvent(dayCount, repeatableEvents, 0);
-                Debug.Log(finalEvent.Label+" Case 0");
                 break;
 
               case 1: //Item events
                 finalEvent = ChooseEvent(dayCount, itemEvents, 1);
-                Debug.Log(finalEvent.Label+" Case 1");
                 break;
 
               case 2: //Chain events
                 chainEvent = true;
                 finalEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
-                            Debug.Log(chainEventsBegin.Count + " CASE 2: chaineventCount");
-                Debug.Log(finalEvent.Label+" Case 2");
                 if(finalEvent.Label != "This event for control indexing")
                   nextEventID = finalEvent.NextEventID;
                 break;
@@ -266,7 +264,6 @@ public class DayManager : MonoBehaviour
             if(finalEvent.Label != "This event for control indexing")
             {
               break;
-              Debug.Log("Returned null");
             }
           }
         }
