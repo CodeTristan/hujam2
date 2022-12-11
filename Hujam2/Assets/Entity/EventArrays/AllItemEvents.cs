@@ -28,7 +28,7 @@ namespace Assets.Entity.EventArrays
 
         private void Awake()
         {
-            Items = new List<EventItem>();
+            
             Items = gameObject.GetComponent<AllItems>().getAllItems();
             Stats = gameObject.GetComponent<AllStats>().getAllShipStats();            
             med = MedicP.GetComponent<Medic>();
@@ -37,15 +37,15 @@ namespace Assets.Entity.EventArrays
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
         }
-        private EventItem ItemFinder(int ItemName)
+        private EventItem ItemFinder(string ItemName)
         {
             EventItem a = new EventItem();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < Items.Count; i++)
             {
                 Debug.Log(Items[0].ItemID);
                 Debug.Log(Items[0].ItemName);
                 Debug.Log(Items[0].ItemCount);
-                if (Convert.ToInt32(Items[i].ItemID) == Convert.ToInt32(ItemName))
+                if (Items[i].ItemName== ItemName)
                 {
                     a = Items[i];
                     return a;
@@ -68,8 +68,8 @@ namespace Assets.Entity.EventArrays
         public List<ItemEvent> getAllItemEvents()
         {
             temp = new List<ItemEvent>();
-            ItemEvent a = new ItemEvent();
 
+            ItemEvent a = new ItemEvent();
             a.InProgress = false;
             a.UseItem = null;
             a.EventID = 1;
@@ -85,16 +85,18 @@ namespace Assets.Entity.EventArrays
             a.EventOptions = new List<EventOption>();
             op1.OptionText = "Caitlin haklı radarı kullanmak işimize yarayabilir.";
             op1.TargetEventID = 1;
+            op1.StatEffect = 0;
             op1.PositiveEffectCrew = med;
             op1.NegativeEffectCrew = techE;
             op1.MoodEffect = 20;
             Debug.Log(MedicP.GetComponent<Medic>().Mood + " allItemDebugCrewMood");
-            Debug.Log(med.Mood + " allItemDebugCrewMood2");
-            op1.GetItem = ItemFinder(1);
+            
+            op1.GetItem = ItemFinder("LifeRadar");
             a.EventOptions.Add(op1);
             EventOption op2 = new EventOption();
             op2.OptionText = "Peter haklı böyle bir icat gereksiz malzeme kaybı.   ";
             op2.TargetEventID = 1;
+            op2.StatEffect = 0;
             op2.PositiveEffectCrew = techE;
             op2.NegativeEffectCrew = med;
             op2.MoodEffect = 20;

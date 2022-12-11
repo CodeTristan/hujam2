@@ -11,6 +11,7 @@ namespace Assets.Entity
     {
         public int TargetEventID{ get; set; }
         public int MoodEffect { get; set; }
+        public float StatEffect{ get; set; }
         public string OptionText{ get; set; }
         public Crew PositiveEffectCrew{ get; set; }
         public Crew NegativeEffectCrew{ get; set; }

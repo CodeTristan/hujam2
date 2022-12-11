@@ -8,12 +8,7 @@ using UnityEngine;
 namespace Assets.Entity.Items
 {
     public class AllItems : MonoBehaviour
-    {
-        
-        private void Awake()
-        {
-            List<EventItem> Items = new List<EventItem>();
-        }
+    {               
         private List<EventItem> temp;
         public List<EventItem> getAllItems()
         {

@@ -8,12 +8,7 @@ using UnityEngine;
 namespace Assets.Entity.Stats
 {
     public class AllStats : MonoBehaviour
-    {
-        public List<ShipStats> Stats;
-        private void Awake()
-        {
-            Stats = getAllShipStats();
-        }
+    {              
         private List<ShipStats> temp;
         public List<ShipStats> getAllShipStats()
         {

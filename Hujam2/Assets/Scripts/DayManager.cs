@@ -126,6 +126,11 @@ public class DayManager : MonoBehaviour
             float value = temp.EventOptions[0].MoodEffect;
             temp.EventOptions[0].NegativeEffectCrew.ChangeMood(-value);
             temp.EventOptions[0].PositiveEffectCrew.ChangeMood(value);
+            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name);
+            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood);
+            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Name);
+            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Mood);
+            Debug.Log(temp.EventOptions[0].GetItem.ItemName);
             Debug.Log(ChooseEvent(dayCount, allEvents).EventID); //Debug, duuuh
         }
     }
