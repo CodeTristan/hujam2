@@ -52,7 +52,7 @@ namespace Assets.Entity.EventArrays
             controlEvent.Text = "This is just for control text";
             temp.Add(controlEvent);
             #endregion
-            #region
+            #region Event1
             Event event1 = new Event();
             event1.RequiredCrews = new List<Crew>();
             event1.RequiredCrews.Add(techE);
