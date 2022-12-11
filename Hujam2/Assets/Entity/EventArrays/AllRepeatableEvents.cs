@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Assets.Entity.EventEntities;
 
 namespace Assets.Entity.EventArrays
 {
@@ -40,20 +41,20 @@ namespace Assets.Entity.EventArrays
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
         }
-        private List<Event> temp;
-        public List<Event> getAllRepeatableEvents()
+        private List<CosmicEvent> temp;
+        public List<CosmicEvent> getAllRepeatableEvents()
         {
             searcher = new EventEntitySearcher();
-            temp = new List<Event>();
+            temp = new List<CosmicEvent>();
             #region IndexControlEvent
-            Event controlEvent = new Event();
+            CosmicEvent controlEvent = new CosmicEvent();
             controlEvent.EventID = 0;
             controlEvent.Label = "This event for control indexing";
             controlEvent.Text = "This is just for control text";
             temp.Add(controlEvent);
             #endregion
             #region Event1
-            Event event1 = new Event();
+            CosmicEvent event1 = new CosmicEvent();
             event1.RequiredCrews = new List<Crew>();
             event1.RequiredCrews.Add(techE);
             event1.EffectedStat = searcher.statFinder(Stats,"Fuel");

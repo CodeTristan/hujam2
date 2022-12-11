@@ -30,7 +30,7 @@ namespace Assets.Entity.EventArrays
 
         private EventOption op1;
         private EventOption op2;
-        private ItemEvent a;
+        private CosmicEvent a;
 
         #endregion
 
@@ -52,14 +52,14 @@ namespace Assets.Entity.EventArrays
             
 
         }
-        private List<ItemEvent> temp;
-        public List<ItemEvent> getAllItemEvents()
+        private List<CosmicEvent> temp;
+        public List<CosmicEvent> getAllItemEvents()
         {
             searcher = new EventEntitySearcher();
-            temp = new List<ItemEvent>();
+            temp = new List<CosmicEvent>();
             #region IndexControlEvent
             //Event 0
-            ItemEvent controlEvent = new ItemEvent();
+            CosmicEvent controlEvent = new CosmicEvent();
             controlEvent.EventID = 0;
             controlEvent.Label = "This event for control indexing";
             controlEvent.Text = "This is just for control text";
@@ -67,7 +67,7 @@ namespace Assets.Entity.EventArrays
             #endregion
             #region Event1
             //Event 1
-            a = new ItemEvent();
+            a = new CosmicEvent();
             a.EventID = 1;
             a.RequiredCrews = new List<Crew>();
             a.RequiredCrews.Add(med);
@@ -97,7 +97,7 @@ namespace Assets.Entity.EventArrays
             #endregion
             #region Event2
             //Event2
-            a = new ItemEvent();
+            a = new CosmicEvent();
             a.EventID = 2;
             a.RequiredCrews = new List<Crew>();
             a.RequiredCrews.Add(med);

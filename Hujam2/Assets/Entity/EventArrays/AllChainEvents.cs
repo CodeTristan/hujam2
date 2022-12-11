@@ -30,7 +30,7 @@ namespace Assets.Entity.EventArrays
 
         private EventOption op1;
         private EventOption op2;
-        private ChainEvent a;
+        private CosmicEvent a;
 
         #endregion
 
@@ -47,21 +47,21 @@ namespace Assets.Entity.EventArrays
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
         }
-        private List<ChainEvent> temp;
-        public List<ChainEvent> getAllChainEvents()
+        private List<CosmicEvent> temp;
+        public List<CosmicEvent> getAllChainEvents()
         {
             searcher = new EventEntitySearcher();
-            temp = new List<ChainEvent>();
+            temp = new List<CosmicEvent>();
             #region IndexControlEvent
             //Event 0
-            ChainEvent controlEvent = new ChainEvent();
+            CosmicEvent controlEvent = new CosmicEvent();
             controlEvent.EventID = 0;
             controlEvent.Label = "This event for control indexing";
             controlEvent.Text = "This is just for control text";
             temp.Add(controlEvent);
             #endregion
             #region Event1
-            a = new ChainEvent();
+            a = new CosmicEvent();
             a.EventID = 1;
             a.NextEventID = 2;
             a.EffectedStat = searcher.statFinder(Stats, "FoodConsump");
@@ -90,7 +90,7 @@ namespace Assets.Entity.EventArrays
             temp.Add(a);
             #endregion
             #region Event1.2
-            a = new ChainEvent();
+            a = new CosmicEvent();
             op1 = new EventOption();
             op2 = new EventOption();
             a.EventOptions = new List<EventOption>();
@@ -120,7 +120,7 @@ namespace Assets.Entity.EventArrays
             temp.Add(a);
             #endregion
             #region Event 1.3
-            a = new ChainEvent();
+            a = new CosmicEvent();
             op1 = new EventOption();
             op2 = new EventOption();
             EventOption op3 = new EventOption();

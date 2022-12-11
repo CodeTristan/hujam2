@@ -9,19 +9,19 @@ using Assets.Scripts;
 
 public class DayManager : MonoBehaviour
 {
-    public Event chosenEvent;
+    public CosmicEvent chosenEvent;
     public EventOption chosenOption;
 
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
     [SerializeField] GameObject eventLister;
 
-    private List<Event> repeatableEvents;
-    private List<Event> itemEvents;
-    private List<Event> chainEvents;
-    private List<Event> chainEventsB;
-    private List<ChainEvent> chainEventsA;
-    private List<ChainEvent> chainEventsAB;
+    private List<CosmicEvent> repeatableEvents;
+    private List<CosmicEvent> itemEvents;
+    private List<CosmicEvent> chainEvents;
+    private List<CosmicEvent> chainEventsB;
+    private List<CosmicEvent> chainEventsA;
+    private List<CosmicEvent> chainEventsAB;
     private OptionExecuter optionExecuter;
     int oldDayCount;
     int timeTillPlanet;
@@ -45,9 +45,9 @@ public class DayManager : MonoBehaviour
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
     }
 
-    Event ChooseEvent(int dayNumber, List<Event> eventOptions, int type)
+    CosmicEvent ChooseEvent(int dayNumber, List<CosmicEvent> eventOptions, int type)
     {
-      Event chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
+      CosmicEvent chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
 
       if(eventOptions.Count > 1)
       {
@@ -121,25 +121,28 @@ public class DayManager : MonoBehaviour
     {
         repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
 
-        itemEvents = new List<Event>();
-        foreach(Event add in eventLister.GetComponent<AllItemEvents>().getAllItemEvents())
+        itemEvents = new List<CosmicEvent>();
+        foreach(CosmicEvent add in eventLister.GetComponent<AllItemEvents>().getAllItemEvents())
           itemEvents.Add(add);
 
-        chainEvents = new List<Event>();
-        chainEventsB = new List<Event>();
+        chainEvents = new List<CosmicEvent>();
+        chainEventsB = new List<CosmicEvent>();
         chainEventsA = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
-        chainEventsAB = new List<ChainEvent>();
-        foreach(ChainEvent test in chainEventsA)
+        chainEventsAB = new List<CosmicEvent>();
+        Debug.Log("ChainEventA Count" + chainEventsA.Count);
+        foreach (CosmicEvent test in chainEventsA)
         {
           if(test.PrevEventID == 0)
             chainEventsAB.Add(test);
         }
-        foreach(Event add in chainEventsAB)
+        Debug.Log("ChainEventAB Count" + chainEventsAB.Count);
+        foreach(CosmicEvent add in chainEventsAB)
           chainEventsB.Add(add);
-        foreach(Event add in chainEventsA)
+        Debug.Log("ChainEventB Count" + chainEventsB.Count);
+        foreach (CosmicEvent add in chainEventsA)
           chainEvents.Add(add);
+        Debug.Log("ChainEvent Count" + chainEvents.Count);
 
-        canShowEvent = true;
         dayCount = 1;
         oldDayCount = 1;
         habitableChance = 0;
@@ -147,6 +150,7 @@ public class DayManager : MonoBehaviour
         timeTillPlanet = Random.Range(8, 11);//Random assignment for planet arrivel for begining
 
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString(); //Displayes day counter
+        canShowEvent = true;
     }
 
 
@@ -192,9 +196,9 @@ public class DayManager : MonoBehaviour
 
             case 2: //Chain events
               chainEvent = true;
-              chosenEvent = ChooseEvent(dayCount, chainEventsB, 2);
-              nextEventID = chainEventsA[chosenEvent.EventID].NextEventID;
-              break;
+              chosenEvent = ChooseEvent(dayCount, chainEventsB, 2); Debug.Log("ChosenEventId Chain" + chosenEvent.EventID);
+              nextEventID = chainEventsA[chosenEvent.EventID].NextEventID; Debug.Log("NextId Chain" + chainEventsA[chosenEvent.EventID].NextEventID);
+                        break;
           }
         }
       }
