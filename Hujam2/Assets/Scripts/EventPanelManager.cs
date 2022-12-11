@@ -29,7 +29,7 @@ public class EventPanelManager : MonoBehaviour
             else
             {
                 crewNegText[i].gameObject.SetActive(true);
-                crewNegText[i].text = dayManager.chosenEvent.EventOptions[i].NegativeEffectCrew.name + "\n" +"-" + dayManager.chosenEvent.EventOptions[i].MoodEffect;
+                crewNegText[i].text = dayManager.chosenEvent.EventOptions[i].NegativeEffectCrew.Name + "\n" +"-" + dayManager.chosenEvent.EventOptions[i].MoodEffect;
             }
 
             if (dayManager.chosenEvent.EventOptions[i].PositiveEffectCrew == null)
@@ -37,7 +37,7 @@ public class EventPanelManager : MonoBehaviour
             else
             {
                 crewPosText[i].gameObject.SetActive(true);
-                crewPosText[i].text = dayManager.chosenEvent.EventOptions[i].PositiveEffectCrew.name + "\n" + "-" + dayManager.chosenEvent.EventOptions[i].MoodEffect;
+                crewPosText[i].text = dayManager.chosenEvent.EventOptions[i].PositiveEffectCrew.Name + "\n" + "-" + dayManager.chosenEvent.EventOptions[i].MoodEffect;
             }
             if (dayManager.chosenEvent.EventOptions[i].GetItem != null)
                 ItemText[i].text = "(+) " + dayManager.chosenEvent.EventOptions[i].GetItem.ItemName;
