@@ -14,6 +14,7 @@ public class DayManager : MonoBehaviour
     [SerializeField] GameObject eventLister;
 
     private List<ItemEvent> events;
+    private List<Event> repeatableEvent;
     private List<Event> allEvents;
     private OptionExecuter optionExecuter;
     Planet planet;
@@ -89,6 +90,7 @@ public class DayManager : MonoBehaviour
         optionExecuter = new OptionExecuter();
         allEvents = new List<Event>();
         events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
+        repeatableEvent = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
         Debug.Log("DayManagerEventCount " + events.Count);
         canShowEvent = true;
         dayCount = 1;
@@ -121,7 +123,7 @@ public class DayManager : MonoBehaviour
         if (canShowEvent)
         {
             canShowEvent = false;
-            Event temp = events[1];
+            Event temp = repeatableEvent[1];
             EventOption selected = new EventOption();
 
 
@@ -132,7 +134,8 @@ public class DayManager : MonoBehaviour
 
 
 
-            //todo selected will chosen on ui and setted
+            
+           
             //selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
             Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
