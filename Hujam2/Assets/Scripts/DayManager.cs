@@ -19,6 +19,7 @@ public class DayManager : MonoBehaviour
     private List<CosmicEvent> repeatableEvents;
     private List<CosmicEvent> itemEvents;
     private List<CosmicEvent> chainEvents;
+    private List<CosmicEvent> chainEventsBegin;
     private OptionExecuter optionExecuter;
     int oldDayCount;
     int timeTillPlanet;
@@ -120,6 +121,13 @@ public class DayManager : MonoBehaviour
         itemEvents = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         chainEvents = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
 
+        chainEventsBegin = new List<CosmicEvent>();
+        foreach(CosmicEvent add in chainEvents)
+        {
+          if(add.PrevEventID == 0)
+            chainEventsBegin.Add(add);
+        }
+
         dayCount = 1;
         oldDayCount = 1;
         habitableChance = 0;
@@ -162,23 +170,29 @@ public class DayManager : MonoBehaviour
         }
         else
         {
-          chainEvent = false;
-          nextEventID = 0;
-
-          switch(Random.Range(0,3))
+          while(true)
           {
-            case 0: //Repetable events
-              chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
-              break;
+            chainEvent = false;
+            nextEventID = 0;
 
-            case 1: //Item events
-              chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
-              break;
+            switch(Random.Range(0,3))
+            {
+              case 0: //Repetable events
+                chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+                break;
 
-            case 2: //Chain events
-              chainEvent = true;
-              chosenEvent = ChooseEvent(dayCount, chainEvents, 2);
-              nextEventID = chosenEvent.NextEventID;
+              case 1: //Item events
+                chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
+                break;
+
+              case 2: //Chain events
+                chainEvent = true;
+                chosenEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
+                nextEventID = chosenEvent.NextEventID;
+                break;
+            }
+
+            if(chosenEvent == null)
               break;
           }
         }
