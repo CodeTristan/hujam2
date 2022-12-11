@@ -26,17 +26,21 @@ namespace Assets.Entity.EventArrays
         private List<ShipStats> Stats;
         private List<EventItem> Items;
         private EventEntitySearcher searcher;
+        private StatAndItemLister lister;
         #endregion
         private void Awake()
         {
-            Items = gameObject.GetComponent<AllItems>().getAllItems();
-            Stats = gameObject.GetComponent<AllStats>().getAllShipStats();
+            lister = new StatAndItemLister();
+            Items = new List<EventItem>();
+            Stats = new List<ShipStats>();
+            
+            Items = lister.allItems;
+            Stats = lister.allStats;
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
-
         }
         private List<ChainEvent> temp;
         public List<ChainEvent> getAllChainEvents()
