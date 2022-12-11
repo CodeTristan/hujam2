@@ -18,8 +18,9 @@ namespace Assets.Scripts
      /// 
         public EventOption option;
         public CosmicEvent control;
-        public void ExecuteOption(EventOption option, CosmicEvent control)
+        public CosmicEvent ExecuteOption(EventOption option, CosmicEvent control)
         {
+            Debug.Log(option.ChainTrigger);
             float moodEffect = option.MoodEffect;
             if (IdChecker(option, control))
             {
@@ -70,8 +71,11 @@ namespace Assets.Scripts
                 control.isChainTriggered = option.ChainTrigger;
 
                 control.isCosmicTriggered = option.CosmicTrigger;
+                return control;
             }
-            Debug.Log("[OPTIONEXECUTER]option id equals event id :FAILED");
+            else
+                Debug.Log("[OPTIONEXECUTER]option id equals event id :FAILED");
+            return null;
         }
         
         /// <summary>

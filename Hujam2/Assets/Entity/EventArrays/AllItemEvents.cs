@@ -108,7 +108,7 @@ namespace Assets.Entity.EventArrays
             a.EventOptions = new List<EventOption>();
             op1 = new EventOption();
             op1.OptionText = "Control event option1.";
-            op1.TargetEventID = 0;
+            op1.TargetEventID = 2;
             op1.PositiveEffectCrew = med;
             op1.NegativeEffectCrew = techE;
             op1.MoodEffect = 40;
@@ -117,7 +117,7 @@ namespace Assets.Entity.EventArrays
             //eventOption2
             op2 = new EventOption();
             op2.OptionText = "Control event option2.   ";
-            op2.TargetEventID = 0;
+            op2.TargetEventID = 2;
             op2.PositiveEffectCrew = techE;
             op2.NegativeEffectCrew = med;
             op2.MoodEffect = 40;
