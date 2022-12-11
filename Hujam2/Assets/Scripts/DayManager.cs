@@ -87,8 +87,8 @@ public class DayManager : MonoBehaviour
     void Awake()
     {
 
-        AllEvents EV = new AllEvents();
-        allEvents = EV.getAllEvents(); //Literally all possible events in one list
+        
+         //Literally all possible events in one list
     }
 
     void Start()
@@ -127,6 +127,7 @@ public class DayManager : MonoBehaviour
             canShowEvent = false;
             Event temp = events[0];
             EventOption selected = new EventOption();
+            //todo selected will chosen on ui and setted 
             selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
             Debug.Log(selected.NegativeEffectCrew.Name+" ~DayManager");
