@@ -28,6 +28,9 @@ namespace Assets.Entity.EventArrays
         private EventEntitySearcher searcher;
         private StatAndItemLister lister;
 
+        private EventOption op1;
+        private EventOption op2;
+
         #endregion
 
         private void Awake()
@@ -55,10 +58,28 @@ namespace Assets.Entity.EventArrays
             searcher = new EventEntitySearcher();
             temp = new List<ItemEvent>();
             #region IndexControlEvent
+            //Event 0
             ItemEvent controlEvent = new ItemEvent();
             controlEvent.EventID = 0;
             controlEvent.Label = "This event for control indexing";
             controlEvent.Text = "This is just for control text";
+            //Event Option 1
+            EventOption op001 = new EventOption();
+            op001.OptionText = "Control event option1.";
+            op001.TargetEventID = 0;
+            op001.PositiveEffectCrew = med;
+            op001.NegativeEffectCrew = techE;
+            op001.MoodEffect = 40;
+            op001.GetItem = searcher.ItemFinder(Items, "LifeRadar");
+            controlEvent.EventOptions.Add(op001);
+            //eventOption2
+            EventOption op002 = new EventOption();
+            op002.OptionText = "Control event option2.   ";
+            op002.TargetEventID = 0;
+            op002.PositiveEffectCrew = techE;
+            op002.NegativeEffectCrew = med;
+            op002.MoodEffect = 20;
+            controlEvent.EventOptions.Add(op002);
             temp.Add(controlEvent);
             #endregion
             #region Event1
@@ -71,7 +92,7 @@ namespace Assets.Entity.EventArrays
             a.Label = "Örnek Başlık";
             a.Text = "Caitlin, Peter ile beraber bir yaşam ölçme radarı yapmak istiyor fakat Peter buna sıcak bakmıyor. Kimin tarafını tutmalıyım.";
             //eventOption1
-            EventOption op1 = new EventOption();
+            op1 = new EventOption();
             a.EventOptions = new List<EventOption>();
             op1.OptionText = "Caitlin haklı radarı kullanmak işimize yarayabilir.";
             op1.TargetEventID = 1;
@@ -81,7 +102,7 @@ namespace Assets.Entity.EventArrays
             op1.GetItem = searcher.ItemFinder(Items, "LifeRadar");
             a.EventOptions.Add(op1);
             //eventOption2
-            EventOption op2 = new EventOption();
+            op2 = new EventOption();
             op2.OptionText = "Peter haklı böyle bir icat gereksiz malzeme kaybı.   ";
             op2.TargetEventID = 1;
             op2.PositiveEffectCrew = techE;
@@ -89,6 +110,7 @@ namespace Assets.Entity.EventArrays
             op2.MoodEffect = 20;
             a.EventOptions.Add(op2);
             temp.Add(a);
+
             #endregion
             #region Event2
             //Event2
