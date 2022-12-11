@@ -19,7 +19,9 @@ public class DayManager : MonoBehaviour
     private List<Event> repeatableEvents;
     private List<Event> itemEvents;
     private List<Event> chainEvents;
+    private List<Event> chainEventsB;
     private List<ChainEvent> chainEventsA;
+    private List<ChainEvent> chainEventsAB;
     private OptionExecuter optionExecuter;
     int oldDayCount;
     int timeTillPlanet;
@@ -34,11 +36,11 @@ public class DayManager : MonoBehaviour
         dayCount++;
         timeTillPlanet--;
 
-        optionExecuter.ExecuteOption(chosenOption, chosenEvent); //CHECK IF IT WORKS I DONT KNOW MAYBE THERE IS A BUG
+        //optionExecuter.ExecuteOption(chosenOption, chosenEvent); //Check if there is a bug
 
-        this.GetComponent<ShipStatus>().ShipStats[0].StatValue += this.GetComponent<ShipStatus>().ShipStats[4].StatValue; ;
-        this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue; ;
-        this.GetComponent<ShipStatus>().ShipStats[2].StatValue += this.GetComponent<ShipStatus>().ShipStats[6].StatValue; ;
+        this.GetComponent<ShipStatus>().ShipStats[0].StatValue += this.GetComponent<ShipStatus>().ShipStats[4].StatValue;
+        this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue;
+        this.GetComponent<ShipStatus>().ShipStats[2].StatValue += this.GetComponent<ShipStatus>().ShipStats[6].StatValue;
 
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
     }
@@ -49,36 +51,26 @@ public class DayManager : MonoBehaviour
 
       if(eventOptions.Count > 1)
       {
-        if(type == 2)
-        {
-          while(true)
-          {
-            chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
-            if(chainEventsA[chosenEvent.EventID].PrevEventID == 0)
-             break;
-          }
-        }
-
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
-            foreach (Crew tested in chosenEvent.RequiredCrews)
+          foreach (Crew tested in chosenEvent.RequiredCrews)
+          {
+            try
             {
-                try
-                {
-                  if(GameObject.FindGameObjectsWithTag(tested.RoleName)[0] == null);
-                }
-                catch
-                {
-                  eventOptions.Remove(chosenEvent);
-                  return ChooseEvent(dayNumber, eventOptions, type);
-                }
+              if(GameObject.FindGameObjectsWithTag(tested.RoleName)[0] == null);
             }
+            catch
+            {
+              eventOptions.Remove(chosenEvent);
+              return ChooseEvent(dayNumber, eventOptions, type);
+            }
+          }
         }
 
         if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
         {
-            eventOptions.Remove(chosenEvent);//Remove event from given list
-            return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
+          eventOptions.Remove(chosenEvent);//Remove event from given list
+          return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
         }
 
         else
@@ -91,8 +83,7 @@ public class DayManager : MonoBehaviour
               itemEvents.Remove(chosenEvent);
               break;
             case 2:
-              chainEvents.Remove(chosenEvent);
-              chainEventsA.RemoveAt(chosenEvent.EventID);
+              chainEventsB.Remove(chosenEvent);
               break;
           }
 
@@ -135,7 +126,16 @@ public class DayManager : MonoBehaviour
           itemEvents.Add(add);
 
         chainEvents = new List<Event>();
+        chainEventsB = new List<Event>();
         chainEventsA = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
+        chainEventsAB = new List<ChainEvent>();
+        foreach(ChainEvent test in chainEventsA)
+        {
+          if(test.PrevEventID == 0)
+            chainEventsAB.Add(test);
+        }
+        foreach(Event add in chainEventsAB)
+          chainEventsB.Add(add);
         foreach(Event add in chainEventsA)
           chainEvents.Add(add);
 
@@ -152,57 +152,51 @@ public class DayManager : MonoBehaviour
 
     void Update()
     {
-        if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
+      if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
+      {
+        canShowEvent = true;
+        oldDayCount = dayCount;
+      }
+
+      if (timeTillPlanet <= 0)
+      {
+        GenPlanet();
+
+        //Planet Search events
+
+        timeTillPlanet = Random.Range(5, 11);
+      }
+
+      if (canShowEvent)
+      {
+        canShowEvent = false;
+
+        if(chainEvent == true && chainEvents[nextEventID].isChainTriggered)
         {
-            canShowEvent = true;
-            oldDayCount = dayCount;
+          chosenEvent = chainEvents[nextEventID];
         }
-
-        if (timeTillPlanet <= 0)
+        else
         {
-            GenPlanet();
+          chainEvent = false;
+          nextEventID = 0;
 
-            //Planet Search events
+          switch(Random.Range(0,3))
+          {
+            case 0: //Repetable events
+              chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+              break;
 
-            timeTillPlanet = Random.Range(5, 11);
+            case 1: //Item events
+              chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
+              break;
+
+            case 2: //Chain events
+              chainEvent = true;
+              chosenEvent = ChooseEvent(dayCount, chainEventsB, 2);
+              nextEventID = chainEventsA[chosenEvent.EventID].NextEventID;
+              break;
+          }
         }
-
-        if (canShowEvent)
-        {
-            canShowEvent = false;
-
-            if(chainEvent == true && chainEvents[nextEventID].isChainTriggered)
-            {
-              chosenEvent = chainEvents[nextEventID];
-            }
-            else
-            {
-              chainEvent = false;
-              nextEventID = 0;
-
-              while(true)
-              {
-                switch(Random.Range(0,3))
-                {
-                  case 0: //Repetable events
-                    chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
-                    break;
-
-                  case 1: //Item events
-                    chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
-                    break;
-
-                  case 2: //Chain events
-                    chainEvent = true;
-                    chosenEvent = ChooseEvent(dayCount, chainEvents, 2);
-                    nextEventID = chainEventsA[chosenEvent.EventID].NextEventID;
-                    break;
-                }
-
-                if(chosenEvent != null)
-                  break;
-              }
-            }
-        }
-    }
+      }
+  }
 }
