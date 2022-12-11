@@ -915,7 +915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8eb3bd77b48724085c46ec0612a739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenEvent: {fileID: 0}
+  finalEvent: {fileID: 0}
   chosenOption: {fileID: 0}
   dayCount: 0
   crewManager: {fileID: 1369161844}
