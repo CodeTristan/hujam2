@@ -37,7 +37,7 @@ public class DayManager : MonoBehaviour
 
     Event ChooseEvent(int dayNumber, List<Event> eventOptions)
     {
-        Event chosenEvent = eventOptions[Random.Range(0, eventOptions.Count)]; //Chose random event from given list
+        Event chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)]; //Chose random event from given list
 
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
@@ -63,7 +63,7 @@ public class DayManager : MonoBehaviour
 
     }
 
-    void GenPlanet() //Generate random planet
+    /*void GenPlanet() //Generate random planet
     {
         planet = new Planet();
 
@@ -82,18 +82,12 @@ public class DayManager : MonoBehaviour
           planet.habitable = false;
           habitableChance += chanceMod;
         }
-    }
-
-    void Awake()
-    {
-
-        
-         //Literally all possible events in one list
-    }
+    }*/
 
     void Start()
     {
         optionExecuter = new OptionExecuter();
+        allEvents = new List<Event>();
         events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         Debug.Log("DayManagerEventCount " + events.Count);
         canShowEvent = true;
@@ -117,7 +111,7 @@ public class DayManager : MonoBehaviour
 
         if (timeTillPlanet <= 0)
         {
-            GenPlanet();
+            //GenPlanet();
 
             //Planet Search events
 
@@ -129,8 +123,17 @@ public class DayManager : MonoBehaviour
             canShowEvent = false;
             Event temp = events[1];
             EventOption selected = new EventOption();
-            //todo selected will chosen on ui and setted 
-            selected = temp.EventOptions[0];
+
+
+            foreach(Event add in events)
+              allEvents.Add(add);
+
+            selected = ChooseEvent(dayCount, allEvents).EventOptions[0];
+
+
+
+            //todo selected will chosen on ui and setted
+            //selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
             Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
             Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");
@@ -141,7 +144,7 @@ public class DayManager : MonoBehaviour
             Debug.Log(temp.EventOptions[0].ChainTrigger + " ~DayManager");
             Debug.Log(temp.isChainTriggered + " ~DayManager");
             Debug.Log(temp.RequiredDay + " ~DayManager");
-            
+
         }
     }
 }
