@@ -55,6 +55,8 @@ namespace Assets.Entity.EventArrays
             #endregion
             #region
             Event event1 = new Event();
+            event1.RequiredCrews = new List<Crew>();
+            event1.RequiredCrews.Add(techE);
             event1.EffectedStat = searcher.statFinder(Stats,"Fuel");
             event1.Label = "Peter'ın yakıt sorunu";
             event1.Text = "Peter yakıtı kendi kişisel amaçları için kullanıyormuş. Tayfamız bunun problem yaratabileceğini söylüyor.";

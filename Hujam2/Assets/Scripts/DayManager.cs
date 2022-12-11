@@ -125,17 +125,9 @@ public class DayManager : MonoBehaviour
             canShowEvent = false;
             Event temp = repeatableEvent[1];
             EventOption selected = new EventOption();
-
-
             foreach(Event add in events)
               allEvents.Add(add);
-
-            selected = ChooseEvent(dayCount, repeatableEvent).EventOptions[0];
-
-
-
-            
-           
+            selected = ChooseEvent(dayCount, repeatableEvent).EventOptions[0];                       
             //selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
             Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
