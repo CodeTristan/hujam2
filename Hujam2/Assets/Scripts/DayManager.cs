@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using Assets.Entity.EventArrays;
 using Assets.Entity.EventEntities;
+using Assets.Entity;
+using Assets.Scripts;
 
 public class DayManager : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class DayManager : MonoBehaviour
 
     private List<ItemEvent> events;
     private List<Event> allEvents;
-
+    private OptionExecuter optionExecuter;
     Planet planet;
     int oldDayCount;
     int timeTillPlanet;
@@ -91,6 +93,7 @@ public class DayManager : MonoBehaviour
 
     void Start()
     {
+        optionExecuter = new OptionExecuter();
         events = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         canShowEvent = true;
         dayCount = 1;
@@ -123,15 +126,16 @@ public class DayManager : MonoBehaviour
         {
             canShowEvent = false;
             Event temp = events[0];
-            float value = temp.EventOptions[0].MoodEffect;
-            temp.EventOptions[0].NegativeEffectCrew.ChangeMood(-value);
-            temp.EventOptions[0].PositiveEffectCrew.ChangeMood(value);
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name);
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood);
-            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Name);
-            Debug.Log(temp.EventOptions[0].PositiveEffectCrew.Mood);
-            Debug.Log(temp.EventOptions[0].GetItem.ItemName);
-            Debug.Log(ChooseEvent(dayCount, allEvents).EventID); //Debug, duuuh
+            EventOption selected = new EventOption();
+            selected = temp.EventOptions[0];
+            optionExecuter.ExecuteOption(selected,temp);
+            Debug.Log(selected.NegativeEffectCrew.Name+" ~DayManager");
+            Debug.Log(selected.NegativeEffectCrew.Mood + " ~DayManager");
+            Debug.Log(selected.PositiveEffectCrew.Name + " ~DayManager");
+            Debug.Log(selected.PositiveEffectCrew.Mood + " ~DayManager");
+            Debug.Log(selected.GetItem.ItemName + " ~DayManager");
+            Debug.Log(selected.GetItem.ItemCount + " ~DayManager");
+            
         }
     }
 }

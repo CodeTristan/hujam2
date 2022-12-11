@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class OptionExecuter : MonoBehaviour
+    public class OptionExecuter
     {
         public void ExecuteOption(EventOption option, Event control)
         {
@@ -21,30 +21,35 @@ namespace Assets.Scripts
                     Debug.Log("---NegativeCrew :CHECKED");
                     option.NegativeEffectCrew.ChangeMood(-moodEffect);
                 }
-                Debug.Log("---NegativeCrew :NULL");
+                else
+                    Debug.Log("---NegativeCrew :NULL");
                 if (PositiveCrewChecker(option))
                 {
                     Debug.Log("---PositiveCrew :CHECKED");
                     option.PositiveEffectCrew.ChangeMood(moodEffect);
                 }
-                Debug.Log("---PositiveCrew :NULL");
+                else
+                    Debug.Log("---PositiveCrew :NULL");
                 if (GetItemChecker(option))
                 {
                     Debug.Log("---GetItem :CHECKED");
                     option.GetItem.ItemCount++;
                 }
-                Debug.Log("---GetItem :Null");
+                else
+                    Debug.Log("---GetItem :Null");
                 if (UseItemChecker(option))
                 {
                     Debug.Log("---UseItem :CHECKED");
                     option.UseItem.ItemCount--;
                 }
+                else
                     Debug.Log("---UseItem :NULL");
                 if (StatChecker(control))
                 {
                     Debug.Log("---EffectedStat :CHECKED");
-                    control.EffectedStat.StatValue+=option.StatEffect;
+                    control.EffectedStat.StatValue += option.StatEffect;
                 }
+                else
                     Debug.Log("---EffectedStat :NULL");
 
             }
