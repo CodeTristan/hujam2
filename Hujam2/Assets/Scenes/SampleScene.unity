@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 13804814}
   m_Layer: 0
   m_Name: Scientist
-  m_TagString: Untagged
+  m_TagString: Scientist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 264592618}
   m_Layer: 0
   m_Name: Security
-  m_TagString: Untagged
+  m_TagString: Security
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2262,7 +2262,7 @@ GameObject:
   - component: {fileID: 366046226}
   m_Layer: 0
   m_Name: TechSup
-  m_TagString: Untagged
+  m_TagString: TechSupport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3559,7 +3559,7 @@ GameObject:
   - component: {fileID: 519901197}
   m_Layer: 0
   m_Name: Medic
-  m_TagString: Untagged
+  m_TagString: Medic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9010,7 +9010,7 @@ GameObject:
   - component: {fileID: 1511156319}
   m_Layer: 0
   m_Name: TechincalE
-  m_TagString: Untagged
+  m_TagString: Engineer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

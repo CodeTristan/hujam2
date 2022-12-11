@@ -38,17 +38,23 @@ public class DayManager : MonoBehaviour
 
     Event ChooseEvent(int dayNumber, List<Event> eventOptions)
     {
+      if(eventOptions.Count > 1)
+      {
         Event chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)]; //Chose random event from given list
 
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
             foreach (Crew tested in chosenEvent.RequiredCrews)
             {
-                if (crewManager.GetComponent(tested.RoleName) == null)
+                try
                 {
-                    allEvents.Remove(chosenEvent); //Remove event from original list if one or both crew members are dead
-                    eventOptions.Remove(chosenEvent); //Remove event from given list for recursion
-                    return ChooseEvent(dayNumber, eventOptions); //Call fucntion again
+                  if(GameObject.FindGameObjectsWithTag(tested.RoleName)[0] == null);
+                }
+                catch
+                {
+                  Debug.Log("Crew mate dead LOOL----------------------------------------");
+                  eventOptions.Remove(chosenEvent);
+                  return ChooseEvent(dayNumber, eventOptions);
                 }
             }
         }
@@ -61,7 +67,9 @@ public class DayManager : MonoBehaviour
 
         else
             return chosenEvent; //If every requirement is satisfied return event as Event
-
+      }
+      else
+        return null;
     }
 
     /*void GenPlanet() //Generate random planet
@@ -127,11 +135,11 @@ public class DayManager : MonoBehaviour
             EventOption selected = new EventOption();
             foreach(Event add in events)
               allEvents.Add(add);
-            selected = ChooseEvent(dayCount, repeatableEvent).EventOptions[0];                       
+            selected = ChooseEvent(dayCount, repeatableEvent).EventOptions[0];
             //selected = temp.EventOptions[0];
             optionExecuter.ExecuteOption(selected,temp);
             Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Name+" ~DayManager");
-            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");                     
+            Debug.Log(temp.EventOptions[0].NegativeEffectCrew.Mood + " ~DayManager");
             Debug.Log(temp.EventOptions[0].ChainTrigger + " ~DayManager");
             Debug.Log(temp.isChainTriggered + " ~DayManager");
             Debug.Log(temp.RequiredDay + " ~DayManager");
