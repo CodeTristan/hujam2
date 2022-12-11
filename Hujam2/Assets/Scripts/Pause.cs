@@ -9,10 +9,18 @@ public class Pause : MonoBehaviour
     public GameObject pausemenu;
     void Update()
     {
-        if (Input.GetKeyDown("escape") && Time.timeScale !=0)
+        if (Input.GetKeyDown("escape"))
         {
-            Time.timeScale = 0;
-            pausescreen.SetActive(true);
+            if (Time.timeScale != 0)
+            {
+                Time.timeScale = 0;
+                pausescreen.SetActive(true);
+            }
+            else
+            {
+                Continue();
+            }
+            
         }
     }
     public void Continue()
