@@ -31,8 +31,7 @@ namespace Assets.Entity.EventArrays
         {
             lister = new StatAndItemLister();
             Items = new List<EventItem>();
-            Stats = new List<ShipStats>();
-            Debug.Log(lister.allItems.Count + " allitemEvents itemcount");
+            Stats = new List<ShipStats>();            
             Items = lister.allItems;
             Stats = lister.allStats;
             med = MedicP.GetComponent<Medic>();

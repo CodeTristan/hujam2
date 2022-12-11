@@ -38,8 +38,7 @@ namespace Assets.Entity.EventArrays
         {
             lister = new StatAndItemLister();
             Items = new List<EventItem>();
-            Stats = new List<ShipStats>();
-            Debug.Log(lister.allItems.Count + " allitemEvents itemcount");
+            Stats = new List<ShipStats>();           
             Items = lister.allItems;
             Stats = lister.allStats;
             med = MedicP.GetComponent<Medic>();
@@ -124,10 +123,7 @@ namespace Assets.Entity.EventArrays
             op2.MoodEffect = 40;
             a.EventOptions.Add(op2);
             temp.Add(a);
-            #endregion
-            Debug.Log(MedicP.GetComponent<Medic>().Name);
-            Debug.Log(med.Name);
-            Debug.Log(op1.NegativeEffectCrew.Name);
+            #endregion           
             return temp;
         }
     }

@@ -19,21 +19,21 @@ namespace Assets.Scripts
             float moodEffect = option.MoodEffect;
             if (IdChecker(option, control))
             {
-                Debug.Log("---option id equals event id :CHECKED");
+                Debug.Log("[OPTIONEXECUTER]option id equals event id :CHECKED");
                 if (NegativeCrewChecker(option))
                 {
-                    Debug.Log("---NegativeCrew :CHECKED");
+                    Debug.Log("[OPTIONEXECUTER]NegativeCrew :CHECKED");
                     option.NegativeEffectCrew.ChangeMood(-moodEffect);
                 }
                 else
-                    Debug.Log("---NegativeCrew :NULL");
+                    Debug.Log("[OPTIONEXECUTER]NegativeCrew :NULL");
                 if (PositiveCrewChecker(option))
                 {
-                    Debug.Log("---PositiveCrew :CHECKED");
+                    Debug.Log("[OPTIONEXECUTER]PositiveCrew :CHECKED");
                     option.PositiveEffectCrew.ChangeMood(moodEffect);
                 }
                 else
-                    Debug.Log("---PositiveCrew :NULL");
+                    Debug.Log("[OPTIONEXECUTER]PositiveCrew :NULL");
                 if (GetItemChecker(option))
                 {
                     if (option.GetItem.ItemCount == 0)
@@ -41,33 +41,33 @@ namespace Assets.Scripts
 
                         option.GetItem.ItemCount++;
                     }
-                    Debug.Log("---GetItem :CHECKED");
+                    Debug.Log("[OPTIONEXECUTER]GetItem :CHECKED");
                 }
                 else
-                    Debug.Log("---GetItem :Null");
+                    Debug.Log("[OPTIONEXECUTER]GetItem :Null");
                 if (UseItemChecker(option))
                 {
                     if (option.UseItem.ItemCount == 1)
                     {
                         option.UseItem.ItemCount--;                        
                     }
-                    Debug.Log("---UseItem :CHECKED");
+                    Debug.Log("[OPTIONEXECUTER]UseItem :CHECKED");
                 }
                 else
-                    Debug.Log("---UseItem :NULL");
+                    Debug.Log("[OPTIONEXECUTER]UseItem :NULL");
                 if (StatChecker(control))
                 {
-                    Debug.Log("---EffectedStat :CHECKED");
+                    Debug.Log("[OPTIONEXECUTER]EffectedStat :CHECKED");
                     control.EffectedStat.StatValue += option.StatEffect;
                 }
                 else
-                    Debug.Log("---EffectedStat :NULL");
+                    Debug.Log("[OPTIONEXECUTER]EffectedStat :NULL");
 
                 control.isChainTriggered = option.ChainTrigger;
 
                 control.isCosmicTriggered = option.ChainTrigger;
             }
-            Debug.Log("---option id equals event id :FAILED");
+            Debug.Log("[OPTIONEXECUTER]option id equals event id :FAILED");
         }
         
         /// <summary>
