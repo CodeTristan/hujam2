@@ -18,32 +18,32 @@ public class EventPanelManager : MonoBehaviour
     private void OnEnable()
     {
         closeAllButtons();
-        for (int i = 0; i < dayManager.chosenEvent.EventOptions.Count; i++)
+        for (int i = 0; i < dayManager.finalEvent.EventOptions.Count; i++)
         {
             buttons[i].SetActive(true);
-            labetText.text = dayManager.chosenEvent.Label;
-            descText.text = dayManager.chosenEvent.Text;
-            butonDescText[i].text = dayManager.chosenEvent.EventOptions[i].OptionText;
+            labetText.text = dayManager.finalEvent.Label;
+            descText.text = dayManager.finalEvent.Text;
+            butonDescText[i].text = dayManager.finalEvent.EventOptions[i].OptionText;
 
-            if (dayManager.chosenEvent.EventOptions[i].NegativeEffectCrew == null)
+            if (dayManager.finalEvent.EventOptions[i].NegativeEffectCrew == null)
                 crewNegText[i].gameObject.SetActive(false);
             else
             {
                 crewNegText[i].gameObject.SetActive(true);
-                crewNegText[i].text = dayManager.chosenEvent.EventOptions[i].NegativeEffectCrew.Name + "\n" +"-" + dayManager.chosenEvent.EventOptions[i].MoodEffect;
+                crewNegText[i].text = dayManager.finalEvent.EventOptions[i].NegativeEffectCrew.Name + "\n" +"-" + dayManager.finalEvent.EventOptions[i].MoodEffect;
             }
 
-            if (dayManager.chosenEvent.EventOptions[i].PositiveEffectCrew == null)
+            if (dayManager.finalEvent.EventOptions[i].PositiveEffectCrew == null)
                 crewPosText[i].gameObject.SetActive(false);
             else
             {
                 crewPosText[i].gameObject.SetActive(true);
-                crewPosText[i].text = dayManager.chosenEvent.EventOptions[i].PositiveEffectCrew.Name + "\n" + "-" + dayManager.chosenEvent.EventOptions[i].MoodEffect;
+                crewPosText[i].text = dayManager.finalEvent.EventOptions[i].PositiveEffectCrew.Name + "\n" + "-" + dayManager.finalEvent.EventOptions[i].MoodEffect;
             }
-            if (dayManager.chosenEvent.EventOptions[i].GetItem != null)
-                ItemText[i].text = "(+) " + dayManager.chosenEvent.EventOptions[i].GetItem.ItemName;
-            else if (dayManager.chosenEvent.EventOptions[i].UseItem != null)
-                ItemText[i].text = "(-) " + dayManager.chosenEvent.EventOptions[i].UseItem.ItemName;
+            if (dayManager.finalEvent.EventOptions[i].GetItem != null)
+                ItemText[i].text = "(+) " + dayManager.finalEvent.EventOptions[i].GetItem.ItemName;
+            else if (dayManager.finalEvent.EventOptions[i].UseItem != null)
+                ItemText[i].text = "(-) " + dayManager.finalEvent.EventOptions[i].UseItem.ItemName;
             else
                 ItemText[i].text = "";
         }
@@ -51,7 +51,7 @@ public class EventPanelManager : MonoBehaviour
 
     public void ChooseOption()
     {
-        dayManager.chosenOption = dayManager.chosenEvent.EventOptions[System.Convert.ToInt32(EventSystem.current.currentSelectedGameObject.name)];
+        dayManager.chosenOption = dayManager.finalEvent.EventOptions[System.Convert.ToInt32(EventSystem.current.currentSelectedGameObject.name)];
     }
     private void closeAllButtons()
     {
@@ -60,5 +60,5 @@ public class EventPanelManager : MonoBehaviour
             buttons[i].SetActive(false);
         }
     }
-    
+
 }

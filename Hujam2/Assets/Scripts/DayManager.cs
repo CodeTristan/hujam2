@@ -9,7 +9,7 @@ using Assets.Scripts;
 
 public class DayManager : MonoBehaviour
 {
-    public CosmicEvent chosenEvent;
+    public CosmicEvent finalEvent;
     public EventOption chosenOption;
 
     [SerializeField] int dayCount;
@@ -45,9 +45,14 @@ public class DayManager : MonoBehaviour
 
     CosmicEvent ChooseEvent(int dayNumber, List<CosmicEvent> eventOptions, int type)
     {
+      CosmicEvent chosenEvent;
+      Debug.Log("Fonksyon çalıştı");
+
       if(eventOptions.Count > 1)
       {
-        CosmicEvent chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
+        chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
+
+        Debug.Log(chosenEvent.Label + " Cosmic event chosen");
 
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
@@ -59,6 +64,7 @@ public class DayManager : MonoBehaviour
             }
             catch
             {
+              Debug.Log("Character dead");
               eventOptions.Remove(chosenEvent);
               return ChooseEvent(dayNumber, eventOptions, type);
             }
@@ -67,6 +73,7 @@ public class DayManager : MonoBehaviour
 
         if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
         {
+          Debug.Log("Required day not met");
           eventOptions.Remove(chosenEvent);//Remove event from given list
           return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
         }
@@ -78,18 +85,23 @@ public class DayManager : MonoBehaviour
             case 0:
               break;
             case 1:
+              Debug.Log("Before removal "+itemEvents.Count);
               itemEvents.Remove(chosenEvent);
+              Debug.Log("After removal "+itemEvents.Count);
               break;
             case 2:
               chainEventsBegin.Remove(chosenEvent);
               break;
           }
 
-          return chosenEvent; //If every requirement is satisfied return event as Event
+          return chosenEvent;
         }
       }
       else
-        return null;
+      {
+        chosenEvent = eventOptions[0];
+        return chosenEvent;
+      }
     }
 
     Planet GenPlanet() //Generate random planet
@@ -162,37 +174,51 @@ public class DayManager : MonoBehaviour
 
         if(chainEvent == true)
         {
+          Debug.Log("next event goes here");
           foreach(CosmicEvent test in chainEvents)
           {
             if(test.EventID == nextEventID && test.isChainTriggered)
-              chosenEvent = test;
+              finalEvent = test;
           }
+
+          chainEvent = false;
         }
         else
         {
+          while(true)
+          {
             chainEvent = false;
             nextEventID = 0;
+
+            finalEvent = new CosmicEvent();
 
             switch(Random.Range(0,3))
             {
               case 0: //Repetable events
-                this.chosenEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+                finalEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+                Debug.Log(finalEvent.Label+" Case 0");
                 break;
 
               case 1: //Item events
-                this.chosenEvent = ChooseEvent(dayCount, itemEvents, 1);
+                finalEvent = ChooseEvent(dayCount, itemEvents, 1);
+                Debug.Log(finalEvent.Label+" Case 1");
                 break;
 
               case 2: //Chain events
                 chainEvent = true;
-                this.chosenEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
-                if(chosenEvent != null)
-                  nextEventID = chosenEvent.NextEventID;
+                finalEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
+                Debug.Log(finalEvent.Label+" Case 2");
+                if(finalEvent.Label != "This event for control indexing")
+                  nextEventID = finalEvent.NextEventID;
                 break;
             }
 
-            if(chosenEvent == null)
+            if(finalEvent.Label != "This event for control indexing")
+            {
+              break;
               Debug.Log("Returned null");
+            }
+          }
         }
       }
   }
