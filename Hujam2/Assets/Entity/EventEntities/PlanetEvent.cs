@@ -9,8 +9,7 @@ namespace Assets.Entity.EventEntities
     public class PlanetEvent
     {
         public int EventID{ get; set; }
-        public string Label{ get; set; }
-        public float DangerRate{ get; set; }
+        public string Label{ get; set; }        
         public ShipStats WaterStat{ get; set; }
         public ShipStats FuelStat{ get; set; }
         public ShipStats FoodStat{ get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Entity.EventEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,48 @@ namespace Assets.Entity.EventArrays
         private List<ShipStats> Stats;
         private EventEntitySearcher searcher;
         private StatAndItemLister lister;
+        private PlanetEvent a;
         private void Awake()
         {
-            lister = new StatAndItemLister();    
-            Stats = new List<ShipStats>(); 
+            lister = new StatAndItemLister();
+            Stats = new List<ShipStats>();
             Stats = lister.allStats;
+        }
+        private List<PlanetEvent> temp;
+        private List<PlanetEvent> getAllPlanetEvents()
+        {
+            //todo newlemeden atamaa olduğu için object null refference fırlatabilir
+            searcher = new EventEntitySearcher();
+            temp = new List<PlanetEvent>();
+            a = new PlanetEvent();
+            a.EventID = 1;           
+            a.FoodStat = searcher.statFinder(Stats, "Food");
+            a.FuelStat = searcher.statFinder(Stats, "Fuel");
+            a.WaterStat = searcher.statFinder(Stats, "Water");
+            a.Label = "Enkazlardan gemi ikmal malzemeleriyle karşılaştık";
+            temp.Add(a);
+            a = new PlanetEvent();
+            a.EventID = 2;
+            a.FoodStat = searcher.statFinder(Stats, "Food");
+            a.FuelStat = searcher.statFinder(Stats, "Fuel");
+            a.WaterStat = searcher.statFinder(Stats, "Water");
+            a.Label = "Gezegenin bazı yerlileri bize maceramızda destek oldu";
+            temp.Add(a);
+            a = new PlanetEvent();
+            a.EventID = 3;
+            a.FoodStat = searcher.statFinder(Stats, "Food");
+            a.FuelStat = searcher.statFinder(Stats, "Fuel");
+            a.WaterStat = searcher.statFinder(Stats, "Water");
+            a.Label = "Karşılaştığımız gezegende bir mola tesisine rastladık";
+            temp.Add(a);
+            a = new PlanetEvent();
+            a.EventID = 4;
+            a.FoodStat = searcher.statFinder(Stats, "Food");
+            a.FuelStat = searcher.statFinder(Stats, "Fuel");
+            a.WaterStat = searcher.statFinder(Stats, "Water");
+            a.Label = "Gezegenin atmosferinde terk edilmiş bir gemiye rastladık";
+            temp.Add(a);
+            return temp;
         }
     }
 }
