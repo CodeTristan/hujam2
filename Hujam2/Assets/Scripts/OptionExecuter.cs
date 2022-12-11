@@ -36,15 +36,22 @@ namespace Assets.Scripts
                     Debug.Log("---PositiveCrew :NULL");
                 if (GetItemChecker(option))
                 {
+                    if (option.GetItem.ItemCount == 0)
+                    {
+
+                        option.GetItem.ItemCount++;
+                    }
                     Debug.Log("---GetItem :CHECKED");
-                    option.GetItem.ItemCount++;
                 }
                 else
                     Debug.Log("---GetItem :Null");
                 if (UseItemChecker(option))
                 {
+                    if (option.UseItem.ItemCount == 1)
+                    {
+                        option.UseItem.ItemCount--;                        
+                    }
                     Debug.Log("---UseItem :CHECKED");
-                    option.UseItem.ItemCount--;
                 }
                 else
                     Debug.Log("---UseItem :NULL");
@@ -56,9 +63,13 @@ namespace Assets.Scripts
                 else
                     Debug.Log("---EffectedStat :NULL");
 
+                control.isChainTriggered = option.ChainTrigger;
+
+                control.isCosmicTriggered = option.ChainTrigger;
             }
             Debug.Log("---option id equals event id :FAILED");
         }
+        
         /// <summary>
         /// Validation for checking option and event id
         /// </summary>

@@ -125,7 +125,7 @@ public class DayManager : MonoBehaviour
         if (canShowEvent)
         {
             canShowEvent = false;
-            Event temp = events[0];
+            Event temp = events[1];
             EventOption selected = new EventOption();
             //todo selected will chosen on ui and setted 
             selected = temp.EventOptions[0];
@@ -136,6 +136,9 @@ public class DayManager : MonoBehaviour
             Debug.Log(selected.PositiveEffectCrew.Mood + " ~DayManager");
             Debug.Log(selected.GetItem.ItemName + " ~DayManager");
             Debug.Log(selected.GetItem.ItemCount + " ~DayManager");
+            Debug.Log(selected.ChainTrigger + " ~DayManager");
+            Debug.Log(temp.isChainTriggered + " ~DayManager");
+            Debug.Log(temp.RequiredDay + " ~DayManager");
             
         }
     }

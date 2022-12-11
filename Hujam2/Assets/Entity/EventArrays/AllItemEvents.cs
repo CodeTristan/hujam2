@@ -12,11 +12,12 @@ namespace Assets.Entity.EventArrays
 {
     public class AllItemEvents : MonoBehaviour
     {
+        #region GameObject and defines
         [SerializeField] GameObject ScientistP;
         [SerializeField] GameObject SecurityP;
         [SerializeField] GameObject MedicP;
         [SerializeField] GameObject TechSupportP;
-        [SerializeField] GameObject TechnicalEngineerP;
+        [SerializeField] GameObject TechnicalEngineerP;       
         private Medic med;
         private Security sec;
         private Scientist sci;
@@ -24,84 +25,68 @@ namespace Assets.Entity.EventArrays
         private TechnicalEngineer techE;
         private List<ShipStats> Stats;
         private List<EventItem> Items;
+        private EventEntitySearcher searcher;
+       
+        #endregion
 
-
-        private void Awake()
+        private void Start()
         {
-            
-            Items = gameObject.GetComponent<AllItems>().getAllItems();
-            Stats = gameObject.GetComponent<AllStats>().getAllShipStats();            
+            StatAndItemLister lister = new StatAndItemLister();
+            Items = new List<EventItem>();
+            Stats = new List<ShipStats>();
+            Items = lister.allItems;
+            Stats = lister.allStats;
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
             techSup = TechSupportP.GetComponent<TechSupport>();
             techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
+
         }
-        private EventItem ItemFinder(string ItemName)
-        {
-            EventItem a = new EventItem();
-            for (int i = 0; i < Items.Count; i++)
-            {
-                Debug.Log(Items[0].ItemID);
-                Debug.Log(Items[0].ItemName);
-                Debug.Log(Items[0].ItemCount);
-                if (Items[i].ItemName== ItemName)
-                {
-                    a = Items[i];
-                    return a;
-                }
-            }
-            return a;
-        }
-        private ShipStats statFinder(string StatName)
-        {
-            for (int i = 0; i < Stats.Count; i++)
-            {
-                if (Stats[i].StatName == StatName)
-                {
-                    return Stats[i];
-                }
-            }
-            return null;
-        }
-       private List<ItemEvent> temp;
+        private List<ItemEvent> temp;
         public List<ItemEvent> getAllItemEvents()
         {
+            searcher = new EventEntitySearcher();
             temp = new List<ItemEvent>();
-
+            #region IndexControlEvent
+            ItemEvent controlEvent = new ItemEvent();
+            controlEvent.EventID = 0;
+            controlEvent.Label = "This event for control indexing";
+            controlEvent.Text = "This is just for control text";
+            temp.Add(controlEvent);
+            #endregion
+            #region Event1
+            //Event 1
             ItemEvent a = new ItemEvent();
-            a.InProgress = false;
-            a.UseItem = null;
             a.EventID = 1;
             a.RequiredCrews = new List<Crew>();
             a.RequiredCrews.Add(med);
             a.RequiredCrews.Add(techE);
-            a.RequiredDay = 0;
-            a.RequiredItem = null;
-            a.EffectedStat = null;
             a.Label = "Örnek Başlık";
             a.Text = "Caitlin, Peter ile beraber bir yaşam ölçme radarı yapmak istiyor fakat Peter buna sıcak bakmıyor. Kimin tarafını tutmalıyım.";
+            //eventOption1
             EventOption op1 = new EventOption();
             a.EventOptions = new List<EventOption>();
             op1.OptionText = "Caitlin haklı radarı kullanmak işimize yarayabilir.";
             op1.TargetEventID = 1;
-            op1.StatEffect = 0;
             op1.PositiveEffectCrew = med;
             op1.NegativeEffectCrew = techE;
             op1.MoodEffect = 20;
-            Debug.Log(MedicP.GetComponent<Medic>().Mood + " allItemDebugCrewMood");
-            
-            op1.GetItem = ItemFinder("LifeRadar");
+            op1.GetItem = searcher.ItemFinder(Items, "LifeRadar");
             a.EventOptions.Add(op1);
+            //eventOption2
             EventOption op2 = new EventOption();
             op2.OptionText = "Peter haklı böyle bir icat gereksiz malzeme kaybı.   ";
             op2.TargetEventID = 1;
-            op2.StatEffect = 0;
             op2.PositiveEffectCrew = techE;
             op2.NegativeEffectCrew = med;
             op2.MoodEffect = 20;
             a.EventOptions.Add(op2);
             temp.Add(a);
+            #endregion
+            #region Event2
+            //Event2
+            #endregion
 
             return temp;
         }

@@ -8,6 +8,8 @@ public class Event : MonoBehaviour
     public int EventID { get; set; }
     public string Label { get; set; }
     public string Text { get; set; }
+    public bool isChainTriggered { get; set; }
+    public bool isCosmicTriggered { get; set; }
     public int RequiredDay { get; set; }
     public ShipStats EffectedStat { get; set; }
     public List<Crew> RequiredCrews{ get; set; }

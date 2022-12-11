@@ -7,14 +7,16 @@ using UnityEngine;
 
 namespace Assets.Entity
 {
-    public class EventOption:MonoBehaviour
+    public class EventOption : MonoBehaviour
     {
-        public int TargetEventID{ get; set; }
+        public int TargetEventID { get; set; }
         public int MoodEffect { get; set; }
-        public float StatEffect{ get; set; }
-        public string OptionText{ get; set; }
-        public Crew PositiveEffectCrew{ get; set; }
-        public Crew NegativeEffectCrew{ get; set; }
+        public float StatEffect { get; set; }
+        public bool ChainTrigger { get; set; }
+        public bool CosmicTrigger { get; set; }
+        public string OptionText { get; set; }
+        public Crew PositiveEffectCrew { get; set; }
+        public Crew NegativeEffectCrew { get; set; }
         public EventItem GetItem { get; set; }
         public EventItem UseItem { get; set; }
 
