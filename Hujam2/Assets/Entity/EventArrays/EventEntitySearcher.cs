@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UnityEngine;
 namespace Assets.Entity.EventArrays
 {
-    public class EventEntitySearcher
+    public class EventEntitySearcher : MonoBehaviour
     {
         public EventItem ItemFinder(List<EventItem> Items,string ItemName)
         {
             List<EventItem> controlList = new List<EventItem>();
             controlList = Items;
+            //Debug.Log(Items.Count + " eventEntitySearcherItemCount");
             EventItem a = new EventItem();
             for (int i = 0; i < controlList.Count; i++)
             {                

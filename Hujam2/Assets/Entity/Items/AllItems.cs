@@ -19,7 +19,7 @@ namespace Assets.Entity.Items
             a.ItemID = 1;
             a.ItemName = "LifeRadar";
             temp.Add(a);
-            Debug.Log(temp.Count);
+            Debug.Log("ALLITEMS GETTALLITEMS "+temp.Count);
             return temp;
         }
     }

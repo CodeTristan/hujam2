@@ -26,16 +26,23 @@ namespace Assets.Entity.EventArrays
         private List<ShipStats> Stats;
         private List<EventItem> Items;
         private EventEntitySearcher searcher;
-       
+        private StatAndItemLister lister;
+
         #endregion
 
-        private void Start()
+        private void Awake()
         {
-            StatAndItemLister lister = new StatAndItemLister();
+            lister = new StatAndItemLister();
             Items = new List<EventItem>();
             Stats = new List<ShipStats>();
+            Debug.Log(lister.allItems.Count + " allitemEvents itemcount");
             Items = lister.allItems;
             Stats = lister.allStats;
+        }
+        private void Start()
+        {
+            
+            
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();

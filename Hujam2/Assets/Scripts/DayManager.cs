@@ -105,6 +105,7 @@ public class DayManager : MonoBehaviour
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString(); //Displayes day counter
     }
 
+
     void Update()
     {
         if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.

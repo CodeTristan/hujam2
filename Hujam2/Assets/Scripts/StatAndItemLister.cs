@@ -11,14 +11,21 @@ public class StatAndItemLister : MonoBehaviour
     public List<ShipStats> allStats;
     private AllItems itemScript;
     private AllStats statScript;
-    void Start()
+
+    public StatAndItemLister()
     {
+        
         itemScript = new AllItems();
         statScript = new AllStats();
         allItems = new List<EventItem>();
         allStats = new List<ShipStats>();
         allItems = itemScript.getAllItems();
+        Debug.Log("StatItemLister2 " + allItems.Count);
         allStats = statScript.getAllShipStats();
+    }
+    void Awake()
+    {
+        Debug.Log("StatItemLister AWAKE");
 
     }
 
