@@ -43,16 +43,27 @@ public class DayManager : MonoBehaviour
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
     }
 
+    private List<CosmicEvent> removeFromList(List<CosmicEvent> events, int id)
+    {
+        List<CosmicEvent> newList = new List<CosmicEvent>();
+
+        for (int i = 0; i < events.Count; i++)
+        {
+            if (events[i].EventID != id)
+            {
+                newList.Add(events[i]);
+            }
+        }
+        return newList;
+    }
     CosmicEvent ChooseEvent(int dayNumber, List<CosmicEvent> eventOptions, int type)
     {
       CosmicEvent chosenEvent;
-      Debug.Log("Fonksyon çalıştı");
+      Debug.Log("Fonksyon çalıştı ve 0. indexte şu var: " + eventOptions[0].Label);
 
       if(eventOptions.Count > 1)
       {
         chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
-
-        Debug.Log(chosenEvent.Label + " Cosmic event chosen");
 
         if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
         {
@@ -65,7 +76,8 @@ public class DayManager : MonoBehaviour
             catch
             {
               Debug.Log("Character dead");
-              eventOptions.Remove(chosenEvent);
+                        eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
+                        //eventOptions.Remove(chosenEvent);
               return ChooseEvent(dayNumber, eventOptions, type);
             }
           }
@@ -74,7 +86,8 @@ public class DayManager : MonoBehaviour
         if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
         {
           Debug.Log("Required day not met");
-          eventOptions.Remove(chosenEvent);//Remove event from given list
+                eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
+                //eventOptions.Remove(chosenEvent);//Remove event from given list
           return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
         }
 
@@ -86,12 +99,15 @@ public class DayManager : MonoBehaviour
               break;
             case 1:
               Debug.Log("Before removal "+itemEvents.Count);
-              itemEvents.Remove(chosenEvent);
+                        itemEvents = removeFromList(itemEvents, chosenEvent.EventID);
+                        //itemEvents.Remove(chosenEvent);
               Debug.Log("After removal "+itemEvents.Count);
               break;
             case 2:
-              chainEventsBegin.Remove(chosenEvent);
+                        chainEventsBegin = removeFromList(chainEventsBegin, chosenEvent.EventID);
+                        //chainEventsBegin.Remove(chosenEvent);
               break;
+                    default: Debug.Log("Remove Switch girdi ama case bulamadı"); break;
           }
 
           return chosenEvent;
@@ -99,6 +115,8 @@ public class DayManager : MonoBehaviour
       }
       else
       {
+            Debug.Log("There is no more events in this category");
+            Debug.Log(eventOptions[0].Label + " Bu event yok olmalı");
         chosenEvent = eventOptions[0];
         return chosenEvent;
       }
@@ -207,6 +225,7 @@ public class DayManager : MonoBehaviour
               case 2: //Chain events
                 chainEvent = true;
                 finalEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
+                            Debug.Log(chainEventsBegin.Count + " CASE 2: chaineventCount");
                 Debug.Log(finalEvent.Label+" Case 2");
                 if(finalEvent.Label != "This event for control indexing")
                   nextEventID = finalEvent.NextEventID;

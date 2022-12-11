@@ -102,7 +102,7 @@ namespace Assets.Entity.EventArrays
             a.RequiredCrews = new List<Crew>();
             a.RequiredCrews.Add(med);
             a.RequiredCrews.Add(techE);
-            a.Label = "Örnek Başlık";
+            a.Label = "Örnek Başlık 2";
             a.Text = "Event 2 hocam bu";
             //Event Option 1
             a.EventOptions = new List<EventOption>();
