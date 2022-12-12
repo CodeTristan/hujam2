@@ -60,6 +60,8 @@ public class DayManager : MonoBehaviour
     bool chainEvent;
     bool canShowEvent;
 
+    public bool gameFinished;
+
     public void EndDay() //End of day button handling
     {
         dayCount++;
@@ -112,6 +114,7 @@ public class DayManager : MonoBehaviour
                 planetEventPanel.SetActive(true);
                 planetEventLabel.text = "Yaþanabilir bir gezegen bulundu!";
                 planetEventText.text = "-Hayatta Kalanlar-" + "\n" + aliveHumans;
+                gameFinished = true;
             }
 
         }
