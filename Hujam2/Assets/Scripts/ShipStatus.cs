@@ -36,6 +36,7 @@ public class ShipStatus : MonoBehaviour
 
       for(int i = 0; i < Sliders.Length; i++)
       {
+            Sliders[i].GetComponent<Slider>().maxValue = 2;
         if(i <= 3)
           Sliders[i].GetComponent<Slider>().value = ShipStats[i].StatValue/100;
         else
