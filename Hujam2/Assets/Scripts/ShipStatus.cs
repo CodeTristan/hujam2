@@ -14,14 +14,17 @@ public class ShipStatus : MonoBehaviour
     [SerializeField] GameObject CrewManager;
     [SerializeField] Image[] SliderFill;
     [SerializeField] Gradient SliderGradient;
+    [SerializeField] GameObject ItemStatLister;
+    private StatAndItemLister lister;
 
     private void Awake()
     {
-        AllStats st = new AllStats();
-        ShipStats = st.getAllShipStats();
+        lister = ItemStatLister.GetComponent<StatAndItemLister>();
+        
     }
     void Start()
     {
+        ShipStats = lister.GetallShipStats();
       CrewManager = GameObject.FindGameObjectsWithTag("Crew Manager")[0];
     }
 

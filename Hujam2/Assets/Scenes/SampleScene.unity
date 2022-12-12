@@ -1031,6 +1031,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
+  ItemStatLister: {fileID: 636051321}
 --- !u!114 &119526344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   planetEventPanel: {fileID: 1420463819}
   planetEventLabel: {fileID: 1923125278}
   planetEventText: {fileID: 515805307}
+  ItemStatLister: {fileID: 636051321}
 --- !u!114 &119526345
 MonoBehaviour:
   m_ObjectHideFlags: 0
