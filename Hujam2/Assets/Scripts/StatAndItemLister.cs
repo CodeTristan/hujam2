@@ -13,8 +13,7 @@ public class StatAndItemLister : MonoBehaviour
     private AllStats statScript;
 
     public void Awake()
-    {
-        
+    {        
         itemScript = new AllItems();
         statScript = new AllStats();
         allItems = new List<EventItem>();

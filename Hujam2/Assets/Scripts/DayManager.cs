@@ -33,6 +33,8 @@ public class DayManager : MonoBehaviour
     [SerializeField] GameObject planetEventPanel;
     [SerializeField] TextMeshProUGUI planetEventLabel;
     [SerializeField] TextMeshProUGUI planetEventText;
+    [SerializeField] GameObject ItemStatLister;
+    private StatAndItemLister lister;
 
     private Medic med;
     private Assets.Entity.Security sec;
@@ -85,12 +87,12 @@ public class DayManager : MonoBehaviour
         chainEventNext = optionExecuter.ExecuteOption(finalOption, LastEvent); //Check if there is a bug
         if (isShipOnPlanet)
         {
-            if(planetExplorer.explorePlanet(PlanetSelectedCrew, selectedPlanetEvent, aproachingPlanet)) //if crew member is not dead
+            if (planetExplorer.explorePlanet(PlanetSelectedCrew, selectedPlanetEvent, aproachingPlanet)) //if crew member is not dead
             {
                 planetEventPanel.SetActive(true);
                 planetEventLabel.text = selectedPlanetEvent.Label;
-                planetEventText.text = "(+)" + aproachingPlanet.foodAmount.ToString() + " erzak" +  "\n" + 
-                                       "(+)" + aproachingPlanet.fuelAmount.ToString() + " yakýt" +"\n" +
+                planetEventText.text = "(+)" + aproachingPlanet.foodAmount.ToString() + " erzak" + "\n" +
+                                       "(+)" + aproachingPlanet.fuelAmount.ToString() + " yakýt" + "\n" +
                                        "(+)" + aproachingPlanet.waterAmount.ToString() + " su" + "\n" + "Bulduk...";
             }
 
@@ -226,7 +228,8 @@ public class DayManager : MonoBehaviour
     }
     void Start()
     {
-        endButton.SetActive(false);
+        lister = ItemStatLister.GetComponent<StatAndItemLister>();
+           endButton.SetActive(false);
         planetExplorer = new PlanetExplorer();
         planetEvents = new List<PlanetEvent>();
         planetEvents = eventLister.GetComponent<AllPlanetEvents>().getAllPlanetEvents();

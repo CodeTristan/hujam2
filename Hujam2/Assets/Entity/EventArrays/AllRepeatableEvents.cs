@@ -32,7 +32,7 @@ namespace Assets.Entity.EventArrays
         private EventOption op3;
         private CosmicEvent a;
 
-#endregion
+        #endregion
 
         private void Awake()
         {
@@ -177,6 +177,58 @@ namespace Assets.Entity.EventArrays
             e5op2.OptionText = "Her birimizin canı oldukça değerli, bunu yapalım.";
             event5.EventOptions.Add(e5op2);
             temp.Add(event5);
+            #endregion
+
+            #region Event6
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 6;
+            a.Label = "Güvensizlik Sorunu";
+            a.Text = "Sarah ortalık alanda silahını temizlemeye başladı Caitlin bu durumdan fazlasıyla rahatsız olduğu için Sarah’ı uyarmamı istiyor.";
+            a.RequiredCrews.Add(med);
+            a.RequiredCrews.Add(sec);
+            op1.TargetEventID = 6;
+            op1.MoodEffect = 20;
+            op1.NegativeEffectCrew = sec;
+            op1.PositiveEffectCrew=med;
+            op1.OptionText = "Sarah silahını gereksiz yerde çıkartma.";
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 6;
+            op2.MoodEffect = 20;
+            op2.NegativeEffectCrew = med;
+            op2.PositiveEffectCrew = sec;
+            op2.OptionText = "Silahının bakımının yapılması bizim için gerekli";
+            a.EventOptions.Add(op2);
+            temp.Add(a);
+
+            #endregion
+            #region Event7
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.RequiredCrews.Add(med);
+            a.RequiredCrews.Add(sci);
+            a.EventID = 7;
+            a.Label = "Gauss’un Endişesi";
+            a.Text = "Gauss kapalı alanda birlikte bu kadar uzun süre sıkışıp kalmış olmanın bazı mürettebat üyelerini olumsuz etkilemiş olabileceğinden endişeleniyor. Her mürettebat üyesini teker teker incelemeye almak istediğini belirtti fakat Caitlin bu durumun sadece durumu daha da kötüleştireceğini savunuyor";
+            op1.TargetEventID = 7;
+            op1.MoodEffect = 20;
+            op1.OptionText = "Endişelenmeni gerektirecek bir durum varsa serbestsin";
+            op1.PositiveEffectCrew = sci;
+            op1.NegativeEffectCrew = med;
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 7;
+            op2.MoodEffect = 20;
+            op2.OptionText = "İşlerini etkilemediği sürece gerek yok";
+            op2.NegativeEffectCrew = sci;
+            op2.PositiveEffectCrew = med;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
             #endregion
 
             return temp;
