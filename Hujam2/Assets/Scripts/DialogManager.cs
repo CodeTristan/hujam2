@@ -22,6 +22,7 @@ public class DialogManager : MonoBehaviour
     private string sentence;
 
     public DialogTrigger FirstDialog;
+    public bool firstDialogBool;
 
 
     private void Awake()
@@ -30,6 +31,7 @@ public class DialogManager : MonoBehaviour
     }
     private void Start()
     {
+        if(firstDialogBool)
         FirstDialog.TriggerDialog();
     }
     public void StartDialog(Dialog[] dialog)  //Starts dialog
