@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Entity
 {
@@ -11,7 +12,7 @@ namespace Assets.Entity
     {
         void Awake()
         {
-            this.Image = gameObject.GetComponent<SpriteRenderer>().sprite;
+            this.Image = gameObject.GetComponent<Image>().sprite;
             this.Name = "Caitlin";
             this.RoleName = "Medic";
             this.Mood = 100;
