@@ -12,7 +12,12 @@ public class PlanetPanelController : MonoBehaviour
     [SerializeField] TechSupport TechSupportP;
     [SerializeField] TechnicalEngineer TechnicalEngineerP;
     [SerializeField] DayManager dayManager;
+    [SerializeField] GameObject PlanetPanelUI;
 
+    public void ClosePanel()
+    {
+        PlanetPanelUI.SetActive(false);
+    }
     public void ChooseCrewMember()
     {
         switch(EventSystem.current.currentSelectedGameObject.name)

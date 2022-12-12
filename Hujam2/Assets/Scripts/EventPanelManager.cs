@@ -46,8 +46,12 @@ public class EventPanelManager : MonoBehaviour
                 ItemText[i].text = "(-) " + dayManager.finalEvent.EventOptions[i].UseItem.ItemName;
             else
                 ItemText[i].text = "";
+
+            if(dayManager.finalEvent.EventOptions[i].StatEffect != 0)
+                ItemText[i].text = dayManager.finalEvent.EffectedStat.StatName +"\n" + dayManager.finalEvent.EventOptions[i].StatEffect;
         }
     }
+    //todo statlarý türkçe olarak yazmak lazým
 
     public void ChooseOption()
     {
