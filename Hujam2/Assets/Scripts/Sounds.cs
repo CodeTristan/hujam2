@@ -6,6 +6,7 @@ using UnityEngine;
 public class Sounds : MonoBehaviour
 {
     public AudioSource clickaudio;
+    public AudioSource pageaudio;
     public AudioSource musicsource;
     public AudioClip[] clips;
     public AudioClip[] musicclips;
@@ -36,10 +37,11 @@ public class Sounds : MonoBehaviour
                 prevmusic = music;
             }
         }
+        else if (voicetype=="page")
+        {
+            pageaudio.Play();
+        }
 
     }
-    public void Options()
-    {
 
-    }
 }

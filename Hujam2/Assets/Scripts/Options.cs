@@ -16,11 +16,13 @@ public class Options : MonoBehaviour
     private void Start()
     {
         save = GameObject.Find("OptionsSave").GetComponent<OptionsSave>();
+        musicoption.value = save.music;
+        soundoption.value=save.volume;
         for (int i = 0; i < audiosources.Length; i++)
         {
-            audiosources[i].volume = soundoption.value;
+            audiosources[i].volume = save.volume;
         }
-        musicsource.volume = musicoption.value;
+        musicsource.volume = save.music;
     }
     public void SaveOptions()
     {
