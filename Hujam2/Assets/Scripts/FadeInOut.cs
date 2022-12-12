@@ -8,7 +8,7 @@ public class FadeInOut : MonoBehaviour
 {
     private YieldInstruction Instruction = new YieldInstruction();
     public IEnumerator FadeOut(Image image,float time)
-    {//general fade out effect for sprites
+    {//general fade out effect for images
         float elapsedTime = 0.0f;
         Color c = image.color;
         while (elapsedTime < time)
@@ -21,7 +21,7 @@ public class FadeInOut : MonoBehaviour
     }
 
     public IEnumerator FadeIn(Image image,float time)
-    {//general fade in effect for sprites
+    {//general fade in effect for images
         float elapsedTime = 0.0f;
         Color c = image.color;
         while (elapsedTime < time)
