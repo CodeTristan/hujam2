@@ -30,6 +30,11 @@ namespace Assets.Entity.Items
             a.ItemID = 3;
             a.ItemName = "Shield";
             temp.Add(a);
+            a = new EventItem();
+            a.ItemCount = 0;
+            a.ItemID = 4;
+            a.ItemName = "Drive";
+            temp.Add(a);
             return temp;
         }
     }

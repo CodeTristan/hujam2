@@ -17,7 +17,8 @@ namespace Assets.Entity.EventArrays
         [SerializeField] GameObject SecurityP;
         [SerializeField] GameObject MedicP;
         [SerializeField] GameObject TechSupportP;
-        [SerializeField] GameObject TechnicalEngineerP;       
+        [SerializeField] GameObject TechnicalEngineerP;
+        [SerializeField] GameObject ItemStatLister;
         private Medic med;
         private Security sec;
         private Scientist sci;
@@ -37,11 +38,11 @@ namespace Assets.Entity.EventArrays
 
         private void Awake()
         {
-            lister = new StatAndItemLister();
+            lister = ItemStatLister.GetComponent<StatAndItemLister>();
             Items = new List<EventItem>();
-            Stats = new List<ShipStats>();           
-            Items = lister.allItems;
-            Stats = lister.allStats;
+            Stats = new List<ShipStats>();
+            Items = lister.GetallItems();
+            Stats = lister.GetallShipStats();
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();

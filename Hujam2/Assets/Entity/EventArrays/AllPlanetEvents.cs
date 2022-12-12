@@ -10,15 +10,17 @@ namespace Assets.Entity.EventArrays
 {
     public class AllPlanetEvents : MonoBehaviour
     {
+        [SerializeField] GameObject ItemStatLister;
         private List<ShipStats> Stats;
         private EventEntitySearcher searcher;
         private StatAndItemLister lister;
         private PlanetEvent a;
         public void Awake()
         {
-            lister = new StatAndItemLister();
+
+            lister = ItemStatLister.GetComponent<StatAndItemLister>();
             Stats = new List<ShipStats>();
-            Stats = lister.allStats;
+            Stats = lister.GetallShipStats();
         }
         public List<PlanetEvent> temp;
         public List<PlanetEvent> getAllPlanetEvents()
@@ -37,8 +39,8 @@ namespace Assets.Entity.EventArrays
             a.WaterStat = new ShipStats();
             a.FuelStat = new ShipStats();
             a.EventID = 1;           
-            a.FoodStat = searcher.statFinder(Stats, "Food");
             a.FuelStat = searcher.statFinder(Stats, "Fuel");
+            a.FoodStat = searcher.statFinder(Stats, "Food");
             a.WaterStat = searcher.statFinder(Stats, "Water");
             a.Label = "Enkazlardan gemi ikmal malzemeleriyle karşılaştık";
             temp.Add(a);

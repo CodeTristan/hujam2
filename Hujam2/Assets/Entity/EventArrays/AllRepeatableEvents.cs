@@ -10,12 +10,13 @@ namespace Assets.Entity.EventArrays
 {
     public class AllRepeatableEvents : MonoBehaviour
     {
-        #region GameObject and defines
+        #region aynen
         [SerializeField] GameObject ScientistP;
         [SerializeField] GameObject SecurityP;
         [SerializeField] GameObject MedicP;
         [SerializeField] GameObject TechSupportP;
         [SerializeField] GameObject TechnicalEngineerP;
+        [SerializeField] GameObject ItemStatLister;
         private Medic med;
         private Security sec;
         private Scientist sci;
@@ -26,15 +27,20 @@ namespace Assets.Entity.EventArrays
         private EventEntitySearcher searcher;
         private StatAndItemLister lister;
 
-        #endregion
+        private EventOption op1;
+        private EventOption op2;
+        private EventOption op3;
+        private CosmicEvent a;
+
+#endregion
 
         private void Awake()
         {
-            lister = new StatAndItemLister();
+            lister = ItemStatLister.GetComponent<StatAndItemLister>();
             Items = new List<EventItem>();
             Stats = new List<ShipStats>();
-            Items = lister.allItems;
-            Stats = lister.allStats;
+            Items = lister.GetallItems();
+            Stats = lister.GetallShipStats();
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
@@ -59,7 +65,7 @@ namespace Assets.Entity.EventArrays
             event1.EventID = 1;
             event1.RequiredCrews = new List<Crew>();
             event1.RequiredCrews.Add(techE);
-            event1.EffectedStat = searcher.statFinder(Stats,"Fuel");
+            event1.EffectedStat = searcher.statFinder(Stats, "Fuel");
             event1.Label = "Peter'ın Yakıt Sorunu";
             event1.Text = "Peter yakıtı kendi kişisel amaçları için kullanıyormuş. Tayfamız bunun problem yaratabileceğini söylüyor.";
             EventOption e1op1 = new EventOption();
@@ -73,7 +79,7 @@ namespace Assets.Entity.EventArrays
             e1op2.TargetEventID = 1;
             e1op2.PositiveEffectCrew = techE;
             e1op2.MoodEffect = 20;
-            e1op2.StatEffect= -5;
+            e1op2.StatEffect = -5;
             e1op2.OptionText = "Dikkatli davranmaya özen gösterdiğin sürece seni rahat bırakıyorum. ";
             event1.EventOptions.Add(e1op2);
             temp.Add(event1);
@@ -82,18 +88,18 @@ namespace Assets.Entity.EventArrays
             #region Event2
             CosmicEvent event2 = new CosmicEvent();
             event2.EventID = 2;
-            event2.EffectedStat = searcher.statFinder(Stats,"Fuel");
+            event2.EffectedStat = searcher.statFinder(Stats, "Fuel");
             event2.Label = "Astreoit Denizi";
             event2.Text = "Gemimizin önünde bir asteroit denizi var! Buradan geçebilir miyiz?";
             EventOption e2op1 = new EventOption();
             event2.EventOptions = new List<EventOption>();
             e2op1.TargetEventID = 2;
-            e2op1.StatEffect= -5;
+            e2op1.StatEffect = -5;
             e2op1.OptionText = "Durmak yok! Bu denizi aşıyoruz.";
             event2.EventOptions.Add(e2op1);
             EventOption e2op2 = new EventOption();
             e2op2.TargetEventID = 2;
-            e2op2.StatEffect= -10;
+            e2op2.StatEffect = -10;
             e2op2.OptionText = "Dikkatli davranmaya özen gösterdiğin sürece seni rahat bırakıyorum. ";
             event2.EventOptions.Add(e2op2);
             temp.Add(event2);
@@ -105,7 +111,7 @@ namespace Assets.Entity.EventArrays
             event3.RequiredCrews = new List<Crew>();
             event3.RequiredCrews.Add(techSup);
             event3.RequiredCrews.Add(techE);
-            event3.EffectedStat = searcher.statFinder(Stats,"Fuel");
+            event3.EffectedStat = searcher.statFinder(Stats, "Fuel");
             event3.Label = "Brian ve Peter'ın Yakı Kavgası";
             event3.Text = "Peter ve Brian yakıt kontrol sisteminden kaynaklı bir kavgaya tutuştular.";
             EventOption e3op1 = new EventOption();
@@ -114,7 +120,7 @@ namespace Assets.Entity.EventArrays
             e3op1.PositiveEffectCrew = techE;
             e3op1.NegativeEffectCrew = techSup;
             e3op1.MoodEffect = 20;
-            e3op1.StatEffect= -5;
+            e3op1.StatEffect = -5;
             e3op1.OptionText = "Brian, bu sormluluk Peter'a ait.";
             event3.EventOptions.Add(e3op1);
             EventOption e3op2 = new EventOption();

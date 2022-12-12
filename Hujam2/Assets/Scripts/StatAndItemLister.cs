@@ -12,7 +12,7 @@ public class StatAndItemLister : MonoBehaviour
     private AllItems itemScript;
     private AllStats statScript;
 
-    public StatAndItemLister()
+    public void Awake()
     {
         
         itemScript = new AllItems();
@@ -22,7 +22,15 @@ public class StatAndItemLister : MonoBehaviour
         allItems = itemScript.getAllItems();
         allStats = statScript.getAllShipStats();
     }
+    public List<ShipStats> GetallShipStats()
+    {
+        return allStats;
+    }
+    public List<EventItem> GetallItems()
+    {
+        return allItems;
+    }
 
-   
-    
+
+
 }

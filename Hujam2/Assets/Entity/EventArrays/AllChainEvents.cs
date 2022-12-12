@@ -18,6 +18,7 @@ namespace Assets.Entity.EventArrays
         [SerializeField] GameObject MedicP;
         [SerializeField] GameObject TechSupportP;
         [SerializeField] GameObject TechnicalEngineerP;
+        [SerializeField] GameObject ItemStatLister;
         private Medic med;
         private Security sec;
         private Scientist sci;
@@ -37,11 +38,11 @@ namespace Assets.Entity.EventArrays
 
         private void Awake()
         {
-            lister = new StatAndItemLister();
+            lister = ItemStatLister.GetComponent<StatAndItemLister>();
             Items = new List<EventItem>();
             Stats = new List<ShipStats>();
-            Items = lister.allItems;
-            Stats = lister.allStats;
+            Items = lister.GetallItems();
+            Stats = lister.GetallShipStats();
             med = MedicP.GetComponent<Medic>();
             sec = SecurityP.GetComponent<Security>();
             sci = ScientistP.GetComponent<Scientist>();
@@ -175,6 +176,60 @@ namespace Assets.Entity.EventArrays
             op3.StatEffect = +10;
             a.EventOptions.Add(op3);
 
+            temp.Add(a);
+            #endregion
+            #region Event3
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();            
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 5;
+            a.NextEventID = 6;
+            a.RequiredCrews.Add(techE);
+            a.RequiredCrews.Add(techSup);
+            a.Label = "Yedek sistem belleği";
+            a.Text = "Brian, Gemi çekirdeğinin olası bir tehdit durumuna karşın yedeklenmesini sağlayan bir sistem yapmak istiyor. Peter bunun gereksiz bir durum olduğunu ve bu konuda emek harcamak istemediğini söylüyor.";
+            op1.ChainTrigger = true;
+            op1.TargetEventID = 5;
+            op1.OptionText = "Brian bu işimize yarayabilir işe koyulun.";
+            op1.PositiveEffectCrew = techSup;
+            op1.NegativeEffectCrew = techE;
+            op1.MoodEffect = 20;
+            op1.GetItem = searcher.ItemFinder(Items, "Drive");
+            a.EventOptions.Add(op1);
+            op2.ChainTrigger = true;
+            op2.TargetEventID = 5;
+            op2.OptionText = "Olduğu gibi devam edelim vakit kaybına gerek yok ";
+            op2.NegativeEffectCrew = techSup;
+            op2.PositiveEffectCrew = techE;
+            op2.MoodEffect = 20;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
+            #endregion
+            #region Event3.1
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();            
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 6;
+            a.PrevEventID = 5;
+            a.Label="Çekirdek sorunu";
+            a.Text = "Gemi çekirdeği fazla yüklenmeye başladı sistemler her an arıza verebilir. Ne yapmalıyız?";
+            a.EffectedStat = searcher.statFinder(Stats, "Durability");
+            a.RequiredCrews.Add(techE);
+            a.RequiredCrews.Add(techSup);
+            op1.TargetEventID = 6;
+            op1.OptionText = "Yedek sistem belleğini aktive edin.";
+            op1.UseItem = searcher.ItemFinder(Items, "Drive");
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 6;
+            op2.NegativeEffectCrew = techE;
+            op2.PositiveEffectCrew = techSup;
+            op2.MoodEffect = 20;
+            op2.OptionText = "Peter çekirdeği kontrol et";
+            a.EventOptions.Add(op2);
             temp.Add(a);
             #endregion
             return temp;
