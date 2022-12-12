@@ -23,6 +23,16 @@ public class DayManager : MonoBehaviour
     [SerializeField] GameObject endButton;
     [SerializeField] GameObject[] planetsUI;
     [SerializeField] GameObject planetPanelButton;
+    [SerializeField] GameObject ScientistP;
+    [SerializeField] GameObject SecurityP;
+    [SerializeField] GameObject MedicP;
+    [SerializeField] GameObject TechSupportP;
+    [SerializeField] GameObject TechnicalEngineerP;
+    private Medic med;
+    private Assets.Entity.Security sec;
+    private Scientist sci;
+    private TechSupport techSup;
+    private TechnicalEngineer techE;
 
     private List<CosmicEvent> repeatableEvents;
     private List<CosmicEvent> itemEvents;
@@ -46,7 +56,7 @@ public class DayManager : MonoBehaviour
     {
         dayCount++;
         timeTillPlanet--;
-        
+
 
         //EventOption finalOption = new EventOption();
         finalOption.TargetEventID = chosenOption.TargetEventID;
@@ -66,8 +76,8 @@ public class DayManager : MonoBehaviour
         LastEvent.isCosmicTriggered = finalEvent.isCosmicTriggered;
         //LastEvent.EffectedStat = finalEvent.EffectedStat;
 
-        chainEventNext = optionExecuter.ExecuteOption(finalOption,LastEvent); //Check if there is a bug
-        if(isShipOnPlanet)
+        chainEventNext = optionExecuter.ExecuteOption(finalOption, LastEvent); //Check if there is a bug
+        if (isShipOnPlanet)
         {
             planetExplorer.explorePlanet(PlanetSelectedCrew, selectedPlanetEvent, aproachingPlanet);
         }
@@ -100,56 +110,56 @@ public class DayManager : MonoBehaviour
 
     CosmicEvent ChooseEvent(int dayNumber, List<CosmicEvent> eventOptions, int type)
     {
-      CosmicEvent chosenEvent;
+        CosmicEvent chosenEvent;
 
-      if(eventOptions.Count > 1)
-      {
-        chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
-
-        if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
+        if (eventOptions.Count > 1)
         {
-          foreach (Crew tested in chosenEvent.RequiredCrews)
-          {
-            try
-            {
-              if(GameObject.FindGameObjectsWithTag(tested.RoleName)[0] == null);
-            }
-            catch
-            {
-              eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
-              return ChooseEvent(dayNumber, eventOptions, type);
-            }
-          }
-        }
+            chosenEvent = eventOptions[Random.Range(1, eventOptions.Count)];
 
-        if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
-        {
-          eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
-          return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
-        }
+            if (chosenEvent.RequiredCrews != null) //If event requires crew check if crew is alive
+            {
+                foreach (Crew tested in chosenEvent.RequiredCrews)
+                {
+                    try
+                    {
+                        if (GameObject.FindGameObjectsWithTag(tested.RoleName)[0] == null) ;
+                    }
+                    catch
+                    {
+                        eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
+                        return ChooseEvent(dayNumber, eventOptions, type);
+                    }
+                }
+            }
 
+            if (chosenEvent.RequiredDay > dayNumber) //If required day time doesnt satisfy
+            {
+                eventOptions = removeFromList(eventOptions, chosenEvent.EventID);
+                return ChooseEvent(dayNumber, eventOptions, type); //Call fucntion again
+            }
+
+            else
+            {
+                switch (type)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        itemEvents = removeFromList(itemEvents, chosenEvent.EventID);
+                        break;
+                    case 2:
+                        chainEventsBegin = removeFromList(chainEventsBegin, chosenEvent.EventID);
+                        break;
+                }
+
+                return chosenEvent;
+            }
+        }
         else
         {
-          switch(type)
-          {
-            case 0:
-              break;
-            case 1:
-              itemEvents = removeFromList(itemEvents, chosenEvent.EventID);
-              break;
-            case 2:
-              chainEventsBegin = removeFromList(chainEventsBegin, chosenEvent.EventID);
-              break;
-          }
-
-          return chosenEvent;
+            chosenEvent = eventOptions[0];
+            return chosenEvent;
         }
-      }
-      else
-      {
-        chosenEvent = eventOptions[0];
-        return chosenEvent;
-      }
     }
 
     Planet GenPlanet() //Generate random planet
@@ -161,23 +171,30 @@ public class DayManager : MonoBehaviour
         planet.waterLevel = Random.Range(0, 21);
         planet.hostileCreatures = Random.Range(0, 2);
 
-        planet.foodAmount = Random.Range(20,41);
+        planet.foodAmount = Random.Range(20, 41);
         planet.waterAmount = Random.Range(planet.waterLevel, 31);
         planet.fuelAmount = Random.Range(40, 61);
 
         selectedPlanetEvent = planetEvents[Random.Range(0, planetEvents.Count)];
-        
-        if(Random.Range(0f,1f)<habitableChance/100)
-          planet.habitable = true;
+
+        if (Random.Range(0f, 1f) < habitableChance / 100)
+            planet.habitable = true;
         else
         {
-          planet.habitable = false;
-          habitableChance += chanceMod;
+            planet.habitable = false;
+            habitableChance += chanceMod;
         }
 
         return planet;
     }
-
+    private void Awake()
+    {
+        med = MedicP.GetComponent<Medic>();
+        sec = SecurityP.GetComponent<Assets.Entity.Security>();
+        sci = ScientistP.GetComponent<Scientist>();
+        techSup = TechSupportP.GetComponent<TechSupport>();
+        techE = TechnicalEngineerP.GetComponent<TechnicalEngineer>();
+    }
     void Start()
     {
         endButton.SetActive(false);
@@ -189,10 +206,10 @@ public class DayManager : MonoBehaviour
         chainEvents = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
         optionExecuter = new OptionExecuter();
         chainEventsBegin = new List<CosmicEvent>();
-        foreach(CosmicEvent add in chainEvents)
+        foreach (CosmicEvent add in chainEvents)
         {
-          if(add.PrevEventID == 0)
-            chainEventsBegin.Add(add);
+            if (add.PrevEventID == 0)
+                chainEventsBegin.Add(add);
         }
 
         dayCount = 1;
@@ -214,81 +231,81 @@ public class DayManager : MonoBehaviour
         else
             endButton.SetActive(true);
 
-      if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
-      {
-        canShowEvent = true;
-        oldDayCount = dayCount;
-      }
+        if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
+        {
+            canShowEvent = true;
+            oldDayCount = dayCount;
+        }
 
-      if (timeTillPlanet <= 0)
-      {
+        if (timeTillPlanet <= 0)
+        {
             randomPlanetIndex = Random.Range(0, planetsUI.Length);
             planetsUI[randomPlanetIndex].SetActive(true);
             planetPanelButton.SetActive(true);
-        aproachingPlanet = GenPlanet();
+            aproachingPlanet = GenPlanet();
             isShipOnPlanet = true;
-        timeTillPlanet = Random.Range(5, 9);
-      }
-
-      if (canShowEvent)
-      {
-        canShowEvent = false;
-
-        if(chainEvent == true)
-        {
-          Debug.Log("next event goes here");
-          foreach(CosmicEvent test in chainEvents)
-          {
-
-            Debug.Log(test.isChainTriggered);
-
-            if(test.EventID == nextEventID && chainEventNext.isChainTriggered)
-            {
-              chainEvent = true;
-              Debug.Log("Chain Event if 2");
-              finalEvent = test;
-              Debug.Log(finalEvent.Label);
-            }
-            else
-            {
-              chainEvent = false;
-            }
-          }
+            timeTillPlanet = Random.Range(5, 9);
         }
 
-        if(!chainEvent)
+        if (canShowEvent)
         {
-          while(true)
-          {
-            chainEvent = false;
-            nextEventID = 0;
+            canShowEvent = false;
 
-            finalEvent = new CosmicEvent();
-
-            switch(Random.Range(0,3))
+            if (chainEvent == true)
             {
-              case 0: //Repetable events
-                finalEvent = ChooseEvent(dayCount, repeatableEvents, 0);
-                break;
+                Debug.Log("next event goes here");
+                foreach (CosmicEvent test in chainEvents)
+                {
 
-              case 1: //Item events
-                finalEvent = ChooseEvent(dayCount, itemEvents, 1);
-                break;
+                    Debug.Log(test.isChainTriggered);
 
-              case 2: //Chain events
-                chainEvent = true;
-                finalEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
-                if(finalEvent.Label != "This event for control indexing")
-                  nextEventID = finalEvent.NextEventID;
-                break;
+                    if (test.EventID == nextEventID && chainEventNext.isChainTriggered)
+                    {
+                        chainEvent = true;
+                        Debug.Log("Chain Event if 2");
+                        finalEvent = test;
+                        Debug.Log(finalEvent.Label);
+                    }
+                    else
+                    {
+                        chainEvent = false;
+                    }
+                }
             }
 
-            if(finalEvent.Label != "This event for control indexing")
+            if (!chainEvent)
             {
-              break;
+                while (true)
+                {
+                    chainEvent = false;
+                    nextEventID = 0;
+
+                    finalEvent = new CosmicEvent();
+
+                    switch (Random.Range(0, 3))
+                    {
+                        case 0: //Repetable events
+                            finalEvent = ChooseEvent(dayCount, repeatableEvents, 0);
+                            break;
+
+                        case 1: //Item events
+                            finalEvent = ChooseEvent(dayCount, itemEvents, 1);
+                            break;
+
+                        case 2: //Chain events
+                            chainEvent = true;
+                            finalEvent = ChooseEvent(dayCount, chainEventsBegin, 2);
+                            if (finalEvent.Label != "This event for control indexing")
+                                nextEventID = finalEvent.NextEventID;
+                            break;
+                    }
+
+                    if (finalEvent.Label != "This event for control indexing")
+                    {
+                        break;
+                    }
+                }
             }
-          }
         }
-      }
-  }
+    }
 }

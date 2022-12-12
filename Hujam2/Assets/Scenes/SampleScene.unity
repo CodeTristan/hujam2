@@ -929,6 +929,11 @@ MonoBehaviour:
   - {fileID: 1606986230}
   - {fileID: 2123746305}
   planetPanelButton: {fileID: 1759519017}
+  ScientistP: {fileID: 1925747550}
+  SecurityP: {fileID: 665574975}
+  MedicP: {fileID: 1903934416}
+  TechSupportP: {fileID: 689019086}
+  TechnicalEngineerP: {fileID: 1161853925}
 --- !u!114 &119526345
 MonoBehaviour:
   m_ObjectHideFlags: 0
