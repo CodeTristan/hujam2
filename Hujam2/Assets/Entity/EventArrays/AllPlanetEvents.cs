@@ -21,7 +21,7 @@ namespace Assets.Entity.EventArrays
             Stats = lister.allStats;
         }
         private List<PlanetEvent> temp;
-        private List<PlanetEvent> getAllPlanetEvents()
+        public List<PlanetEvent> getAllPlanetEvents()
         {
             //todo newlemeden atamaa olduğu için object null refference fırlatabilir
             searcher = new EventEntitySearcher();

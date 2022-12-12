@@ -24,7 +24,9 @@ public class DayManager : MonoBehaviour
     private List<CosmicEvent> repeatableEvents;
     private List<CosmicEvent> itemEvents;
     private List<CosmicEvent> chainEvents;
+    private List<PlanetEvent> planetEvents;
     private List<CosmicEvent> chainEventsBegin;
+    private PlanetExplorer planetExplorer;
     private OptionExecuter optionExecuter;
     private CosmicEvent chainEventNext;
     int oldDayCount;
@@ -164,7 +166,8 @@ public class DayManager : MonoBehaviour
     void Start()
     {
         endButton.SetActive(false);
-
+        planetExplorer = new PlanetExplorer();
+        planetEvents = eventLister.GetComponent<AllPlanetEvents>().getAllPlanetEvents();
         repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
         itemEvents = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
         chainEvents = eventLister.GetComponent<AllChainEvents>().getAllChainEvents();
