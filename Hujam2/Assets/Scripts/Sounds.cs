@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sounds : MonoBehaviour
@@ -35,6 +36,10 @@ public class Sounds : MonoBehaviour
                 prevmusic = music;
             }
         }
+
+    }
+    public void Options()
+    {
 
     }
 }

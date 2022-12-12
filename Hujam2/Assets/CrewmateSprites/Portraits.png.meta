@@ -110,7 +110,7 @@ TextureImporter:
         serializedVersion: 2
         x: 300
         y: 0
-        width: 1734
+        width: 1497
         height: 1000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -119,35 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b880a731620e7744957144540ef4ac0
-      internalID: 956196144
+      spriteID: 4135daafcff4ab54ab371338d284f9e1
+      internalID: -278840681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: Portraits_2
-      rect:
-        serializedVersion: 2
-        x: 2068
-        y: 457
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df35b025b3a87dd4fb34d2b6b0d0669f
-      internalID: 796227338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Portraits_3
       rect:
         serializedVersion: 2
         x: 2629
@@ -161,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe2811d67b47534e829f85a1c790f75
-      internalID: -806203586
+      spriteID: 344e08a11f5c042458f50a1fdf95fe67
+      internalID: -1568488798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Portraits_4
+      name: Portraits_3
       rect:
         serializedVersion: 2
         x: 4602
@@ -182,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16605294c02c4f543983a8dd4a2a7f2f
-      internalID: 302233410
+      spriteID: cc7984dcd2855cc4db47564f642194e3
+      internalID: 1145763526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Portraits_5
+      name: Portraits_4
       rect:
         serializedVersion: 2
         x: 6629
@@ -203,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f72a68b98342dda4f99e11ca0141cf11
-      internalID: 1735543040
+      spriteID: 4965cae26d8d2ef49a2073d1a4d37c54
+      internalID: 571984493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Portraits_6
+      name: Portraits_5
       rect:
         serializedVersion: 2
         x: 8392
@@ -224,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a68093051d76e14fa59010e65e106b5
-      internalID: -746958970
+      spriteID: 3b1372fadd859f9458c9f6fcbd04b5b0
+      internalID: 1498199744
       vertices: []
       indices: 
       edges: []
@@ -241,13 +220,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Portraits_3: -806203586
-      Portraits_0: 956196144
-      Portraits_6: -746958970
-      Portraits_5: 1735543040
-      Portraits_4: 302233410
-      Portraits_1: -1966996103
-      Portraits_2: 796227338
+      Portraits_3: 1145763526
+      Portraits_0: -278840681
+      Portraits_5: 1498199744
+      Portraits_4: 571984493
+      Portraits_1: 746313664
+      Portraits_2: -1568488798
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
