@@ -77,10 +77,10 @@ public class DayManager : MonoBehaviour
         this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue;
         this.GetComponent<ShipStatus>().ShipStats[2].StatValue += this.GetComponent<ShipStatus>().ShipStats[6].StatValue;
 
-        GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
+        GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Hafta: " + dayCount.ToString();
         planetsUI[randomPlanetIndex].SetActive(false);
         planetPanelButton.SetActive(false);
-        endButton.active = false;
+        endButton.SetActive(false);
         isShipOnPlanet = false;
     }
 
@@ -201,7 +201,7 @@ public class DayManager : MonoBehaviour
 
         timeTillPlanet = Random.Range(8, 11);//Random assignment for planet arrivel for begining
 
-        GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString(); //Displayes day counter
+        GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Hafta: " + dayCount.ToString(); //Displayes day counter
         canShowEvent = true;
     }
 

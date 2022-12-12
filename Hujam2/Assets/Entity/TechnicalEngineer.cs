@@ -18,6 +18,8 @@ namespace Assets.Entity
             this.RoleName = "Engineer";
             this.Mood = 100;
         }
+
+        
         
     }
 }
