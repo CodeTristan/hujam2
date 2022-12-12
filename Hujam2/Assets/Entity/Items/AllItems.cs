@@ -25,6 +25,11 @@ namespace Assets.Entity.Items
             a.ItemID=2;
             a.ItemName = "Gun";
             temp.Add(a);
+            a = new EventItem();
+            a.ItemCount = 1;
+            a.ItemID = 3;
+            a.ItemName = "Shield";
+            temp.Add(a);
             return temp;
         }
     }

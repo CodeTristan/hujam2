@@ -30,6 +30,7 @@ namespace Assets.Entity.EventArrays
 
         private EventOption op1;
         private EventOption op2;
+        private EventOption op3;
         private CosmicEvent a;
 
         #endregion
@@ -72,7 +73,7 @@ namespace Assets.Entity.EventArrays
             a.RequiredCrews = new List<Crew>();
             a.RequiredCrews.Add(med);
             a.RequiredCrews.Add(techE);
-            a.Label = "Örnek Başlık";
+            a.Label = "Radar";
             a.Text = "Caitlin, Peter ile beraber bir yaşam ölçme radarı yapmak istiyor fakat Peter buna sıcak bakmıyor. Kimin tarafını tutmalıyım.";
             //eventOption1
             op1 = new EventOption();
@@ -98,31 +99,30 @@ namespace Assets.Entity.EventArrays
             #region Event2
             //Event2
             a = new CosmicEvent();
-            a.EventID = 2;
-            a.RequiredCrews = new List<Crew>();
-            a.RequiredCrews.Add(med);
-            a.RequiredCrews.Add(techE);
-            a.Label = "Örnek Başlık 2";
-            a.Text = "Event 2 hocam bu";
-            //Event Option 1
-            a.EventOptions = new List<EventOption>();
             op1 = new EventOption();
-            op1.OptionText = "Control event option1.";
-            op1.TargetEventID = 2;
-            op1.PositiveEffectCrew = med;
-            op1.NegativeEffectCrew = techE;
-            op1.MoodEffect = 40;
-            op1.GetItem = searcher.ItemFinder(Items, "LifeRadar");
-            a.EventOptions.Add(op1);
-            //eventOption2
             op2 = new EventOption();
-            op2.OptionText = "Control event option2.   ";
+            op3 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EffectedStat = searcher.statFinder(Stats, "Fuel");
+            a.EventID = 2;
+            a.RequiredCrews.Add(sec);
+            a.Label = "UZAY KORSANLARI";
+            a.Text = "Üzerinde uzay korsanları yazan bir gemi hızla gemimize yaklaşıyor tehlikeli olabilirler. Sarah kendimizi korumak için ateş açmamızı öneriyor.";
+            op1.TargetEventID = 2;
+            op1.OptionText = "Gemiye kilitlenin ve silahları ateşleyin!";
+            op1.UseItem = searcher.ItemFinder(Items, "Gun");
+            op1.MoodEffect = 30;
+            op1.PositiveEffectCrew = sec;
+            a.EventOptions.Add(op1);
             op2.TargetEventID = 2;
-            op2.PositiveEffectCrew = techE;
-            op2.NegativeEffectCrew = med;
-            op2.MoodEffect = 40;
-            op2.UseItem = searcher.ItemFinder(Items, "LifeRadar");
+            op2.OptionText = "Gazı kökleyip buradan gidiyoruz";
+            op2.StatEffect = -20;
             a.EventOptions.Add(op2);
+            op3.TargetEventID = 2;
+            op3.OptionText = "Lazer kalkanlarını aktive edin ve harekete geçin";
+            op3.UseItem = searcher.ItemFinder(Items, "Shield");
+            a.EventOptions.Add(op3);
             temp.Add(a);
             #endregion           
             return temp;
