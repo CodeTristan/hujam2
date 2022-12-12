@@ -112,7 +112,7 @@ namespace Assets.Entity.EventArrays
             event3.RequiredCrews.Add(techSup);
             event3.RequiredCrews.Add(techE);
             event3.EffectedStat = searcher.statFinder(Stats, "Fuel");
-            event3.Label = "Brian ve Peter'ın Yakı Kavgası";
+            event3.Label = "Brian ve Peter'ın Yakıt Kavgası";
             event3.Text = "Peter ve Brian yakıt kontrol sisteminden kaynaklı bir kavgaya tutuştular.";
             EventOption e3op1 = new EventOption();
             event3.EventOptions = new List<EventOption>();
@@ -231,6 +231,60 @@ namespace Assets.Entity.EventArrays
             temp.Add(a);
             #endregion
 
+
+            #region Event8
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 8;
+            a.RequiredCrews.Add(med);
+            a.RequiredCrews.Add(techE);
+            a.Label = "Bağımlı";
+            a.Text = "Peter’ın yakıt bağımlılığı gün geçtikçe artmaya devam ediyor. Peter bunun zararsız olduğunu söylemesine karşın Caitlin bunun uzun vadede sağlığı üzerinde olumsuz etkileri olacağını söylüyor.";
+            a.EffectedStat = searcher.statFinder(Stats, "Fuel");
+            op1.TargetEventID = 8;
+            op1.OptionText = "Sağlıksız ve yakıtımız yetersiz.";
+            op1.MoodEffect = 20;
+            op1.NegativeEffectCrew = techE;
+            op1.PositiveEffectCrew = med;
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 8;
+            op2.OptionText = "Herkesin Stresle başa çıkma yolu farklı.";
+            op2.MoodEffect = 20;
+            op2.NegativeEffectCrew = med;
+            op2.PositiveEffectCrew = techE;
+            op2.StatEffect = -5;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
+            #endregion
+
+            #region Event9
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 9;
+            a.RequiredCrews.Add(med);
+            a.RequiredCrews.Add(techSup);
+            a.Label = "Tıbbi ekipmanlarda hata";
+            a.Text = "Caitlin günlerdir Brian’dan ekipmanlarındaki bazı ayarları düzeltmesini istiyor. Brian ise her seferinde işi ertelediği için kendisini uyarmamı istyior";
+            op1.TargetEventID = 9;
+            op1.MoodEffect = 20;
+            op1.OptionText = "Tıbbi ekipmanların bakımı hemen yapılmalı";
+            op1.NegativeEffectCrew = techSup;
+            op1.PositiveEffectCrew = med;
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 9;
+            op2.MoodEffect = 20;
+            op2.OptionText = "Teknisyen iş sırsını iyi bilir";
+            op2.NegativeEffectCrew = med;
+            op2.PositiveEffectCrew = techSup;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
+            #endregion
             return temp;
         }
     }
