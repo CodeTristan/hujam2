@@ -114,7 +114,7 @@ namespace Assets.Entity.EventArrays
             op2.MoodEffect = 30;
             op2.PositiveEffectCrew=sci;
             op2.NegativeEffectCrew=sec;
-            op2.ChainTrigger=true;
+            op2.ChainTrigger=false;
             a.EventOptions.Add(op2);
             temp.Add(a);
             #endregion
