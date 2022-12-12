@@ -270,7 +270,7 @@ namespace Assets.Entity.EventArrays
             a.RequiredCrews.Add(med);
             a.RequiredCrews.Add(techSup);
             a.Label = "Tıbbi ekipmanlarda hata";
-            a.Text = "Caitlin günlerdir Brian’dan ekipmanlarındaki bazı ayarları düzeltmesini istiyor. Brian ise her seferinde işi ertelediği için kendisini uyarmamı istyior";
+            a.Text = "Caitlin günlerdir Brian’dan ekipmanlarındaki bazı ayarları düzeltmesini istiyor. Brian ise her seferinde işi ertelediği için kendisini uyarmamı istiyor";
             op1.TargetEventID = 9;
             op1.MoodEffect = 20;
             op1.OptionText = "Tıbbi ekipmanların bakımı hemen yapılmalı";
