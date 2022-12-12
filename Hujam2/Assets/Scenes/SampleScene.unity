@@ -3533,6 +3533,10 @@ RectTransform:
   - {fileID: 192922061}
   - {fileID: 617831797}
   - {fileID: 2123060037}
+  - {fileID: 735573082}
+  - {fileID: 1547237765}
+  - {fileID: 877996218}
+  - {fileID: 1854784023}
   m_Father: {fileID: 665574976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6798,15 +6802,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCharDialogs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1679045381}
+  - {fileID: 1801956833}
+  - {fileID: 192922062}
+  - {fileID: 617831798}
+  - {fileID: 2123060038}
+  - {fileID: 735573083}
+  - {fileID: 1547237766}
+  - {fileID: 877996219}
+  - {fileID: 1854784024}
 --- !u!114 &665574980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7085,6 +7089,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCharDialogs: []
+--- !u!1 &735573081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735573082}
+  - component: {fileID: 735573083}
+  m_Layer: 5
+  m_Name: Day12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &735573082
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735573081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &735573083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735573081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "203\u2026 204\u2026 205\u2026"
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah \u015F\u0131nav \xE7ekiyor."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Hadi\u2026 206\u2026"
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Onu rahats\u0131z etmesem daha iyi sanki\u2026"
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Kaptan sen de gelsene beraber \u015F\u0131nav \xE7ekelim."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Yok yok kals\u0131n. Zaten ayakta kalmak bile yoruyor beni."
 --- !u!1 &747737888
 GameObject:
   m_ObjectHideFlags: 0
@@ -8189,6 +8268,80 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &877996217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877996218}
+  - component: {fileID: 877996219}
+  m_Layer: 5
+  m_Name: Day22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &877996218
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877996217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &877996219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877996217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Kaptan bir \u015Fey soracakt\u0131m."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Evet Sarah?
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Sence insanl\u0131\u011F\u0131 kurtarabilir miyiz? Evet b\xF6yle kutsal bir
+      g\xF6rev i\xE7in yola \xE7\u0131kt\u0131k ama\u2026"
+    - "Ama daha hi\xE7bir \xE7\xF6z\xFCm bulamad\u0131k."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Merak etme Sarah. E\u011Fer inanc\u0131m\u0131z\u0131 yitirmezsek, eninde
+      sonunda bir \xE7\xF6z\xFCm buluruz."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Hakl\u0131s\u0131n Kaptan, te\u015Fekk\xFCr ederim."
 --- !u!1 &888693933
 GameObject:
   m_ObjectHideFlags: 0
@@ -13637,6 +13790,95 @@ RectTransform:
   m_AnchoredPosition: {x: 154.50003, y: -0.13}
   m_SizeDelta: {x: 54.7, y: 31.72}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1547237764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547237765}
+  - component: {fileID: 1547237766}
+  m_Layer: 5
+  m_Name: Day17
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1547237765
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547237764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1547237766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547237764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah b\u0131\xE7a\u011F\u0131n\u0131 bilerken, di\u011Ferlerine bir avc\u0131
+      gibi bak\u0131yor."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah bir s\u0131k\u0131nt\u0131 m\u0131 var?"
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - ...
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Sarah?
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Ama nerede pi\u015Firebilirim ki\u2026"
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Sarah iyi misin? Yemek saati geldi haberin olsun.
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Ne? Ha evet. Ben de ona haz\u0131rlan\u0131yordum. Birisini yememe gerek kalmad\u0131
+      en az\u0131ndan."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Ne?
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Ne? Bir \u015Fey yok. Hadi yemek yiyelim."
 --- !u!1 &1554204321
 GameObject:
   m_ObjectHideFlags: 0
@@ -15445,9 +15687,9 @@ MonoBehaviour:
   - Name: Kaptan
     sprite: {fileID: 0}
     sentences:
-    - "(Bu Sarah. Asl\u0131nda d\xFCnyada \xFCst d\xFCzey bir g\xFCvenlik olarak
-      \xE7al\u0131\u015F\u0131yordu. Gemiye kat\u0131lmas\u0131n\u0131n sebebi ise
-      bizi \u201Cd\u0131\u015F tehditlere\u201D kar\u015F\u0131 koruyacak olmas\u0131.)"
+    - "(Bu Sarah. Asl\u0131nda d\xFCnyada \xFCst d\xFCzey bir g\xFCvenlik g\xF6revlisi
+      olarak \xE7al\u0131\u015F\u0131yordu. Gemiye kat\u0131lmas\u0131n\u0131n sebebi
+      ise bizi \u201Cd\u0131\u015F tehditlere\u201D kar\u015F\u0131 koruyacak olmas\u0131.)"
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
@@ -15892,6 +16134,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847234417}
   m_CullTransparentMesh: 1
+--- !u!1 &1854784022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1854784023}
+  - component: {fileID: 1854784024}
+  m_Layer: 5
+  m_Name: Day28
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1854784023
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854784022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1854784024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854784022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Hi\xE7bir gezegen ya\u015Fanabilir de\u011Fil\u2026 Biz d\xF6nene kadar d\xFCnyan\u0131n
+      sonu gelmi\u015F olacak."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Hay\u0131r Sarah, \xF6yle d\xFC\u015F\xFCnme."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Nas\u0131l d\xFC\u015F\xFCneyim o zaman ha! Zaten k\u0131s\u0131tl\u0131 olan
+      suyla hayatta kalan o insanlar \u015Fimdiye \xE7oktan \xF6lm\xFC\u015Ft\xFCr."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Bizim g\xF6revimizi yine de yerine getirmemiz laz\u0131m. Hep sen s\xF6ylerdin
+      bunu \xF6yle de\u011Fil mi?"
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "San\u0131r\u0131m art\u0131k \xF6yle de\u011Fil Kaptan\u2026  Art\u0131k g\xF6rev
+      yok."
 --- !u!1 &1861530853
 GameObject:
   m_ObjectHideFlags: 0
