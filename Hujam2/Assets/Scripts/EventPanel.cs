@@ -6,6 +6,7 @@ public class EventPanel : MonoBehaviour
 {
     [SerializeField] GameObject eventpanel;
     [SerializeField] GameObject planetPanel;
+    [SerializeField] GameObject planetEventPanel;
 
     public void planetPanelOn()
     {
@@ -15,8 +16,10 @@ public class EventPanel : MonoBehaviour
     {
         eventpanel.SetActive(true);
     }
+
     public void Close() //BURAYA IF PLANETEVENT MÝ DÝYE BÝR ÞEY EKLENECEK. Eðer planet event olduysa kapattýktan sonra yeni bir event seçecek.
     {
         eventpanel.SetActive(false);
+        planetEventPanel.SetActive(false);
     }
 }

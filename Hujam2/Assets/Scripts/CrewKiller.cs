@@ -11,10 +11,17 @@ namespace Assets.Scripts
     {
         public void moodKiller(Crew a)
         {
-            if (a.Mood <= -20)
+            if (a.Mood <= -20 && a.gameObject.activeSelf)
             {
+                a.suicideDialog.TriggerDialog();
                 a.gameObject.SetActive(false);
             }
+        }
+
+        public void planetKiller(Crew a)
+        {
+            a.planetDieDialog.TriggerDialog();
+            a.gameObject.SetActive(false);
         }
     }
 }

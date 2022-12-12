@@ -14,6 +14,8 @@ public class Crew : MonoBehaviour
     }
 
     public DialogTrigger[] allCharDialogs;
-    
+
+    public DialogTrigger suicideDialog;
+    public DialogTrigger planetDieDialog;
 
 }

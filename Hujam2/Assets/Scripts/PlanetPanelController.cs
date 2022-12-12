@@ -15,9 +15,11 @@ public class PlanetPanelController : MonoBehaviour
     [SerializeField] DayManager dayManager;
     [SerializeField] GameObject PlanetPanelUI;
     [SerializeField] TextMeshProUGUI dangerText;
+    [SerializeField] GameObject[] buttons;
 
     private void OnEnable()
     {
+        CheckCrewMembers();
         if(dayManager.aproachingPlanet.planetRiskLevel() < 0.25f)
         {
             dangerText.text = "Tehlike seviyesi: Düþük";
@@ -31,6 +33,15 @@ public class PlanetPanelController : MonoBehaviour
             dangerText.text = "Tehlike seviyesi: Yüksek";
         }
 
+    }
+
+    private void CheckCrewMembers()
+    {
+        buttons[0].SetActive(TechnicalEngineerP.gameObject.activeSelf);
+        buttons[1].SetActive(SecurityP.gameObject.activeSelf);
+        buttons[2].SetActive(ScientistP.gameObject.activeSelf);
+        buttons[3].SetActive(MedicP.gameObject.activeSelf);
+        buttons[4].SetActive(TechSupportP.gameObject.activeSelf);
     }
     public void ClosePanel()
     {

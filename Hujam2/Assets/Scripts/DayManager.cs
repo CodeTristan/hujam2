@@ -28,6 +28,12 @@ public class DayManager : MonoBehaviour
     [SerializeField] GameObject MedicP;
     [SerializeField] GameObject TechSupportP;
     [SerializeField] GameObject TechnicalEngineerP;
+    [SerializeField] CrewKiller crewKiller;
+
+    [SerializeField] GameObject planetEventPanel;
+    [SerializeField] TextMeshProUGUI planetEventLabel;
+    [SerializeField] TextMeshProUGUI planetEventText;
+
     private Medic med;
     private Assets.Entity.Security sec;
     private Scientist sci;
@@ -79,7 +85,15 @@ public class DayManager : MonoBehaviour
         chainEventNext = optionExecuter.ExecuteOption(finalOption, LastEvent); //Check if there is a bug
         if (isShipOnPlanet)
         {
-            planetExplorer.explorePlanet(PlanetSelectedCrew, selectedPlanetEvent, aproachingPlanet);
+            if(planetExplorer.explorePlanet(PlanetSelectedCrew, selectedPlanetEvent, aproachingPlanet)) //if crew member is not dead
+            {
+                planetEventPanel.SetActive(true);
+                planetEventLabel.text = selectedPlanetEvent.Label;
+                planetEventText.text = "(+)" + aproachingPlanet.foodAmount.ToString() + " erzak" +  "\n" + 
+                                       "(+)" + aproachingPlanet.fuelAmount.ToString() + " yakýt" +"\n" +
+                                       "(+)" + aproachingPlanet.waterAmount.ToString() + " su" + "\n" + "Bulduk...";
+            }
+
         }
         chosenOption = new EventOption();
 
@@ -93,13 +107,22 @@ public class DayManager : MonoBehaviour
         //TechSupportP.GetComponent<NpcDialogController>().checkAvailableDialogs();
         TechnicalEngineerP.GetComponent<NpcDialogController>().checkAvailableDialogs();
 
+        CheckCrewMoods();
+
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Hafta: " + dayCount.ToString();
         planetsUI[randomPlanetIndex].SetActive(false);
         planetPanelButton.SetActive(false);
         endButton.SetActive(false);
         isShipOnPlanet = false;
     }
-
+    private void CheckCrewMoods()
+    {
+        crewKiller.moodKiller(med);
+        crewKiller.moodKiller(sec);
+        crewKiller.moodKiller(sci);
+        crewKiller.moodKiller(techE);
+        crewKiller.moodKiller(techSup);
+    }
     private List<CosmicEvent> removeFromList(List<CosmicEvent> events, int id)
     {
         List<CosmicEvent> newList = new List<CosmicEvent>();
@@ -173,7 +196,7 @@ public class DayManager : MonoBehaviour
         Planet planet = new Planet();
         PlanetSelectedCrew = new Crew();
 
-        planet.toxicAtmosphere = Random.Range(0, 41);
+        planet.toxicAtmosphere = Random.Range(10, 60);
         planet.waterLevel = Random.Range(0, 21);
         planet.hostileCreatures = Random.Range(0, 2);
 
@@ -222,7 +245,7 @@ public class DayManager : MonoBehaviour
         oldDayCount = 1;
         habitableChance = 0;
 
-        timeTillPlanet = Random.Range(8, 11);//Random assignment for planet arrivel for begining
+        timeTillPlanet = Random.Range(6, 9);//Random assignment for planet arrivel for begining
 
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Hafta: " + dayCount.ToString(); //Displayes day counter
         canShowEvent = true;
@@ -250,7 +273,7 @@ public class DayManager : MonoBehaviour
             planetPanelButton.SetActive(true);
             aproachingPlanet = GenPlanet();
             isShipOnPlanet = true;
-            timeTillPlanet = Random.Range(5, 9);
+            timeTillPlanet = Random.Range(4, 8);
         }
 
         if (canShowEvent)
