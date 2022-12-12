@@ -13,6 +13,7 @@ public class Crew : MonoBehaviour
         this.Mood += moodValue;
     }
 
-    [SerializeField] DialogTrigger[] allCharDialogs;
+    public DialogTrigger[] allCharDialogs;
+    
 
 }

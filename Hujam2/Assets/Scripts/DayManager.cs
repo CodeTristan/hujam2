@@ -17,7 +17,7 @@ public class DayManager : MonoBehaviour
     public Crew PlanetSelectedCrew;
     public bool isShipOnPlanet;
 
-    [SerializeField] int dayCount;
+    public int dayCount;
     [SerializeField] GameObject crewManager;
     [SerializeField] GameObject eventLister;
     [SerializeField] GameObject endButton;
