@@ -1277,6 +1277,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138451629}
   m_CullTransparentMesh: 1
+--- !u!1 &150514647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150514648}
+  - component: {fileID: 150514650}
+  - component: {fileID: 150514649}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &150514648
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1161853926}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.1, y: 45.7}
+  m_SizeDelta: {x: 39.57, y: 39.57}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &150514649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e2928b19636b6974b946176aef7e5e02, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &150514650
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514647}
+  m_CullTransparentMesh: 1
 --- !u!1 &171184069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1611,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7f2493209973a469a1de7d0a7537aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &192922060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192922061}
+  - component: {fileID: 192922062}
+  m_Layer: 5
+  m_Name: Day2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &192922061
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192922060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &192922062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192922060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah, kaptan\u0131 g\xF6r\xFCnce haz\u0131r ol duru\u015Funa ge\xE7ti ve
+      kaptan\u0131 selamlad\u0131."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Rahat ol Sarah. Beni her g\xF6rd\xFC\u011F\xFCnde selam durmana gerek yok."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - " Kaptan ama emir komuta zincirine uymazsak\u2026"
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Burada 6 ki\u015Fiyiz. Tabii ki de se\xE7im yap\u0131lacaksa bu sorumluluk
+      bana d\xFC\u015F\xFCyor, fakat her saniye ordudaym\u0131\u015F gibi davranmana
+      gerek yok."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Bilemiyorum Kaptan. E\u011Fer bu bir emirse yapmay\u0131 deneyebilirim."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Evet\u2026 Evet\u2026 Emir."
 --- !u!1 &196305204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,6 +3500,47 @@ MonoBehaviour:
     sprite: {fileID: 0}
     sentences:
     - "Tamam Peter bu kadar motor ya\u011F\u0131 yeterli. Ver elindekini."
+--- !u!1 &400484626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400484627}
+  m_Layer: 5
+  m_Name: Dialogs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &400484627
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400484626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1679045380}
+  - {fileID: 1801956832}
+  - {fileID: 192922061}
+  - {fileID: 617831797}
+  - {fileID: 2123060037}
+  m_Father: {fileID: 665574976}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -168.23, y: -133.81}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &409399759
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,6 +5951,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7f2493209973a469a1de7d0a7537aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &617831796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 617831797}
+  - component: {fileID: 617831798}
+  m_Layer: 5
+  m_Name: Day5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &617831797
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617831796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &617831798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617831796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Yemek saati geldi ve herkes yemek masas\u0131nda topland\u0131."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Sonunda yemek saati! A\xE7l\u0131ktan demirleri kemirmeye ba\u015Flam\u0131\u015Ft\u0131m."
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Sarah, birazc\u0131k fazla yemek yemiyor musun? Benim i\xE7in sorun yok ama
+      belki di\u011Ferlerinin ho\u015Funa gitmiyor olabilir."
+  - Name: Brian
+    sprite: {fileID: 21300000, guid: 3acc46d756524c5428e4d0277bfc3a37, type: 3}
+    sentences:
+    - "Evet, evet. Biraz daha b\xF6yle giderse yemek falan kalmayacak. Hepimiz a\xE7l\u0131ktan
+      \xF6lece\u011Fiz."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Ben sizin deneylerinize, oyuncaklar\u0131n\u0131za kar\u0131\u015F\u0131yor
+      muyum? Yemeklerimi ellemeyin."
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah \xF6n\xFCne 2 \xF6\u011F\xFCnl\xFCk yemek ald\u0131 ve yemeye ba\u015Flad\u0131.
+      Herkes umutsuzca kaptana bakt\u0131."
+    - "Kaptan \u015Fimdilik Sarah\u2019\u0131 rahat b\u0131rakt\u0131."
 --- !u!1 &624006807
 GameObject:
   m_ObjectHideFlags: 0
@@ -6441,7 +6716,9 @@ GameObject:
   - component: {fileID: 665574976}
   - component: {fileID: 665574978}
   - component: {fileID: 665574977}
+  - component: {fileID: 665574981}
   - component: {fileID: 665574979}
+  - component: {fileID: 665574980}
   m_Layer: 5
   m_Name: Sarah
   m_TagString: Security
@@ -6460,7 +6737,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 400484627}
   m_Father: {fileID: 57413097}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6519,7 +6797,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56cd6f46e7d6f44c91a66c9a58aecd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCharDialogs: []
+  allCharDialogs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &665574980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665574975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 665574977}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 665574981}
+        m_TargetAssemblyTypeName: NpcDialogController, Assembly-CSharp
+        m_MethodName: StartDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &665574981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665574975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848130eb4ffcf67459e353ed0d1c8e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crew: {fileID: 665574979}
+  dialogDays: 010000000200000005000000080000000c00000011000000160000001c000000
 --- !u!1 &672847783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,11 +7178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d61895122f6384083c74d585325dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScientistP: {fileID: 0}
-  SecurityP: {fileID: 0}
-  MedicP: {fileID: 0}
-  TechSupportP: {fileID: 0}
-  TechnicalEngineerP: {fileID: 0}
+  ScientistP: {fileID: 1925747554}
+  SecurityP: {fileID: 665574979}
+  MedicP: {fileID: 1903934420}
+  TechSupportP: {fileID: 689019090}
+  TechnicalEngineerP: {fileID: 1161853929}
   dayManager: {fileID: 119526344}
   PlanetPanelUI: {fileID: 747737888}
 --- !u!1 &751809090
@@ -10531,6 +10888,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 441803490}
+  - {fileID: 150514648}
   m_Father: {fileID: 57413097}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13775,6 +14133,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678218208}
   m_CullTransparentMesh: 1
+--- !u!1 &1679045379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679045380}
+  - component: {fileID: 1679045381}
+  m_Layer: 5
+  m_Name: Day0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1679045380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679045379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1679045381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679045379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: PeterDay1
+  dialogs:
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah antrenman yap\u0131yor. Rahats\u0131z etmesem daha iyi olur."
 --- !u!1 &1689070792
 GameObject:
   m_ObjectHideFlags: 0
@@ -14978,6 +15391,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780425948}
   m_CullTransparentMesh: 1
+--- !u!1 &1801956831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801956832}
+  - component: {fileID: 1801956833}
+  m_Layer: 5
+  m_Name: Day1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1801956832
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801956831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1801956833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801956831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "(Bu Sarah. Asl\u0131nda d\xFCnyada \xFCst d\xFCzey bir g\xFCvenlik olarak
+      \xE7al\u0131\u015F\u0131yordu. Gemiye kat\u0131lmas\u0131n\u0131n sebebi ise
+      bizi \u201Cd\u0131\u015F tehditlere\u201D kar\u015F\u0131 koruyacak olmas\u0131.)"
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Bu g\xF6rev u\u011Fruna d\xFCnyam\u0131zdan ayr\u0131ld\u0131k. B\xF6yle bir
+      kutsal g\xF6revde var oldu\u011Fum i\xE7in gurur duyuyorum."
+    - "Her ne kadar yemekler berbat olsa da akademide daha k\xF6t\xFC g\xFCnlerden
+      ge\xE7mi\u015Ftim."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Biraz rahat ol Sarah.
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Hay\u0131r kaptan! Bana verilen bu g\xF6revi lay\u0131\u011F\u0131 ile yerine
+      getirece\u011Fim. Herhangi bir d\u0131\u015F etkiden sizi korumak benim hayat
+      amac\u0131md\u0131r."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Peki, peki\u2026 Daha \u201Cd\u0131\u015F etkilerin\u201D olup olmad\u0131\u011F\u0131n\u0131
+      bile bilmiyoruz. Ama sen istedi\u011Fini yap."
 --- !u!1 &1808308417
 GameObject:
   m_ObjectHideFlags: 0
@@ -17628,6 +18120,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100186277}
   m_CullTransparentMesh: 1
+--- !u!1 &2123060036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123060037}
+  - component: {fileID: 2123060038}
+  m_Layer: 5
+  m_Name: Day8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2123060037
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123060036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 400484627}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2123060038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123060036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah g\xFCnl\xFCk antrenman\u0131n\u0131 yap\u0131yor."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Aah Kaptan, antrenman yapmaya m\u0131 geldin?"
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Uzayda bile hi\xE7 durmadan devam ediyorsun demek, \u015Fa\u015F\u0131rt\u0131c\u0131."
+  - Name: Sarah
+    sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
+    sentences:
+    - "Evet. Yapay yer \xE7ekimi sayesinde v\xFCcut a\u011F\u0131rl\u0131\u011F\u0131m
+      ile antrenmanlar\u0131ma devam edebiliyorum."
+    - "Aaaah \xE7ok ac\u0131kt\u0131m. Yemek ne zaman?"
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Yemek yiyeli 1 saat oldu Sarah. Stoklar\u0131m\u0131z k\u0131s\u0131tl\u0131
+      biraz dikkatli ol."
+  - Name: 
+    sprite: {fileID: 0}
+    sentences:
+    - "Sarah cebinden bir jel \xE7\u0131kard\u0131 ve onu yemeye ba\u015Flad\u0131.
+      Kaptan, elinden bir \u015Fey gelmeyece\u011Fini anlay\u0131nca uzakla\u015Ft\u0131."
 --- !u!1 &2123746305
 GameObject:
   m_ObjectHideFlags: 0
