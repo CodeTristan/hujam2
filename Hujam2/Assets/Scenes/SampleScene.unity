@@ -325,6 +325,12 @@ RectTransform:
   m_Children:
   - {fileID: 1711696671}
   - {fileID: 951310774}
+  - {fileID: 268237487}
+  - {fileID: 631431377}
+  - {fileID: 1532000559}
+  - {fileID: 1949098794}
+  - {fileID: 1175432580}
+  - {fileID: 695190272}
   - {fileID: 1387122504}
   - {fileID: 1384217505}
   m_Father: {fileID: 1903934417}
@@ -3026,6 +3032,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260998296}
   m_CullTransparentMesh: 1
+--- !u!1 &268237486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268237487}
+  - component: {fileID: 268237488}
+  m_Layer: 5
+  m_Name: Day3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &268237487
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268237486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22245134}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &268237488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268237486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Uzaydaki hayat\u0131m resmi olarak ba\u015Flad\u0131. D\xFCnya\u2019ya duydu\u011Fum
+      \u015Fimdiden \xE7ok fazla ama bu g\xF6rev her \u015Feyden \xF6nemli."
+    - "\xC7\xF6z\xFCm bulaca\u011F\u0131z yeni bir yuva bulaca\u011F\u0131z inanc\u0131m
+      tam."
 --- !u!1 &270053094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7680,6 +7744,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629458566}
   m_CullTransparentMesh: 1
+--- !u!1 &631431376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 631431377}
+  - component: {fileID: 631431378}
+  m_Layer: 5
+  m_Name: Day6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &631431377
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631431376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22245134}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &631431378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631431376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Sa\u011Fl\u0131k sistemleri ne durumda Caitlin?"
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Sistemler gayet iyi \xE7al\u0131\u015F\u0131yor, umar\u0131m bizde tak\u0131m
+      olarak b\xF6yle devam ederiz."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Mutsuz gibisin bir sorun mu var?
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "\xD6zlem. D\xFCnya\u2019n\u0131n hali ne olursa olsun ben oraya i\xE7ten bir
+      \xF6zlem duyuyorum sebepsiz ama \xF6yle ama s\u0131k\u0131nt\u0131 etmeyin
+      bunun beni etkilemesine izin vermeyece\u011Fim "
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - Mutsuz gibisin bir sorun mu var?
 --- !u!1 &635132116
 GameObject:
   m_ObjectHideFlags: 0
@@ -8779,6 +8917,77 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &695190271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 695190272}
+  - component: {fileID: 695190273}
+  m_Layer: 5
+  m_Name: Day25
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &695190272
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695190271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22245134}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &695190273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695190271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Caitlin nerelerdesin seni laboratuvar d\u0131\u015F\u0131nda bir s\xFCredir
+      g\xF6rmedim\u2026\r\n"
+    - "O yerdeki \u015F\u0131r\u0131ngalar ne?\r"
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "S\u0131-s\u0131-s\u0131k\u0131nt\u0131l\u0131 \u015Feyler de\u011Filler Gauss
+      ve benim birka\xE7 deney \xFCz-z-zerinde kulland\u0131\u011F\u0131m\u0131z
+      ila\xE7lar hepsi bu. S\u0131kk-\u0131nt\u0131 Yok."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Bunlar\u0131n \xFCzerinde Y\xFCksek Tesirli Morfin yaz\u0131yor."
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - ...
 --- !u!1 &735573081
 GameObject:
   m_ObjectHideFlags: 0
@@ -13474,6 +13683,74 @@ MonoBehaviour:
     - "Peter'\u0131n ba\u011Flant\u0131s\u0131 koptu. Ne olur ne olmaz diye bekledik
       ama en son ald\u0131\u011F\u0131m\u0131z bilgilere g\xF6re..."
     - "Peter: Gezegende dola\u015F\u0131rken \xD6LD\xDC."
+--- !u!1 &1175432579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175432580}
+  - component: {fileID: 1175432581}
+  m_Layer: 5
+  m_Name: Day20
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1175432580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175432579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22245134}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1175432581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175432579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Oradaki Caitlin mi? O a\u011Fl\u0131yor\u2026"
+    - 'Caitlin ne oldu iyi misin? '
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Kaptan art\u0131k katlanam\u0131yorum herkes par\xE7alanma noktas\u0131n\u0131n
+      e\u015Fiklerine yakla\u015F\u0131yor. Elimden hi\xE7 bir \u015Fey gelmiyor.
+      \xC7ok g\xFC\xE7s\xFCz ve \xE7aresiz hissetmeye ba\u015Flad\u0131m. "
+    - "D\xFCnya\u2026 D\xFCnya buras\u0131 ile k\u0131yasla Cennetten farks\u0131z."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Sakin ol her \u015Fey\u2026 Her \u015Fey d\xFCzelecek az kald\u0131 \xE7ok
+      az\u2026"
 --- !u!1 &1178240032
 GameObject:
   m_ObjectHideFlags: 0
@@ -15618,7 +15895,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22245134}
-  m_RootOrder: 3
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15751,7 +16028,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22245134}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16804,11 +17081,11 @@ MonoBehaviour:
   continueButton: {fileID: 862942586}
   dialogUI: {fileID: 687609303}
   characterImage: {fileID: 1184545160}
-  typeSpeed: 0.015
+  typeSpeed: 0.012
   dialogCount: 0
   maxDialogCount: 0
   FirstDialog: {fileID: 1198209082}
-  firstDialogBool: 0
+  firstDialogBool: 1
 --- !u!4 &1528984397
 Transform:
   m_ObjectHideFlags: 0
@@ -16824,6 +17101,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1532000558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1532000559}
+  - component: {fileID: 1532000560}
+  m_Layer: 5
+  m_Name: Day10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1532000559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532000558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22245134}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1532000560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532000558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Herkes yava\u015F yava\u015F k\u0131r\u0131lmaya ba\u015Fl\u0131yor kaptan
+      elimden bir \u015Fey gelmiyor."
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Hakl\u0131s\u0131n ama kendimizi b\u0131rakamay\u0131z bu ba\u015Fta sesin
+      i\xE7in ge\xE7erli. Merak etme bunlar\u0131 atlataca\u011F\u0131z. "
+    - "Yard\u0131mc\u0131 olabilece\u011Fim bir \u015Fey var m\u0131?"
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Kaptan bilmiyorum her konu olabilir kendimi \xE7ok yetersiz hissediyorum her
+      \u015Fey yava\u015F yava\u015F elimizden kay\u0131yor sanki. "
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Evet stres olduk\xE7a fazla ve etkileri ortaya \xE7\u0131k\u0131yor ama s\u0131k\u0131nt\u0131
+      etme sen olduk\xE7a ba\u015Far\u0131l\u0131 ve yeterli bir doktorsun bunu unutma."
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "\u015Eu ila\xE7 solisyonunu yapma konusunda Gauss ve bana yard\u0131m edebilirsen
+      sevinirim."
 --- !u!1 &1545520870
 GameObject:
   m_ObjectHideFlags: 0
@@ -20657,6 +21011,12 @@ MonoBehaviour:
   allCharDialogs:
   - {fileID: 1711696672}
   - {fileID: 951310775}
+  - {fileID: 268237488}
+  - {fileID: 631431378}
+  - {fileID: 1532000560}
+  - {fileID: 1949098795}
+  - {fileID: 1175432581}
+  - {fileID: 695190273}
   suicideDialog: {fileID: 1387122505}
   planetDieDialog: {fileID: 1384217506}
 --- !u!114 &1903934421
@@ -20673,7 +21033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Exc: {fileID: 1192341182}
   crew: {fileID: 1903934420}
-  dialogDays: 01000000
+  dialogDays: 0100000003000000060000000a0000000f0000001400000019000000
 --- !u!114 &1903934422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21392,6 +21752,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930081015}
   m_CullTransparentMesh: 1
+--- !u!1 &1949098793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949098794}
+  - component: {fileID: 1949098795}
+  m_Layer: 5
+  m_Name: Day15
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1949098794
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949098793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22245134}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1949098795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949098793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0167d8410d7c2408cfedf0ab677465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Context: SarahDay1
+  dialogs:
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Kaptan elimdeki anti depresanlar ve ba\u011F\u0131\u015F\u0131kl\u0131k bask\u0131lay\u0131c\u0131lar
+      yava\u015F yava\u015F t\xFCkeniyor\u2026"
+  - Name: Kaptan
+    sprite: {fileID: 0}
+    sentences:
+    - "Bu b\xFCy\xFCk bir s\u0131k\u0131nt\u0131. Gauss nerede o bu konuda sana yard\u0131mc\u0131
+      olamaz m\u0131?"
+  - Name: Caitlin
+    sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
+    sentences:
+    - "Kaptan, t\xFCkenmenin ba\u015F nedenlerinden birisi O..."
 --- !u!1 &1967334831
 GameObject:
   m_ObjectHideFlags: 0
