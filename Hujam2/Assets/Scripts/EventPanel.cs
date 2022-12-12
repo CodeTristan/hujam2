@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventPanel : MonoBehaviour
 {
@@ -21,5 +22,9 @@ public class EventPanel : MonoBehaviour
     {
         eventpanel.SetActive(false);
         planetEventPanel.SetActive(false);
+        if(FindObjectOfType<DayManager>().gameFinished)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

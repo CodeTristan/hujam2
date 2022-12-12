@@ -1400,6 +1400,7 @@ MonoBehaviour:
   planetEventText: {fileID: 515805307}
   ItemStatLister: {fileID: 636051321}
   chanceMod: 20
+  gameFinished: 0
 --- !u!114 &119526345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13941,7 +13942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: FirstDialog
   dialogs:
-  - Name: 
+  - Name: Kaptan
     sprite: {fileID: 0}
     sentences:
     - "D\xFCnyay\u0131 terk ettik\u2026Ba\u015Fka bir se\xE7ene\u011Fimiz yoktu."
@@ -13961,6 +13962,14 @@ MonoBehaviour:
       test etme a\xE7\u0131s\u0131ndan gerekli bir fedak\xE2rl\u0131k."
     - "Tayfa ile konu\u015Fay\u0131m yolculu\u011Fa \xE7\u0131kt\u0131\u011F\u0131m\u0131zdan
       beri keyifleri nas\u0131lm\u0131\u015F sormal\u0131y\u0131m."
+  - Name: TUTORIAL
+    sprite: {fileID: 0}
+    sentences:
+    - "Her hafta bir se\xE7im yapman gerekiyor. Bu se\xE7imleri yaparken tayfan\u0131n
+      ruh haline dikkat et."
+    - "E\u011Fer tayfan\u0131n ruh hali 0'a d\xFC\u015Ferse, \xF6lmek isteyebilirler."
+    - "Kar\u015F\u0131na gezegen \xE7\u0131karsa, onu ara\u015Ft\u0131r ve ya\u015Fanabilir
+      olup olmad\u0131\u011F\u0131n\u0131 kontrol et."
 --- !u!1 &1264813523
 GameObject:
   m_ObjectHideFlags: 0

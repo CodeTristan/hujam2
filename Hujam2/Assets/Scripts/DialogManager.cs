@@ -30,7 +30,7 @@ public class DialogManager : MonoBehaviour
     }
     private void Start()
     {
-        //FirstDialog.TriggerDialog();
+        FirstDialog.TriggerDialog();
     }
     public void StartDialog(Dialog[] dialog)  //Starts dialog
     {
