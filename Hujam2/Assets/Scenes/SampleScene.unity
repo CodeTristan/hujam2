@@ -11363,6 +11363,7 @@ GameObject:
   - component: {fileID: 1366147617}
   - component: {fileID: 1366147618}
   - component: {fileID: 1366147619}
+  - component: {fileID: 1366147620}
   m_Layer: 0
   m_Name: EventLister
   m_TagString: Untagged
@@ -11472,6 +11473,18 @@ MonoBehaviour:
   MedicP: {fileID: 519901194}
   TechSupportP: {fileID: 366046223}
   TechnicalEngineerP: {fileID: 1511156316}
+--- !u!114 &1366147620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366147612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8edef76f4af39f04eba4fb25448b32f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366787602
 GameObject:
   m_ObjectHideFlags: 0
