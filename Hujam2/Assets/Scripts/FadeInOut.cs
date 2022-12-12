@@ -6,6 +6,35 @@ using UnityEngine.UI;
 
 public class FadeInOut : MonoBehaviour
 {
+    public Image Dark;
+
+    private void Start()
+    {
+        StartCoroutine(StartFade());
+    }
+    public void FadeWeek()
+    {
+        StartCoroutine(WeekFade());
+    }
+
+    private IEnumerator WeekFade()
+    {
+        Dark.gameObject.SetActive(true);
+        StartCoroutine(FadeIn(Dark, 2));
+        yield return new WaitForSeconds(2);
+        StartCoroutine(FadeOut(Dark, 2));
+        yield return new WaitForSeconds(2);
+        Dark.gameObject.SetActive(false);
+
+    }
+    private IEnumerator StartFade()
+    {
+        Dark.gameObject.SetActive(true);
+        StartCoroutine(FadeOut(Dark, 2));
+        yield return new WaitForSeconds(2);
+        Dark.gameObject.SetActive(false);
+    }
+
     private YieldInstruction Instruction = new YieldInstruction();
     public IEnumerator FadeOut(Image image,float time)
     {//general fade out effect for images

@@ -30,7 +30,7 @@ public class Sounds : MonoBehaviour
         }
         else if (voicetype=="music")
         {
-            music = musicclips[Random.Range(0, 3)];
+            music = musicclips[Random.Range(0, 2)];
             if (music!=prevmusic)
             {
                 musicsource.PlayOneShot(music);
