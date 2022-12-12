@@ -15,6 +15,7 @@ public class DayManager : MonoBehaviour
     public EventOption finalOption;
     public Planet aproachingPlanet;
     public Crew PlanetSelectedCrew;
+    public bool isShipOnPlanet;
 
     [SerializeField] int dayCount;
     [SerializeField] GameObject crewManager;
@@ -29,6 +30,7 @@ public class DayManager : MonoBehaviour
     private PlanetExplorer planetExplorer;
     private OptionExecuter optionExecuter;
     private CosmicEvent chainEventNext;
+    private PlanetEvent selectedPlanetEvent;
     int oldDayCount;
     int timeTillPlanet;
     int habitableChance;
@@ -41,6 +43,7 @@ public class DayManager : MonoBehaviour
     {
         dayCount++;
         timeTillPlanet--;
+        
 
         //EventOption finalOption = new EventOption();
         finalOption.TargetEventID = chosenOption.TargetEventID;
@@ -61,7 +64,10 @@ public class DayManager : MonoBehaviour
         //LastEvent.EffectedStat = finalEvent.EffectedStat;
 
         chainEventNext = optionExecuter.ExecuteOption(finalOption,LastEvent); //Check if there is a bug
-
+        if(isShipOnPlanet)
+        {
+            planetExplorer.explorePlanet(PlanetSelectedCrew, selectedPlanetEvent, aproachingPlanet);
+        }
         chosenOption = new EventOption();
 
         this.GetComponent<ShipStatus>().ShipStats[0].StatValue += this.GetComponent<ShipStatus>().ShipStats[4].StatValue;
@@ -70,6 +76,7 @@ public class DayManager : MonoBehaviour
 
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
         endButton.active = false;
+        isShipOnPlanet = false;
     }
 
     private List<CosmicEvent> removeFromList(List<CosmicEvent> events, int id)
@@ -152,6 +159,8 @@ public class DayManager : MonoBehaviour
         planet.waterAmount = Random.Range(planet.waterLevel, 31);
         planet.fuelAmount = Random.Range(40, 61);
 
+        selectedPlanetEvent = planetEvents[Random.Range(0, planetEvents.Count)];
+        
         if(Random.Range(0f,1f)<habitableChance/100)
           planet.habitable = true;
         else
@@ -167,6 +176,7 @@ public class DayManager : MonoBehaviour
     {
         endButton.SetActive(false);
         planetExplorer = new PlanetExplorer();
+        planetEvents = new List<PlanetEvent>();
         planetEvents = eventLister.GetComponent<AllPlanetEvents>().getAllPlanetEvents();
         repeatableEvents = eventLister.GetComponent<AllRepeatableEvents>().getAllRepeatableEvents();
         itemEvents = eventLister.GetComponent<AllItemEvents>().getAllItemEvents();
@@ -207,7 +217,7 @@ public class DayManager : MonoBehaviour
       if (timeTillPlanet <= 0)
       {
         aproachingPlanet = GenPlanet();
-
+            isShipOnPlanet = true;
         timeTillPlanet = Random.Range(5, 11);
       }
 

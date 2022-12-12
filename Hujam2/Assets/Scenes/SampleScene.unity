@@ -923,6 +923,7 @@ MonoBehaviour:
   finalOption: {fileID: 1554204322}
   aproachingPlanet: {fileID: 0}
   PlanetSelectedCrew: {fileID: 0}
+  isShipOnPlanet: 0
   dayCount: 0
   crewManager: {fileID: 1369161844}
   eventLister: {fileID: 1366147612}
