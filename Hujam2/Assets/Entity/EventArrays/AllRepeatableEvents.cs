@@ -279,9 +279,31 @@ namespace Assets.Entity.EventArrays
             a.EventOptions.Add(op1);
             op2.TargetEventID = 9;
             op2.MoodEffect = 20;
-            op2.OptionText = "Teknisyen iş sırsını iyi bilir";
+            op2.OptionText = "Teknisyen iş sırasını iyi bilir";
             op2.NegativeEffectCrew = med;
             op2.PositiveEffectCrew = techSup;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
+            #endregion
+            #region Event10
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 10;
+            a.RequiredCrews.Add(sci);
+            a.Label = "Bir varmış bir yokmuş";
+            a.Text = "Gauss rüyalarında önemli bir buluşun ip uçlarını gördüğünü iddia ediyor. Bunun için hafta içinde git gide daha fazla uyumaya başladı. Eksikliği yapılması gereken diğer işlerinin birikmesine sebep oluyor.";
+            op1.TargetEventID = 10;
+            op1.MoodEffect = 25;
+            op1.OptionText = "Artık 8 saatten fazla uyumana izin veremem";
+            op1.NegativeEffectCrew = sci;
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 10;
+            op2.MoodEffect = 25;
+            op2.OptionText = "Eğer Gauss bu buluşa taktıysa onu durdurmaya çalışmanın bir alemi yok ";
+            op2.PositiveEffectCrew = sci;
             a.EventOptions.Add(op2);
             temp.Add(a);
             #endregion
