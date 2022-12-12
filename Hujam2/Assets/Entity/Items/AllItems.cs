@@ -19,6 +19,7 @@ namespace Assets.Entity.Items
             a.ItemCount = 0;
             a.ItemID = 1;
             a.ItemName = "LifeRadar";
+            temp.Add(a);
             a = new EventItem();
             a.ItemCount=1;
             a.ItemID=2;
