@@ -54,7 +54,7 @@ public class DayManager : MonoBehaviour
     int oldDayCount;
     int timeTillPlanet;
     int habitableChance;
-    int chanceMod;
+    public int chanceMod;
     int nextEventID;
     int randomPlanetIndex;
     bool chainEvent;
@@ -94,6 +94,24 @@ public class DayManager : MonoBehaviour
                 planetEventText.text = "(+)" + aproachingPlanet.foodAmount.ToString() + " erzak" + "\n" +
                                        "(+)" + aproachingPlanet.fuelAmount.ToString() + " yakýt" + "\n" +
                                        "(+)" + aproachingPlanet.waterAmount.ToString() + " su" + "\n" + "Bulduk...";
+            }
+
+            if(aproachingPlanet.habitable == true)
+            {
+                string aliveHumans = "";
+                if (med.gameObject.activeSelf)
+                    aliveHumans += "Caitlin\n";
+                if (sci.gameObject.activeSelf)
+                    aliveHumans += "Gauss\n";
+                if (techE.gameObject.activeSelf)
+                    aliveHumans += "Peter\n";
+                if (techSup.gameObject.activeSelf)
+                    aliveHumans += "Brian\n";
+                if (sec.gameObject.activeSelf)
+                    aliveHumans += "Sarah\n";
+                planetEventPanel.SetActive(true);
+                planetEventLabel.text = "Yaþanabilir bir gezegen bulundu!";
+                planetEventText.text = "-Hayatta Kalanlar-" + "\n" + aliveHumans;
             }
 
         }

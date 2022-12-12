@@ -1071,6 +1071,7 @@ MonoBehaviour:
   planetEventLabel: {fileID: 1923125278}
   planetEventText: {fileID: 515805307}
   ItemStatLister: {fileID: 636051321}
+  chanceMod: 100
 --- !u!114 &119526345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14436,7 +14437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1420463820
 MonoBehaviour:
   m_ObjectHideFlags: 0
