@@ -1081,12 +1081,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1929289929}
+  m_Father: {fileID: 1523636588}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.0991, y: -1.5317}
+  m_AnchoredPosition: {x: -216.2209, y: 58.6283}
   m_SizeDelta: {x: 117.26, y: 140.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111211326
@@ -1171,10 +1171,17 @@ MonoBehaviour:
   nextpage: {fileID: 1085762081}
   stats: {fileID: 607085342}
   crewnotes: {fileID: 1523636587}
+  crewimage: {fileID: 111211326}
   crewtexts:
   - {fileID: 1347738552}
   - {fileID: 107166984}
   - {fileID: 1390893928}
+  portraits:
+  - {fileID: 21300000, guid: b43f87c7f2e665747823c72d7f549dc2, type: 3}
+  - {fileID: 21300000, guid: 3e4c91729273c4c4d866bae04a25fd6c, type: 3}
+  - {fileID: 21300000, guid: d9175a7089a554b4599beafd205ea80f, type: 3}
+  - {fileID: 21300000, guid: 32b6edcd341dd1e4293b3cbd95dfdbdc, type: 3}
+  - {fileID: 21300000, guid: 8fca5f88f6fb9c046bde6d0c234e5a1f, type: 3}
   names:
   - 'Name: Peter'
   - 'Name: Sarah'
@@ -1188,11 +1195,29 @@ MonoBehaviour:
   - 'Occupation: Medical Officah'
   - 'Occupation: System Manager'
   descriptions:
-  - peter desc
-  - sarah desc
-  - gauss desc
-  - caitlin desc
-  - brian desc
+  - " \u0130nsanl\u0131\u011F\u0131 ve d\xFCnyay\u0131 pek umursamayan bir tip. Kendi
+    merak\u0131 ve zevkleri i\xE7in ya\u015F\u0131yor. Manyak da biraz, motor ya\u011F\u0131
+    i\xE7ip duruyor. Tek amac\u0131 ve iste\u011Fi uzay\u0131 ke\u015Ffedip yeni
+    icatlar yapmak."
+  - "G\xF6rev bilinci \xE7ok y\xFCksek bir karakter. Uzayda ya\u015Fanacak bir \u015Fey
+    aramay\u0131 kutsal bir g\xF6rev olarak benimseyip \xE7ok b\xFCy\xFCk bir dikkate
+    g\xF6revini yerine getirmeye \xE7al\u0131\u015F\u0131yor. Biraz s\u0131k\u0131c\u0131
+    da birisi. Tek sevdi\u011Fi ve \xF6nemsedi\u011Fi \u015Fey emir komuta zinciri
+    ve g\xF6revler. \xC7ok kasl\u0131 ve b\xFCy\xFCk oldu\u011Fundan \xE7ok yemek
+    yiyor."
+  - "Hafif \u0131l\u0131man g\xF6z\xFCken ama \xF6z\xFCnde \u015Ferefsiz birisi.
+    D\xFCnyadan ayr\u0131lmas\u0131ndaki tek ama\xE7 d\xFCnyan\u0131n sona erece\u011Fini
+    d\xFC\u015F\xFCnmesi. Hayatta kalmak i\xE7in uzaya gitmeye g\xF6n\xFCll\xFC olmu\u015F
+    birisi. Ya\u015Fam-\xD6l\xFCm durumlar\u0131nca a\u015F\u0131r\u0131 bencil olabilir."
+  - "\u0130nsan sevgisi y\xFCksek birisi. \xC7ok a\xE7 birisini g\xF6r\xFCrse kendi
+    yeme\u011Fini bile verir. Bu y\xFCzden ikilemlerde onu se\xE7meyince o kadar
+    da fazla k\u0131zm\u0131yor ama e\u011Fer istedi\u011Fi \u015Feyleri vermezsek
+    k\u0131zg\u0131nl\u0131\u011F\u0131 art\u0131yor. Uzaydaki ya\u015Fam\u0131 ara\u015Ft\u0131rmak
+    en b\xFCy\xFCk ama\xE7lar\u0131ndan birisi."
+  - "Paranoyak birisi. \xD6lmekten \xE7ok korktu\u011Fu i\xE7in uzaya geldi ama insanl\u0131\u011F\u0131
+    da \xF6nemsiyor. En ufak bir \u015Fey ters gitti\u011Finde a\u015F\u0131r\u0131
+    stres yap\u0131yor. Yapay zekaya \xE7ok ilgili ve yapay zekan\u0131n y\xF6netti\u011Fi
+    bir yerde ya\u015Famay\u0131 umut ediyor.  "
   page: 0
 --- !u!4 &119526339
 Transform:
@@ -2227,8 +2252,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 414b4a2e910d9154ebe993b2bb789e37, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3083,8 +3108,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 414b4a2e910d9154ebe993b2bb789e37, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5556,8 +5581,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 414b4a2e910d9154ebe993b2bb789e37, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7244,7 +7269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.96300876, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.8392157, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12435,7 +12460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9220363, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.8399844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13670,8 +13695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 224.5}
-  m_SizeDelta: {x: 308.75, y: 308.75}
+  m_AnchoredPosition: {x: 0.2, y: 146.88}
+  m_SizeDelta: {x: 440.71, y: 440.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184545160
 MonoBehaviour:
@@ -16407,7 +16432,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1929289929}
+  - {fileID: 111211325}
   - {fileID: 1347738551}
   - {fileID: 107166983}
   - {fileID: 1390893927}
@@ -18422,8 +18447,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 414b4a2e910d9154ebe993b2bb789e37, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -21011,83 +21036,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &1929289928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1929289929}
-  - component: {fileID: 1929289931}
-  - component: {fileID: 1929289930}
-  m_Layer: 5
-  m_Name: Crewmate Image Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1929289929
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929289928}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 111211325}
-  m_Father: {fileID: 1523636588}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -219.32, y: 60.16}
-  m_SizeDelta: {x: 100.3, y: 120.32}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1929289930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929289928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1929289931
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929289928}
-  m_CullTransparentMesh: 1
 --- !u!1 &1930081015
 GameObject:
   m_ObjectHideFlags: 0
