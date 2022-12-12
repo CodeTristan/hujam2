@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class EventPanelManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class EventPanelManager : MonoBehaviour
         for (int i = 0; i < dayManager.finalEvent.EventOptions.Count; i++)
         {
             buttons[i].SetActive(true);
+            buttons[i].GetComponent<Button>().interactable = true;
             labetText.text = dayManager.finalEvent.Label;
             descText.text = dayManager.finalEvent.Text;
             butonDescText[i].text = dayManager.finalEvent.EventOptions[i].OptionText;
@@ -43,7 +45,13 @@ public class EventPanelManager : MonoBehaviour
             if (dayManager.finalEvent.EventOptions[i].GetItem != null)
                 ItemText[i].text = "(+) " + dayManager.finalEvent.EventOptions[i].GetItem.ItemName;
             else if (dayManager.finalEvent.EventOptions[i].UseItem != null)
+            {
                 ItemText[i].text = "(-) " + dayManager.finalEvent.EventOptions[i].UseItem.ItemName;
+                if (dayManager.finalEvent.EventOptions[i].UseItem.ItemCount < 1)
+                    buttons[i].GetComponent<Button>().interactable = false;
+                else
+                    buttons[i].GetComponent<Button>().interactable = true;
+            }
             else
                 ItemText[i].text = "";
 

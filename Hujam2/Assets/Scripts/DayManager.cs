@@ -21,6 +21,8 @@ public class DayManager : MonoBehaviour
     [SerializeField] GameObject crewManager;
     [SerializeField] GameObject eventLister;
     [SerializeField] GameObject endButton;
+    [SerializeField] GameObject[] planetsUI;
+    [SerializeField] GameObject planetPanelButton;
 
     private List<CosmicEvent> repeatableEvents;
     private List<CosmicEvent> itemEvents;
@@ -36,6 +38,7 @@ public class DayManager : MonoBehaviour
     int habitableChance;
     int chanceMod;
     int nextEventID;
+    int randomPlanetIndex;
     bool chainEvent;
     bool canShowEvent;
 
@@ -75,6 +78,8 @@ public class DayManager : MonoBehaviour
         this.GetComponent<ShipStatus>().ShipStats[2].StatValue += this.GetComponent<ShipStatus>().ShipStats[6].StatValue;
 
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Day: " + dayCount.ToString();
+        planetsUI[randomPlanetIndex].SetActive(false);
+        planetPanelButton.SetActive(false);
         endButton.active = false;
         isShipOnPlanet = false;
     }
@@ -150,6 +155,7 @@ public class DayManager : MonoBehaviour
     Planet GenPlanet() //Generate random planet
     {
         Planet planet = new Planet();
+        PlanetSelectedCrew = new Crew();
 
         planet.toxicAtmosphere = Random.Range(0, 41);
         planet.waterLevel = Random.Range(0, 21);
@@ -203,10 +209,10 @@ public class DayManager : MonoBehaviour
     void Update()
     {
 
-      if(chosenOption.OptionText == null)
-        endButton.active = false;
-      else
-        endButton.active = true;
+        if (chosenOption.OptionText == null || (planetPanelButton.activeSelf && PlanetSelectedCrew == null))
+            endButton.SetActive(false);
+        else
+            endButton.SetActive(true);
 
       if (dayCount != oldDayCount) //Makes sure no 2 event is shown in one day.
       {
@@ -216,9 +222,12 @@ public class DayManager : MonoBehaviour
 
       if (timeTillPlanet <= 0)
       {
+            randomPlanetIndex = Random.Range(0, planetsUI.Length);
+            planetsUI[randomPlanetIndex].SetActive(true);
+            planetPanelButton.SetActive(true);
         aproachingPlanet = GenPlanet();
             isShipOnPlanet = true;
-        timeTillPlanet = Random.Range(5, 11);
+        timeTillPlanet = Random.Range(5, 9);
       }
 
       if (canShowEvent)

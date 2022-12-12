@@ -28,5 +28,6 @@ public class PlanetPanelController : MonoBehaviour
             case "Crewmate3": dayManager.PlanetSelectedCrew = MedicP; break;
             case "Crewmate4": dayManager.PlanetSelectedCrew = TechSupportP; break;
         }
+        ClosePanel();
     }
 }
