@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Entity;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class PlanetPanelController : MonoBehaviour
 {
@@ -13,7 +14,24 @@ public class PlanetPanelController : MonoBehaviour
     [SerializeField] TechnicalEngineer TechnicalEngineerP;
     [SerializeField] DayManager dayManager;
     [SerializeField] GameObject PlanetPanelUI;
+    [SerializeField] TextMeshProUGUI dangerText;
 
+    private void OnEnable()
+    {
+        if(dayManager.aproachingPlanet.planetRiskLevel() < 0.25f)
+        {
+            dangerText.text = "Tehlike seviyesi: Düþük";
+        }
+        else if (dayManager.aproachingPlanet.planetRiskLevel() > 0.25f && dayManager.aproachingPlanet.planetRiskLevel() < 0.65f)
+        {
+            dangerText.text = "Tehlike seviyesi: Orta";
+        }
+        else if (dayManager.aproachingPlanet.planetRiskLevel() > 0.65f )
+        {
+            dangerText.text = "Tehlike seviyesi: Yüksek";
+        }
+
+    }
     public void ClosePanel()
     {
         PlanetPanelUI.SetActive(false);

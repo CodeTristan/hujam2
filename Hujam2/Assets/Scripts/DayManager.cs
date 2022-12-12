@@ -87,6 +87,12 @@ public class DayManager : MonoBehaviour
         this.GetComponent<ShipStatus>().ShipStats[1].StatValue += this.GetComponent<ShipStatus>().ShipStats[5].StatValue;
         this.GetComponent<ShipStatus>().ShipStats[2].StatValue += this.GetComponent<ShipStatus>().ShipStats[6].StatValue;
 
+        //ScientistP.GetComponent<NpcDialogController>().checkAvailableDialogs();
+        SecurityP.GetComponent<NpcDialogController>().checkAvailableDialogs();
+        //MedicP.GetComponent<NpcDialogController>().checkAvailableDialogs();
+        //TechSupportP.GetComponent<NpcDialogController>().checkAvailableDialogs();
+        TechnicalEngineerP.GetComponent<NpcDialogController>().checkAvailableDialogs();
+
         GameObject.FindGameObjectsWithTag("Day Display")[0].GetComponent<TextMeshProUGUI>().text = "Hafta: " + dayCount.ToString();
         planetsUI[randomPlanetIndex].SetActive(false);
         planetPanelButton.SetActive(false);
