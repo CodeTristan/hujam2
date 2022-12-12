@@ -1980,6 +1980,7 @@ GameObject:
   - component: {fileID: 150514648}
   - component: {fileID: 150514650}
   - component: {fileID: 150514649}
+  - component: {fileID: 150514651}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -2045,6 +2046,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150514647}
   m_CullTransparentMesh: 1
+--- !u!95 &150514651
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514647}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f3a661777b9495468b154baabe8e423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &171184069
 GameObject:
   m_ObjectHideFlags: 0
@@ -8829,6 +8850,7 @@ GameObject:
   - component: {fileID: 741807181}
   - component: {fileID: 741807183}
   - component: {fileID: 741807182}
+  - component: {fileID: 741807184}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -8894,6 +8916,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741807180}
   m_CullTransparentMesh: 1
+--- !u!95 &741807184
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741807180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f3a661777b9495468b154baabe8e423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &747737888
 GameObject:
   m_ObjectHideFlags: 0
@@ -13843,6 +13885,7 @@ GameObject:
   - component: {fileID: 1192341183}
   - component: {fileID: 1192341185}
   - component: {fileID: 1192341184}
+  - component: {fileID: 1192341186}
   m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
@@ -13908,6 +13951,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192341182}
   m_CullTransparentMesh: 1
+--- !u!95 &1192341186
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192341182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f3a661777b9495468b154baabe8e423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1198209079
 GameObject:
   m_ObjectHideFlags: 0
@@ -17060,6 +17123,7 @@ GameObject:
   - component: {fileID: 1647415667}
   - component: {fileID: 1647415669}
   - component: {fileID: 1647415668}
+  - component: {fileID: 1647415670}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -17125,6 +17189,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647415666}
   m_CullTransparentMesh: 1
+--- !u!95 &1647415670
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647415666}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f3a661777b9495468b154baabe8e423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1657583735
 GameObject:
   m_ObjectHideFlags: 0
@@ -22532,6 +22616,7 @@ GameObject:
   - component: {fileID: 2144142526}
   - component: {fileID: 2144142528}
   - component: {fileID: 2144142527}
+  - component: {fileID: 2144142529}
   m_Layer: 5
   m_Name: Image (4)
   m_TagString: Untagged
@@ -22597,3 +22682,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144142525}
   m_CullTransparentMesh: 1
+--- !u!95 &2144142529
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144142525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f3a661777b9495468b154baabe8e423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
