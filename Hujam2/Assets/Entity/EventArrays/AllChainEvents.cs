@@ -30,6 +30,7 @@ namespace Assets.Entity.EventArrays
 
         private EventOption op1;
         private EventOption op2;
+        private EventOption op3;
         private CosmicEvent a;
 
         #endregion
@@ -38,7 +39,7 @@ namespace Assets.Entity.EventArrays
         {
             lister = new StatAndItemLister();
             Items = new List<EventItem>();
-            Stats = new List<ShipStats>();            
+            Stats = new List<ShipStats>();
             Items = lister.allItems;
             Stats = lister.allStats;
             med = MedicP.GetComponent<Medic>();
@@ -96,7 +97,7 @@ namespace Assets.Entity.EventArrays
             a.EventOptions = new List<EventOption>();
             a.RequiredCrews = new List<Crew>();
             a.EventID = 2;
-            a.PrevEventID = 1;            
+            a.PrevEventID = 1;
             a.EffectedStat = searcher.statFinder(Stats, "FoodConsump");
             a.RequiredCrews.Add(sci);
             a.RequiredCrews.Add(sec);
@@ -105,21 +106,77 @@ namespace Assets.Entity.EventArrays
             op1.TargetEventID = 2;
             op1.OptionText = "Fareyi atmalıyız Gauss hastalanmış. ";
             op1.MoodEffect = 30;
-            op1.PositiveEffectCrew=sec;
-            op1.NegativeEffectCrew=sci;
+            op1.PositiveEffectCrew = sec;
+            op1.NegativeEffectCrew = sci;
             op1.StatEffect = +1;
             a.EventOptions.Add(op1);
             op2.TargetEventID = 2;
             op2.OptionText = "Gauss o fareyle güzel buluşlar yapacak, atamayız.";
             op2.MoodEffect = 30;
-            op2.PositiveEffectCrew=sci;
-            op2.NegativeEffectCrew=sec;
-            op2.ChainTrigger=false;
+            op2.PositiveEffectCrew = sci;
+            op2.NegativeEffectCrew = sec;
+            op2.ChainTrigger = false;
             a.EventOptions.Add(op2);
             temp.Add(a);
             #endregion
-            
-            
+            #region Event2
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EventID = 3;
+            a.NextEventID = 4;
+            a.RequiredCrews.Add(techSup);
+            a.RequiredCrews.Add(sec);
+            a.Label = "Bu kocaman Silahlar?";
+            a.Text = "Brian, Sarah’ın silahlarından irkiliyor ve ona güvenmiyor. Bu sabah tekrar bir kargaşa çıktı ve Brian silahları atmamız gerektiğini söylüyor. Sarah ise silahlarını atmaya oldukça karşı.";
+            op1.TargetEventID = 3;
+            op1.ChainTrigger = true;
+            op1.OptionText = "Silahı atmalıyız. İç kargaşa olursa tehlike yaratır";
+            op1.NegativeEffectCrew = sec;
+            op1.PositiveEffectCrew = techSup;
+            op1.MoodEffect = 30;
+            op1.UseItem = searcher.ItemFinder(Items, "Gun");
+            a.EventOptions.Add(op1);
+            op2.TargetEventID = 3;
+            op2.ChainTrigger = true;
+            op2.OptionText = "Silahı atamayız. Dış tehditlere karşı savunmasız kalırız";
+            op2.NegativeEffectCrew = techSup;
+            op2.PositiveEffectCrew = sec;
+            op2.MoodEffect = 30;
+            a.EventOptions.Add(op2);
+            temp.Add(a);
+            #endregion
+            #region Event2.1
+            a = new CosmicEvent();
+            op1 = new EventOption();
+            op2 = new EventOption();
+            op3 = new EventOption();
+            a.EventOptions = new List<EventOption>();
+            a.RequiredCrews = new List<Crew>();
+            a.EffectedStat = searcher.statFinder(Stats, "Fuel");
+            a.EventID = 4;
+            a.PrevEventID = 3;
+            a.RequiredCrews.Add(sec);
+            a.EffectedStat = searcher.statFinder(Stats, "Fuel");
+            a.Label = "Bir varlık";
+            a.Text = "Dışarıda bir varlık bize doğru yaklaşıyor ne yapmalıyız?";
+            op1.OptionText = "Sarah silahı ile ateş etsin";
+            op1.TargetEventID = 4;
+            op1.UseItem = searcher.ItemFinder(Items, "Gun");
+            a.EventOptions.Add(op1);
+            op2.OptionText = "Hiçbir şey olmamış gibi hızlıca yanından geç";
+            op2.TargetEventID = 4;
+            op2.StatEffect = -10;
+            a.EventOptions.Add(op2);
+            op3.TargetEventID = 4;
+            op3.OptionText = "Gemiye girmek koşuluyla yardım teklif etti";
+            op3.StatEffect = +10;
+            a.EventOptions.Add(op3);
+
+            temp.Add(a);
+            #endregion
             return temp;
         }
     }

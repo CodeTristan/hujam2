@@ -8,17 +8,22 @@ using UnityEngine;
 namespace Assets.Entity.Items
 {
     public class AllItems : MonoBehaviour
-    {               
+    {
+        private EventItem a;
         private List<EventItem> temp;
         public List<EventItem> getAllItems()
         {
             temp = new List<EventItem>();
-            EventItem a = new EventItem();
+            a = new EventItem();
 
             a.ItemCount = 0;
             a.ItemID = 1;
             a.ItemName = "LifeRadar";
-            temp.Add(a);            
+            a = new EventItem();
+            a.ItemCount=1;
+            a.ItemID=2;
+            a.ItemName = "Gun";
+            temp.Add(a);
             return temp;
         }
     }
