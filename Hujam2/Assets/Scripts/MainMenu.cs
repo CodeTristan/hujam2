@@ -26,9 +26,16 @@ public class MainMenu : MonoBehaviour
         }
         musicsource.volume = musicoption.value;
     }
-
+    public Image Dark;
     public void Play()
     {
+        StartCoroutine(StartCo());
+    }
+    IEnumerator StartCo()
+    {
+        Dark.gameObject.SetActive(true);
+        StartCoroutine(FadeIn(Dark,2));
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("SampleScene");
     }
     public void Exit()
@@ -69,5 +76,31 @@ public class MainMenu : MonoBehaviour
         menubuttons.SetActive(false);
         optionsmenu.SetActive(true);
         backbutton.SetActive(true);
+    }
+    private YieldInstruction Instruction = new YieldInstruction();
+    public IEnumerator FadeOut(Image image, float time)
+    {//general fade out effect for images
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < time)
+        {
+            yield return Instruction;
+            elapsedTime += Time.deltaTime;
+            c.a = 1.0f - Mathf.Clamp01(elapsedTime / time);
+            image.color = c;
+        }
+    }
+
+    public IEnumerator FadeIn(Image image, float time)
+    {//general fade in effect for images
+        float elapsedTime = 0.0f;
+        Color c = image.color;
+        while (elapsedTime < time)
+        {
+            yield return Instruction;
+            elapsedTime += Time.deltaTime;
+            c.a = Mathf.Clamp01(elapsedTime / time);
+            image.color = c;
+        }
     }
 }
