@@ -41,7 +41,7 @@ public class DialogManager : MonoBehaviour
         currentDialogs = dialog;
         if (dialogCount == maxDialogCount) //if there is no more dialog end it.
         {
-            EndDialog();
+            dialogUI.SetActive(false);
             return;
         }
 
@@ -80,7 +80,7 @@ public class DialogManager : MonoBehaviour
         continueButton.SetActive(false);
         if (dialogCount == maxDialogCount)
         {
-            EndDialog();
+            dialogUI.SetActive(false);
             return;
         }
         if (sentences.Count == 0) //if dialog is finished starts another one.
@@ -94,10 +94,6 @@ public class DialogManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(Type(sentence));
         }
-    }
-    public void EndDialog()
-    {
-        dialogUI.SetActive(false);
     }
 
 

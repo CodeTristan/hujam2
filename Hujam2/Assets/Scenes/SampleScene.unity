@@ -174,11 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: PeterDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Gauss tahtada hesaplamalarla u\u011Fra\u015F\u0131yor. Onu yaln\u0131z b\u0131raksam
-      iyi olur."
+    - Gauss is at the board doing calculations. I'd better leave him alone.
 --- !u!1 &9532902
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,33 +713,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: SarahDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "(Gauss bir bilim insan\u0131. Her t\xFCrl\xFC deney ve ara\u015Ft\u0131rma
-      i\xE7in gemimizde bulunuyor. E\u011Fer o olmazsa di\u011Fer gezegenlerin ya\u015Fanabilir
-      olup olmad\u0131\u011F\u0131n\u0131 test etmemiz \xE7ok g\xFC\xE7le\u015Fir.)"
+    - (Gauss is a scientist. He is on board for all kinds of experiments and research.
+      Without him it would be very difficult to test whether other planets are habitable).
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Selam Kaptan. Nas\u0131ls\u0131n? Burada durumlar iyi her \u015Fey stabil
-      g\xF6z\xFCk\xFCyor."
-  - Name: Kaptan
+    - Hey, Captain. How are you? Things are good here, everything seems to be stable.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "\u0130yiyim, a\xE7\u0131k\xE7as\u0131 bo\u015Flu\u011Fa do\u011Fru ilerlemenin
-      verdi\u011Fi korku biraz beni sarm\u0131\u015F durumda."
+    - I'm fine, to be honest, I'm a little bit scared of going into the void.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Ama Kaptan sen b\xF6yle olursan t\xFCm tayfaya bu korku yay\u0131l\u0131r.
-      \xC7ok fazla b\xF6yle konu\u015Fmaman\u0131 tavsiye ederim."
-    - "Bizim oralar\u0131n bir s\xF6z\xFC vard\u0131r: \u201CSakin v\xFCcut, sakin
-      kafayla sa\u011Flan\u0131r.\u201D Bizim kafam\u0131z sensin."
-  - Name: Kaptan
+    - But Captain, if you keep acting like this, it'll spread fear throughout the
+      crew. I advise you not to talk like that too much.
+    - 'We have a saying back home: "Calm mind, calm body." You are our mind.'
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Hakl\u0131s\u0131n Gauss. Hakl\u0131s\u0131n\u2026"
+    - You're right, Gauss. You're right...
 --- !u!1 &71644591
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,39 +884,37 @@ MonoBehaviour:
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - Kaptan dur dur! Beni dinle!
-  - Name: Kaptan
+    - Captain, stop, stop! Listen to me!
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Efendim Peter?
+    - Yes, Peter?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Acilen geri d\xF6nmeliyiz! D\xFCnyada \xE7ok \xF6nemli bir \u015Feyimi unuttum."
-    - "E\u011Fer o olmazsa bu yolculuk dev bir fiyasko olacak Kaptan anl\u0131yor
-      musun!"
-  - Name: Kaptan
+    - We must go back immediately! I forgot something very important in the world.
+    - This trip will be a giant fiasco without it, Captain, do you understand?
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "\u015Eu an geri d\xF6nmemiz imkans\u0131z Peter. Neyi bu kadar \xF6nemsedi\u011Fini
-      merak ediyorum ama."
+    - We can't go back now, Peter. I wonder what you care so much about.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Kendime yapt\u0131\u011F\u0131m her t\xFCrl\xFC oyunu em\xFClat\xF6r ile \xE7al\u0131\u015Ft\u0131rabilen
-      oyun konsolunu unuttum. O olmadan burada o kadar zaman\u0131 ge\xE7iremem."
-  - Name: Kaptan
+    - I forgot about the game console I built for myself that can run any game with
+      an emulator. I can't spend all that time here without it.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Maden kendin yapt\u0131n. Bir daha yapabilirsin bence."
+    - Since you made it yourself. I think you can do it again.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Hakl\u0131s\u0131n asl\u0131nda. Gemiden biraz malzeme kullan\u0131rsam e\u011Fer\u2026"
+    - You're right, actually. If I use some material from the ship.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter kurnazca planlar kurmaya ba\u015Flad\u0131."
+    - Peter began to devise cunning plans.
 --- !u!1 &107166982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,29 +1195,24 @@ MonoBehaviour:
   - 'Occupation: Medical Officah'
   - 'Occupation: System Manager'
   descriptions:
-  - " \u0130nsanl\u0131\u011F\u0131 ve d\xFCnyay\u0131 pek umursamayan bir tip. Kendi
-    merak\u0131 ve zevkleri i\xE7in ya\u015F\u0131yor. Manyak da biraz, motor ya\u011F\u0131
-    i\xE7ip duruyor. Tek amac\u0131 ve iste\u011Fi uzay\u0131 ke\u015Ffedip yeni
-    icatlar yapmak."
-  - "G\xF6rev bilinci \xE7ok y\xFCksek bir karakter. Uzayda ya\u015Fanacak bir \u015Fey
-    aramay\u0131 kutsal bir g\xF6rev olarak benimseyip \xE7ok b\xFCy\xFCk bir dikkate
-    g\xF6revini yerine getirmeye \xE7al\u0131\u015F\u0131yor. Biraz s\u0131k\u0131c\u0131
-    da birisi. Tek sevdi\u011Fi ve \xF6nemsedi\u011Fi \u015Fey emir komuta zinciri
-    ve g\xF6revler. \xC7ok kasl\u0131 ve b\xFCy\xFCk oldu\u011Fundan \xE7ok yemek
-    yiyor."
-  - "Hafif \u0131l\u0131man g\xF6z\xFCken ama \xF6z\xFCnde \u015Ferefsiz birisi.
-    D\xFCnyadan ayr\u0131lmas\u0131ndaki tek ama\xE7 d\xFCnyan\u0131n sona erece\u011Fini
-    d\xFC\u015F\xFCnmesi. Hayatta kalmak i\xE7in uzaya gitmeye g\xF6n\xFCll\xFC olmu\u015F
-    birisi. Ya\u015Fam-\xD6l\xFCm durumlar\u0131nca a\u015F\u0131r\u0131 bencil olabilir."
-  - "\u0130nsan sevgisi y\xFCksek birisi. \xC7ok a\xE7 birisini g\xF6r\xFCrse kendi
-    yeme\u011Fini bile verir. Bu y\xFCzden ikilemlerde onu se\xE7meyince o kadar
-    da fazla k\u0131zm\u0131yor ama e\u011Fer istedi\u011Fi \u015Feyleri vermezsek
-    k\u0131zg\u0131nl\u0131\u011F\u0131 art\u0131yor. Uzaydaki ya\u015Fam\u0131 ara\u015Ft\u0131rmak
-    en b\xFCy\xFCk ama\xE7lar\u0131ndan birisi."
-  - "Paranoyak birisi. \xD6lmekten \xE7ok korktu\u011Fu i\xE7in uzaya geldi ama insanl\u0131\u011F\u0131
-    da \xF6nemsiyor. En ufak bir \u015Fey ters gitti\u011Finde a\u015F\u0131r\u0131
-    stres yap\u0131yor. Yapay zekaya \xE7ok ilgili ve yapay zekan\u0131n y\xF6netti\u011Fi
-    bir yerde ya\u015Famay\u0131 umut ediyor.  "
+  - He doesn't care much about humanity and the world. He lives for his own curiosity
+    and pleasure. He's a bit weird too, he drinks engine oil. His only goal and desire
+    is to explore space and make new inventions.
+  - She is a very dutiful character. She considers it a sacred mission to search
+    for a habitable planet in space and she tries to fulfill her mission with great
+    care. She's also a bit boring. The only thing she loves and cares about is the
+    chain of command and missions. She eats a lot because she is very muscular and
+    big.
+  - He's a mild-mannered guy, but he's an asshole at heart. The only reason he left
+    Earth was because he thought the world would end. He volunteered to go to space
+    to survive. He can be extremely selfish in Life-Death situations.
+  - She has a great love for people. If she sees someone who is very hungry, she
+    will even give her own food. That's why she doesn't get angry if we don't choose
+    her in a dilemma. One of her biggest goals is to research life in space.
+  - 'He''s paranoid. He came to space because he was so afraid of dying, but he also
+    cares about humanity. He gets extremely stressed when the slightest thing goes
+    wrong. He is very interested in artificial intelligence and hopes to live in
+    a place ruled by artificial intelligence.  '
   page: 0
 --- !u!4 &119526339
 Transform:
@@ -1273,6 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9241b05971ffc8746a8e4d0abb55156c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  o: {fileID: 119526342}
+  p: {fileID: 119526340}
   clickaudio: {fileID: 524698361}
   pageaudio: {fileID: 55473201}
   musicsource: {fileID: 306207981}
@@ -1284,6 +1274,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 060b31a6f519b8b45a686815932cf335, type: 3}
   - {fileID: 8300000, guid: 1ab86d1a1e0b4f2459984c4a52890cca, type: 3}
   - {fileID: 8300000, guid: cd77c20bf319f3a418d4a956db7a6ed6, type: 3}
+  musicmultiplier: 0
 --- !u!114 &119526342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,13 +1287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc1d4f97d40671468df1b6c4d92f0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 119526340}
-  soundoption: {fileID: 866654010}
-  musicoption: {fileID: 1070241531}
-  audiosources:
-  - {fileID: 524698361}
-  musicsource: {fileID: 306207981}
-  optionsmenu: {fileID: 1049363622}
+  soundbar: {fileID: 866654010}
+  musicbar: {fileID: 1070241531}
+  JSON: 
+  s: {fileID: 119526341}
 --- !u!114 &119526343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2140,30 +2128,30 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter tek ba\u015F\u0131na duruyor. Hafif \xFCzg\xFCn g\xF6z\xFCk\xFCyor."
-  - Name: Kaptan
+    - Peter is standing alone. He looks a little sad.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Peter iyi misin?
+    - Peter are you OK?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Betsy\u2019yi \xF6zledim\u2026"
-  - Name: Kaptan
+    - I miss Betsy...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Merak etme Peter sevdi\u011Fimiz insanlara bir g\xFCn tekrardan kavu\u015Faca\u011F\u0131z."
+    - Don't worry, Peter, one day we'll be reunited with the people we love.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "\u0130nsan m\u0131? Ben yapt\u0131\u011F\u0131m full donan\u0131ml\u0131,
-      7.1 sanal ses sistemli insans\u0131 robotumdan bahsediyorum."
-    - "Aahhh \u015Fimdi neler yap\u0131yodur kim bilir. Kesin \u015Farj\u0131 bitmi\u015Ftir
-      ve \u015Farj kablosu ararken kaybolmu\u015Ftur. Ahh Betsy ahh\u2026"
-  - Name: Kaptan
+    - People? I'm talking about my fully equipped humanoid robot with a 7.1 virtual
+      sound system.
+    - Aahhh who knows what she's doing now. I bet her battery died and she got lost
+      looking for a charging cable. Ahh Betsy ahh...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Onu yaln\u0131z b\u0131raksam daha iyi olur."
+    - I'd better leave him alone.
 --- !u!1 &172226920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,30 +2386,28 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah, kaptan\u0131 g\xF6r\xFCnce haz\u0131r ol duru\u015Funa ge\xE7ti ve
-      kaptan\u0131 selamlad\u0131."
-  - Name: Kaptan
+    - When Sarah saw the captain, she stood at attention and saluted him.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Rahat ol Sarah. Beni her g\xF6rd\xFC\u011F\xFCnde selam durmana gerek yok."
+    - Relax, Sarah. You don't have to salute every time you see me.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - " Kaptan ama emir komuta zincirine uymazsak\u2026"
-  - Name: Kaptan
+    - Captain, but if we don't follow the chain of command...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Burada 6 ki\u015Fiyiz. Tabii ki de se\xE7im yap\u0131lacaksa bu sorumluluk
-      bana d\xFC\u015F\xFCyor, fakat her saniye ordudaym\u0131\u015F gibi davranmana
-      gerek yok."
+    - We are six people here. Of course, if there's a choice to be made, it's my
+      responsibility, but you don't have to act like you're in the army every second.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Bilemiyorum Kaptan. E\u011Fer bu bir emirse yapmay\u0131 deneyebilirim."
-  - Name: Kaptan
+    - I don't know, Captain. If that's an order, I can try to do it.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Evet\u2026 Evet\u2026 Emir."
+    - Yes... Yes... Order.
 --- !u!1 &196305204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,9 +2691,8 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Gauss'un ba\u011Flant\u0131s\u0131 koptu. Ne olur ne olmaz diye bekledik ama
-      en son ald\u0131\u011F\u0131m\u0131z bilgilere g\xF6re..."
-    - "Gauss: Gezegende dola\u015F\u0131rken \xD6LD\xDC."
+    - Gauss is disconnected. We waited, just in case, but the last we heard...
+    - 'Gauss: Died while wandering on the planet.'
 --- !u!1 &231776802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,10 +3071,9 @@ MonoBehaviour:
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Uzaydaki hayat\u0131m resmi olarak ba\u015Flad\u0131. D\xFCnya\u2019ya duydu\u011Fum
-      \u015Fimdiden \xE7ok fazla ama bu g\xF6rev her \u015Feyden \xF6nemli."
-    - "\xC7\xF6z\xFCm bulaca\u011F\u0131z yeni bir yuva bulaca\u011F\u0131z inanc\u0131m
-      tam."
+    - My life in space has officially begun. The longing for Earth is already too
+      much, but this mission is more important than anything else.
+    - We'll find a solution, we'll find a new home.
 --- !u!1 &270053094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,20 +4533,19 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter \xE7ok iyi g\xF6z\xFCkm\xFCyor. Y\xFCr\xFCy\xFC\u015F\xFC hafif dengesiz."
+    - Peter doesn't look so good. His gait is slightly unsteady.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "\u0130nsanl\u0131ktan uzakla\u015Ft\u0131k ne g\xFCzel oldu! Kafa dinlemeye
-      vakit bulduk cidden."
-    - "Bir de o geri kafal\u0131 Sarah olmasayd\u0131, sonsuza kadar burada kalabilirdim.
-      Kaptan aram\u0131zda kals\u0131n bence o gizli bir ajan olabilir."
-    - "Biliyorsun zaten FBI i\xE7in \xE7al\u0131\u015Fm\u0131\u015F zaman\u0131nda."
-    - "\u015E\u015E\u015E\u015E\u015E sessiz ol Kaptan! Seni duyacak."
-  - Name: Kaptan
+    - It's nice to be away from humanity! We actually had time to relax.
+    - And if it wasn't for that bigot Sarah, I could've stayed here forever. Captain,
+      between you and me, I think she might be a secret agent.
+    - You know, she used to work for the FBI.
+    - Shh! Shh! Quiet, Captain! She'll hear you.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Tamam Peter bu kadar motor ya\u011F\u0131 yeterli. Ver elindekini."
+    - Okay, Peter, that's enough engine oil. Give me that.
 --- !u!1 &400484626
 GameObject:
   m_ObjectHideFlags: 0
@@ -5797,11 +5780,10 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Son zamanlarda Peter'\u0131n ruh hali \xE7ok k\xF6t\xFCyd\xFC. Git gide daha
-      fazla motor ya\u011F\u0131 i\xE7meye ba\u015Flad\u0131."
-    - "Herkes uyand\u0131\u011F\u0131nda, yerde Peter'\u0131n cans\u0131z bedenini
-      bulundu."
-    - "Peter: Fazla motor ya\u011F\u0131 i\xE7mekten \xD6LD\xDC."
+    - Peter has been in a very bad mood lately. He started drinking more and more
+      engine oil.
+    - When everyone woke up, they found Peter's lifeless body on the floor.
+    - 'Peter: died from drinking too much engine oil.'
 --- !u!1 &465300664
 GameObject:
   m_ObjectHideFlags: 0
@@ -6143,35 +6125,35 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Gauss y\xFCksek sesle m\xFCzik dinliyor."
-  - Name: Kaptan
+    - Gauss is making a ruckus by listening to this terrible noise he thinks is music.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Gauss onu birazc\u0131k k\u0131sabilir misin?"
+    - Gauss, can you turn it down a little bit?
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - Ha?
-  - Name: Kaptan
+    - Huh?
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "M\xFCzi\u011Fi k\u0131sar m\u0131s\u0131n Gauss?"
+    - Can you turn the music down, Gauss?
   - Name: Gauss
-    sprite: {fileID: 21300000, guid: d9175a7089a554b4599beafd205ea80f, type: 3}
+    sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
     - Bitte?
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "M\xDCZ\u0130\u011E\u0130 KIS GAUSS!"
+    - TURN DOWN THE MUSIC, GAUSS!
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Ha pardon pardon. Kulaklar\u0131m art\u0131k normal alg\u0131l\u0131yor bunu."
-  - Name: Kaptan
+    - Oh, sorry. My ears perceive it as normal now.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Tamam s\u0131k\u0131nt\u0131 de\u011Fil. Sadece biraz dikkatli ol."
+    - It's all right. Just be careful.
 --- !u!1 &486972337
 GameObject:
   m_ObjectHideFlags: 0
@@ -6783,11 +6765,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: PeterDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Peter kendi kendine bir \u015Feylerle u\u011Fra\u015F\u0131yor.\nRahats\u0131z
-      etmesem daha iyi olur."
+    - 'Peter''s doing something on his own.
+
+      I''d better not disturb him.'
 --- !u!1 &549871159
 GameObject:
   m_ObjectHideFlags: 0
@@ -7493,32 +7476,31 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Yemek saati geldi ve herkes yemek masas\u0131nda topland\u0131."
+    - Dinner time arrived and everyone gathered at the dining table.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Sonunda yemek saati! A\xE7l\u0131ktan demirleri kemirmeye ba\u015Flam\u0131\u015Ft\u0131m."
+    - Dinner time at last! I was gnawing on the bars out of hunger.
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Sarah, birazc\u0131k fazla yemek yemiyor musun? Benim i\xE7in sorun yok ama
-      belki di\u011Ferlerinin ho\u015Funa gitmiyor olabilir."
+    - Sarah, aren't you eating a little too much? I don't mind, but maybe others
+      don't like it.
   - Name: Brian
     sprite: {fileID: 21300000, guid: 3acc46d756524c5428e4d0277bfc3a37, type: 3}
     sentences:
-    - "Evet, evet. Biraz daha b\xF6yle giderse yemek falan kalmayacak. Hepimiz a\xE7l\u0131ktan
-      \xF6lece\u011Fiz."
+    - Yeah, yeah. If this keeps up for much longer, there won't be any food left.
+      We'll all starve to death.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Ben sizin deneylerinize, oyuncaklar\u0131n\u0131za kar\u0131\u015F\u0131yor
-      muyum? Yemeklerimi ellemeyin."
+    - Do I interfere with your experiments, your toys? Don't touch my food.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah \xF6n\xFCne 2 \xF6\u011F\xFCnl\xFCk yemek ald\u0131 ve yemeye ba\u015Flad\u0131.
-      Herkes umutsuzca kaptana bakt\u0131."
-    - "Kaptan \u015Fimdilik Sarah\u2019\u0131 rahat b\u0131rakt\u0131."
+    - Sarah took a two course meal in front of her and started to eat. Everyone looked
+      desperately at the captain.
+    - The captain has left Sarah be for now.
 --- !u!1 &624006807
 GameObject:
   m_ObjectHideFlags: 0
@@ -7795,29 +7777,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: SarahDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Sa\u011Fl\u0131k sistemleri ne durumda Caitlin?"
+    - What about the health care system, Caitlin?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Sistemler gayet iyi \xE7al\u0131\u015F\u0131yor, umar\u0131m bizde tak\u0131m
-      olarak b\xF6yle devam ederiz."
-  - Name: Kaptan
+    - The systems are working very well, I hope we can continue like this as a team.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Mutsuz gibisin bir sorun mu var?
+    - You seem unhappy. Is something wrong?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "\xD6zlem. D\xFCnya\u2019n\u0131n hali ne olursa olsun ben oraya i\xE7ten bir
-      \xF6zlem duyuyorum sebepsiz ama \xF6yle ama s\u0131k\u0131nt\u0131 etmeyin
-      bunun beni etkilemesine izin vermeyece\u011Fim "
-  - Name: Kaptan
-    sprite: {fileID: 0}
-    sentences:
-    - Mutsuz gibisin bir sorun mu var?
+    - 'Longing. Whatever the state of the world, I feel a deep longing for it, but
+      don''t worry, I won''t let it affect me '
 --- !u!1 &635132116
 GameObject:
   m_ObjectHideFlags: 0
@@ -8040,7 +8016,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653421629
 GameObject:
@@ -8968,22 +8944,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: SarahDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Caitlin nerelerdesin seni laboratuvar d\u0131\u015F\u0131nda bir s\xFCredir
-      g\xF6rmedim\u2026\r\n"
-    - "O yerdeki \u015F\u0131r\u0131ngalar ne?\r"
+    - Caitlin where have you been. I haven't seen you outside the lab for a while
+    - What are those syringes on the floor?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "S\u0131-s\u0131-s\u0131k\u0131nt\u0131l\u0131 \u015Feyler de\u011Filler Gauss
-      ve benim birka\xE7 deney \xFCz-z-zerinde kulland\u0131\u011F\u0131m\u0131z
-      ila\xE7lar hepsi bu. S\u0131kk-\u0131nt\u0131 Yok."
-  - Name: Kaptan
+    - They're n-not a-anything troublesome, they're just medicines that Gauss and
+      I used in a couple of experiments, that's all. It's no problem.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Bunlar\u0131n \xFCzerinde Y\xFCksek Tesirli Morfin yaz\u0131yor."
+    - These are labeled High Potency Morphine.
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
@@ -9046,23 +9020,23 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah \u015F\u0131nav \xE7ekiyor."
+    - Sarah's doing push-ups.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Hadi\u2026 206\u2026"
-  - Name: Kaptan
+    - Come on... 206...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Onu rahats\u0131z etmesem daha iyi sanki\u2026"
+    - It's better if I don't bother her...
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Kaptan sen de gelsene beraber \u015F\u0131nav \xE7ekelim."
-  - Name: Kaptan
+    - Captain, why don't you come and do push-ups with me?
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Yok yok kals\u0131n. Zaten ayakta kalmak bile yoruyor beni."
+    - No, no, no. I'm already tired just standing up.
 --- !u!1 &741807180
 GameObject:
   m_ObjectHideFlags: 0
@@ -9409,7 +9383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gezegene Kimi G\xF6nderelim?"
+  m_text: Who should we send to the planet?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
   m_sharedMaterial: {fileID: 6331599084098828607, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
@@ -10330,7 +10304,19 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 119526342}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: OptionsSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &872285337
 GameObject:
   m_ObjectHideFlags: 0
@@ -10385,11 +10371,10 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Son zamanlarda Sarah'\u0131n ruh hali \xE7ok k\xF6t\xFCyd\xFC. Git gide antrenmanlar\u0131n\u0131
-      s\u0131kla\u015Ft\u0131rd\u0131."
-    - "Herkes uyand\u0131\u011F\u0131nda, yerde Sarah'\u0131n cans\u0131z bedenini
-      bulundu."
-    - "Sarah: Fazla \xE7al\u0131\u015Fmaktan \xD6LD\xDC."
+    - Sarah had been in a very bad mood lately. She has been exercising more and
+      more.
+    - When everyone woke up, they found Sarah's lifeless body on the floor.
+    - 'Sarah: DIED from over-exercising.'
 --- !u!1 &877996217
 GameObject:
   m_ObjectHideFlags: 0
@@ -10444,72 +10429,25 @@ MonoBehaviour:
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Kaptan bir \u015Fey soracakt\u0131m."
-  - Name: Kaptan
+    - Captain, I have a question.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Evet Sarah?
+    - Yes, Sarah?
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Sence insanl\u0131\u011F\u0131 kurtarabilir miyiz? Evet b\xF6yle kutsal bir
-      g\xF6rev i\xE7in yola \xE7\u0131kt\u0131k ama\u2026"
-    - "Ama daha hi\xE7bir \xE7\xF6z\xFCm bulamad\u0131k."
-  - Name: Kaptan
+    - Do you think we can save humanity? Yes, we set out on such a sacred mission,
+      but...
+    - But we haven't found any solution yet.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Merak etme Sarah. E\u011Fer inanc\u0131m\u0131z\u0131 yitirmezsek, eninde
-      sonunda bir \xE7\xF6z\xFCm buluruz."
+    - Don't worry, Sarah. If we keep the faith, we'll find a solution eventually.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Hakl\u0131s\u0131n Kaptan, te\u015Fekk\xFCr ederim."
---- !u!1 &886873513
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 886873515}
-  - component: {fileID: 886873514}
-  m_Layer: 0
-  m_Name: OptionsSave
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &886873514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886873513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92da238091e67f74ea81c64e17859a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 0.5
-  music: 0.3
---- !u!4 &886873515
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886873513}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0476025, y: -2.1275387, z: 0.8837785}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+    - You're right, Captain, thank you.
 --- !u!1 &888693933
 GameObject:
   m_ObjectHideFlags: 0
@@ -10999,36 +10937,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: SarahDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "(Bu Caitlin. Kendisi bu geminin t\xFCm medikal i\u015Flerini halleden ki\u015Fi.
-      Ayr\u0131ca yemekleri steril bir \u015Fekilde haz\u0131rlamakta yard\u0131mc\u0131
-      oluyor. E\u011Fer o olmasayd\u0131 hastal\u0131ktan k\u0131r\u0131l\u0131rd\u0131k.)"
-    - "Ne ile u\u011Fra\u015F\u0131yorsun Caitlin?"
+    - (This is Caitlin. She's the one who handles all the medical work on this ship.
+      She also helps to prepare the food in a sterile way. If it wasn't for her,
+      we would be all sick).
+    - What are you doing, Caitlin?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Peter ile birlikte bir radar sistemi hakk\u0131nda konu\u015Fmu\u015Ftuk.
-      D\u0131\u015Far\u0131da herhangi bir canl\u0131 varl\u0131k tespit edebilir
-      miyiz diye ara\u015Ft\u0131rma yapaca\u011F\u0131z."
-    - "E\u011Fer ki bir canl\u0131yla kar\u015F\u0131la\u015F\u0131rsak orada ya\u015Fam
-      var demektir. Fakat bunu yapabilmek i\xE7in malzemelere ihtiyac\u0131m\u0131z
-      var."
-  - Name: Kaptan
+    - Peter and I talked about a radar system. We're going to see if we can detect
+      any living beings out there.
+    - If we encounter a living creature, it means there is life there. But to do
+      that, we need materials.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - " Bu hi\xE7likte malzemeyi nas\u0131l bulmay\u0131 planl\u0131yorsun?"
+    - How do you plan to find material in this void?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Kaptan bu hi\xE7lik dedi\u011Fin yerde her \u015Fey var. Kar\u015F\u0131m\u0131za
-      \xE7\u0131kacak f\u0131rsatlardan bir \u015Fekilde yararlan\u0131p malzemeleri
-      toplayabiliriz."
-  - Name: Kaptan
+    - Captain, there's everything in this place you call void. We can take advantage
+      of any opportunities that come our way and gather supplies.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Evet asl\u0131nda ya\u015Fam tespit radar\u0131 i\u015Fimize yarayabilir."
+    - Yeah, actually, life-detection radar could come in handy.
 --- !u!1 &965820992
 GameObject:
   m_ObjectHideFlags: 0
@@ -11438,7 +11373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hafta:'
+  m_text: 'Week:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
   m_sharedMaterial: {fileID: 6331599084098828607, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
@@ -12182,10 +12117,9 @@ MonoBehaviour:
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Uzay ne kadar ilgin\xE7 de\u011Fil mi kaptan? \xC7ok y\xFCksek h\u0131zlarla
-      ilerliyoruz ama sanki ilerlemiyormu\u015Fuz gibi."
-    - "Belki ileride y\xFCksek teknolojiye sahip canl\u0131larla kar\u015F\u0131la\u015F\u0131r\u0131z
-      umuduyla ya\u015F\u0131yorum."
+    - Isn't space interesting, captain? We're moving at very high speeds, but it's
+      like we're not moving at all.
+    - I live in hope that maybe in the future we will encounter high-tech creatures.
 --- !u!1 &1060471675
 GameObject:
   m_ObjectHideFlags: 0
@@ -12407,21 +12341,21 @@ MonoBehaviour:
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Evet evet evet ama deneyi nerede, kime, nas\u0131l yapaca\u011F\u0131m."
-  - Name: Kaptan
+    - Yes, yes, but where, to whom, how will I do the experiment?
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Sorun nedir Gauss?
+    - What's the matter, Gauss?
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Akl\u0131ma bizi hastal\u0131klardan koruyabilecek bir a\u015F\u0131 fikri
-      geldi. Fakat deneyleri yapabilece\u011Fim bir denek yok."
-    - "Acaba Sarah\u2019tan rica etsem g\xF6n\xFCll\xFC denek olur mu? SARAAAAAH!"
+    - I have an idea for a vaccine that could protect us from diseases. But I don't
+      have a test subject to do the experiments.
+    - I wonder if I could ask Sarah to volunteer as a test subject. SARAAAAAH!
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Hay\u0131r."
+    - No.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
@@ -12429,11 +12363,11 @@ MonoBehaviour:
   - Name: Brian
     sprite: {fileID: 21300000, guid: 3acc46d756524c5428e4d0277bfc3a37, type: 3}
     sentences:
-    - "Hay\u0131r."
+    - No.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Schei\xDFe! Kimse yard\u0131mc\u0131 olmuyor!"
+    - "Schei\xDFe! Nobody's helping!"
 --- !u!1 &1070241530
 GameObject:
   m_ObjectHideFlags: 0
@@ -12501,7 +12435,19 @@ MonoBehaviour:
   m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 119526342}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: OptionsSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1070241532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13001,38 +12947,36 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
     - "1555200\u2026 1555201\u2026 1555202\u2026"
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Ne say\u0131yorsun Peter?"
+    - What are you counting, Peter?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "1555203\u2026 Uzaya \xE7\u0131kt\u0131\u011F\u0131m\u0131z andan itibaren
-      ka\xE7 saniye ge\xE7ti\u011Fini say\u0131yorum. 1555204\u2026 155205\u2026"
-    - "B\xF6ylece ka\xE7 g\xFCn ge\xE7ti\u011Fini alg\u0131lamam\u0131z kolayla\u015Facak."
-  - Name: Kaptan
+    - 1555203... I'm counting how many seconds have passed since we went into space.
+      1555204... 155205...
+    - This will make it easier for us to perceive how many days have passed.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Geminin ortas\u0131nda g\xFCn sayac\u0131n\u0131n oldu\u011Funun fark\u0131ndas\u0131n
-      de\u011Fil mi Peter?"
+    - You do realize there's a day counter in the middle of the ship, right, Peter?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "1555206\u2026 NE! NASIL YAN\u0130?"
+    - 1555206... WHAT! HOW?
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter agresif bir \u015Fekilde aya\u011Fa kalkt\u0131 ve salonun ortas\u0131na
-      do\u011Fru y\xFCr\xFCd\xFC."
+    - Peter stood up aggressively and walked to the center of the hall.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Bunca zaman bo\u015Fa m\u0131 sayd\u0131m ben\u2026"
-  - Name: Kaptan
+    - Did I count all this time for nothing...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Beyin egzersizi olmu\u015F en az\u0131ndan \xE7ok da \xFCz\xFClme."
+    - At least it's a brain exercise, so don't get too upset.
 --- !u!1 &1139322341
 GameObject:
   m_ObjectHideFlags: 0
@@ -13163,17 +13107,17 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Gauss tahtan\u0131n yan\u0131nda a\u011Fl\u0131yor."
+    - Gauss is crying by the board.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Asla\u2026 Geri d\xF6neme-"
-    - "Asla geri d\xF6nemeyece\u011Fiz!"
-    - "Sonumuz geldi. \u0130nsanl\u0131\u011F\u0131n sonu geldi."
+    - Never... We'll never ge ba-
+    - We'll never go back!
+    - Our end has come. The end of humanity has come.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Kaptan konu\u015Fmak istedi. Fakat a\u011Fz\u0131ndan kelimeler d\xF6k\xFClemedi."
+    - The captain wanted to speak. But no words came out of his mouth.
 --- !u!1 &1141559711
 GameObject:
   m_ObjectHideFlags: 0
@@ -13680,9 +13624,8 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter'\u0131n ba\u011Flant\u0131s\u0131 koptu. Ne olur ne olmaz diye bekledik
-      ama en son ald\u0131\u011F\u0131m\u0131z bilgilere g\xF6re..."
-    - "Peter: Gezegende dola\u015F\u0131rken \xD6LD\xDC."
+    - Peter's disconnected. We waited, just in case, but the last we heard...
+    - 'Peter: Died while wandering the planet.'
 --- !u!1 &1175432579
 GameObject:
   m_ObjectHideFlags: 0
@@ -13734,23 +13677,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: SarahDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Oradaki Caitlin mi? O a\u011Fl\u0131yor\u2026"
-    - 'Caitlin ne oldu iyi misin? '
+    - Is that Caitlin over there? She's crying...
+    - 'Caitlin, what happened? Are you okay? '
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Kaptan art\u0131k katlanam\u0131yorum herkes par\xE7alanma noktas\u0131n\u0131n
-      e\u015Fiklerine yakla\u015F\u0131yor. Elimden hi\xE7 bir \u015Fey gelmiyor.
-      \xC7ok g\xFC\xE7s\xFCz ve \xE7aresiz hissetmeye ba\u015Flad\u0131m. "
-    - "D\xFCnya\u2026 D\xFCnya buras\u0131 ile k\u0131yasla Cennetten farks\u0131z."
-  - Name: Kaptan
+    - 'Captain, I can''t take it anymore, everyone is approaching the brink of falling
+      apart. I can''t do anything about it. I''m starting to feel so powerless and
+      helpless. '
+    - The world... The world is like Heaven compared to this place.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Sakin ol her \u015Fey\u2026 Her \u015Fey d\xFCzelecek az kald\u0131 \xE7ok
-      az\u2026"
+    - Calm down everything... Everything will be fine.
 --- !u!1 &1178240032
 GameObject:
   m_ObjectHideFlags: 0
@@ -13839,7 +13781,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 119526344}
         m_TargetAssemblyTypeName: DayManager, Assembly-CSharp
-        m_MethodName: EndDay
+        m_MethodName: DayDelay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14146,38 +14088,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: PeterDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "(Bu Peter. Teknik m\xFChendislik gerektiren her t\xFCrl\xFC i\u015Fi o hallediyor.
-      E\u011Fer o olmazsa bu uzay gemisi rotas\u0131ndan \xE7\u0131kar.)"
+    - (This is Peter. He handles all the technical stuff. Without him, this spaceship
+      would go off course.)
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Selam kaptan. Sonunda yola \xE7\u0131kt\u0131k. D\xFCnyadan kurtulduk!"
+    - Hello, captain. We're finally on our way. We escaped the earth!
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Biliyorsun uzay\u0131 hep merak etmi\u015Fimdir. Sonunda bir \u015Fekilde
-      merak\u0131m\u0131 dindirebilece\u011Fim. Yani d\xFCnyan\u0131n durumunu zaten
-      k\xF6t\xFCye gidiyor. Ka\xE7t\u0131\u011F\u0131m\u0131z iyi oldu."
-  - Name: Kaptan
+    - You know, I've always been curious about space. I'll finally be able to satisfy
+      my curiosity somehow. I mean, the state of the world is already getting worse.
+      It's good we escaped.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Amac\u0131m\u0131z ka\xE7mak de\u011Fil Peter. Ya\u015Fanabilir bir gezegen
-      bulup geri d\xF6nece\u011Fiz."
+    - Our goal is not to escape, Peter. We're going to find a habitable planet and
+      come back.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Tabii, tabii\u2026  Sen nas\u0131l diyorsan \xF6yle. Ne de olsa kaptan sensin."
-  - Name: Kaptan
+    - Sure, sure... Whatever you say. After all, you're the captain.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Motorlar\u0131n durumu nas\u0131l?"
+    - How's the condition of the engines?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Fevkalade. Dert etmene gerek yok kaptan, bana g\xFCven."
+    - Splendid. Don't worry about it, captain, trust me.
 --- !u!1 &1192341182
 GameObject:
   m_ObjectHideFlags: 0
@@ -14718,27 +14660,26 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Gauss h\xFCz\xFCnl\xFC bir \u015Fekilde tahtaya form\xFCller yaz\u0131yor."
-  - Name: Kaptan
+    - Gauss sadly writes formulas on the blackboard.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Hay\u0131rd\u0131r Gauss, bir sorum mu var?"
+    - What's the matter, Gauss, is something wrong?
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Evet Kaptan. Hesaplar\u0131ma g\xF6re ya\u015Fanabilir bir gezegen \xE7\u0131kma
-      olas\u0131l\u0131\u011F\u0131, \xE7ok d\xFC\u015F\xFCk."
-    - "Bu gidi\u015Fle a\xE7l\u0131ktan \xF6lece\u011Fiz. "
-    - "Veya daha k\xF6t\xFCs\xFC\u2026 Wilhelm\u2026"
-  - Name: Kaptan
+    - Yes, Captain. According to my calculations, the probability of a habitable
+      planet is very low.
+    - 'At this rate we will starve to death. '
+    - Or worse... Wilhelm...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Umudunu kaybetme Gauss. E\u011Fer biz umudumuzu kaybedersek, i\u015Fte o zaman
-      sonumuz gelmi\u015F demektir."
+    - Don't lose hope, Gauss. If we lose hope, then we are doomed.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: d9175a7089a554b4599beafd205ea80f, type: 3}
     sentences:
-    - "San\u0131r\u0131m hakl\u0131s\u0131n Kaptan."
+    - I think you're right, Captain.
 --- !u!1 &1307806865
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,7 +14738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Haftay\u0131 bitir"
+  m_text: End Week
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
   m_sharedMaterial: {fileID: 6331599084098828607, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
@@ -15858,12 +15799,12 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Gauss dondurulmu\u015F bakterilerle oynuyor."
+    - Gauss is playing with frozen bacteria.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Aaahh\u2026 Wilhelm acaba ne yap\u0131yordur \u015Fu an."
-    - "Belki de beni \xE7oktan unutmu\u015Ftur."
+    - Aaahh... I wonder what Wilhelm is doing right now.
+    - Maybe he's already forgotten me.
     - "Wilhelm\u2026."
 --- !u!1 &1384217504
 GameObject:
@@ -15919,9 +15860,8 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Caitlin'in ba\u011Flant\u0131s\u0131 koptu. Ne olur ne olmaz diye bekledik
-      ama en son ald\u0131\u011F\u0131m\u0131z bilgilere g\xF6re..."
-    - "Caitlin: Gezegende dola\u015F\u0131rken \xD6LD\xDC."
+    - Caitlin's disconnected. We waited, just in case, but the last we heard...
+    - 'Caitlin: She died while wandering on the planet.'
 --- !u!1 &1385913701
 GameObject:
   m_ObjectHideFlags: 0
@@ -16052,10 +15992,9 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Son zamanlarda Caitlin'in ruh hali \xE7ok k\xF6t\xFCyd\xFC. Git gide tek ba\u015F\u0131na
-      a\u011Flamaya ba\u015Flad\u0131"
-    - "Herkes uyand\u0131\u011F\u0131nda, yerde Caitlin'in cans\u0131z bedenini bulundu."
-    - "Caitlin: \u0130ntihar etti. "
+    - Lately Caitlin's mood has been very bad. She's been crying more and more alone.
+    - When everyone woke up, they found Caitlin's lifeless body on the floor.
+    - 'Caitlin: Has committed suicide. '
 --- !u!1 &1390893926
 GameObject:
   m_ObjectHideFlags: 0
@@ -16245,38 +16184,35 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter yan\u0131nda 2 \u015Fi\u015Fe motor ya\u011F\u0131 ile beraber oturuyor."
+    - Peter is sitting with two bottles of engine oil.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "YALANNN HER \u015EEY YALANNNN"
-  - Name: Kaptan
+    - LIE, LIE, LIE, EVERYTHING'S A LIE.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Peter nap\u0131yorsun? T\xFCm ya\u011F\u0131m\u0131z\u0131 bitirme."
+    - Peter, what are you doing? Don't drink all our oil.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "YA\u015EANAB\u0130L\u0130R BA\u015EKA B\u0130R GEZEGEN YOK!"
-  - Name: Kaptan
+    - THERE IS NO OTHER HABITABLE PLANET!
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Ba\u011F\u0131rmadan konu\u015F. Sakin ol."
+    - Speak without shouting. Calm down.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "\u015Eu ana kadar neden ya\u015Fanabilir bir yer bulamad\u0131k o zaman ha?
-      S\xF6ylesene be Kaptan!"
-  - Name: Kaptan
+    - Then why haven't we found a habitable place so far? Tell me, Captain!
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Bilmiyorum\u2026 Bildi\u011Fim tek \u015Fey daha fazla \u015Fundan i\xE7memelisin.
-      Ver \u015Funu."
+    - I don't know... I just know you shouldn't drink any more of that. Give me that.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Motor ya\u011F\u0131 elinden al\u0131nd\u0131ktan sonra Peter huzursuzca homurdanarak
-      uykuya dald\u0131."
+    - After the engine oil was taken away, Peter fell asleep, grumbling restlessly.
 --- !u!1 &1413180544
 GameObject:
   m_ObjectHideFlags: 0
@@ -16335,7 +16271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tehlike Seviyesi: Y\xFCksek"
+  m_text: 'Danger Level: High'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
   m_sharedMaterial: {fileID: 6331599084098828607, guid: a768bb0e94de05a49bb46fe529c90eec, type: 2}
@@ -17155,29 +17091,26 @@ MonoBehaviour:
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Herkes yava\u015F yava\u015F k\u0131r\u0131lmaya ba\u015Fl\u0131yor kaptan
-      elimden bir \u015Fey gelmiyor."
-  - Name: Kaptan
+    - Everyone's slowly starting to fall apart. There's nothing left that i can do.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Hakl\u0131s\u0131n ama kendimizi b\u0131rakamay\u0131z bu ba\u015Fta sesin
-      i\xE7in ge\xE7erli. Merak etme bunlar\u0131 atlataca\u011F\u0131z. "
-    - "Yard\u0131mc\u0131 olabilece\u011Fim bir \u015Fey var m\u0131?"
+    - 'You''re right, but we can''t give up on ourselves, especially you. Don''t
+      worry, we''ll get through this. '
+    - Is there anything I can help you with?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Kaptan bilmiyorum her konu olabilir kendimi \xE7ok yetersiz hissediyorum her
-      \u015Fey yava\u015F yava\u015F elimizden kay\u0131yor sanki. "
-  - Name: Kaptan
+    - 'Captain, I feel so inadequate, like everything is slowly slipping away. '
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Evet stres olduk\xE7a fazla ve etkileri ortaya \xE7\u0131k\u0131yor ama s\u0131k\u0131nt\u0131
-      etme sen olduk\xE7a ba\u015Far\u0131l\u0131 ve yeterli bir doktorsun bunu unutma."
+    - Yes, stress is quite high and its effects are emerging, but don't worry, you
+      are a very successful and competent doctor, don't forget that.
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "\u015Eu ila\xE7 solisyonunu yapma konusunda Gauss ve bana yard\u0131m edebilirsen
-      sevinirim."
+    - I'd appreciate it if you could help Gauss and me make this medicine solution.
 --- !u!1 &1545520870
 GameObject:
   m_ObjectHideFlags: 0
@@ -17269,41 +17202,40 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah b\u0131\xE7a\u011F\u0131n\u0131 bilerken, di\u011Ferlerine bir avc\u0131
-      gibi bak\u0131yor."
-  - Name: Kaptan
+    - As Sarah sharpens her knife, she looks at the others like a hunter.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Sarah bir s\u0131k\u0131nt\u0131 m\u0131 var?"
+    - Sarah, is something wrong?
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
     - ...
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
     - Sarah?
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Ama nerede pi\u015Firebilirim ki\u2026"
-  - Name: Kaptan
+    - But where can I cook them...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Sarah iyi misin? Yemek saati geldi haberin olsun.
+    - Sarah, are you okay? I just wanted to let you know it's dinnertime.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Ne? Ha evet. Ben de ona haz\u0131rlan\u0131yordum. Birisini yememe gerek kalmad\u0131
-      en az\u0131ndan."
-  - Name: Kaptan
+    - What's that? Oh, yeah. Uh-huh. I was just getting ready for that. At least
+      I didn't have to eat anyone.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Ne?
+    - What?
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Ne? Bir \u015Fey yok. Hadi yemek yiyelim."
+    - What? It's nothing. Let's eat.
 --- !u!1 &1554204321
 GameObject:
   m_ObjectHideFlags: 0
@@ -18005,10 +17937,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: PeterDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Sarah antrenman yap\u0131yor. Rahats\u0131z etmesem daha iyi olur."
+    - Sarah's exercising. I'd better not disturb her.
 --- !u!1 &1689070792
 GameObject:
   m_ObjectHideFlags: 0
@@ -18315,11 +18247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: PeterDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Caitlin bir \u015Feylerle me\u015Fgul gibi. Rahats\u0131z etmesem daha iyi
-      olur."
+    - Caitlin seems to be busy with something. I'd better not disturb her.
 --- !u!1 &1713766528
 GameObject:
   m_ObjectHideFlags: 0
@@ -18483,9 +18414,8 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah'\u0131n ba\u011Flant\u0131s\u0131 koptu. Ne olur ne olmaz diye bekledik
-      ama en son ald\u0131\u011F\u0131m\u0131z bilgilere g\xF6re..."
-    - "Sarah: Gezegende dola\u015F\u0131rken \xD6LD\xDC."
+    - Sarah's disconnected. We waited, just in case, but the last we heard...
+    - 'Sarah: Died while wandering on the planet.'
 --- !u!1 &1717125425
 GameObject:
   m_ObjectHideFlags: 0
@@ -19578,34 +19508,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Context: SarahDay1
   dialogs:
-  - Name: Kaptan
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "(Bu Sarah. Asl\u0131nda d\xFCnyada \xFCst d\xFCzey bir g\xFCvenlik g\xF6revlisi
-      olarak \xE7al\u0131\u015F\u0131yordu. Gemiye kat\u0131lmas\u0131n\u0131n sebebi
-      ise bizi \u201Cd\u0131\u015F tehditlere\u201D kar\u015F\u0131 koruyacak olmas\u0131.)"
+    - (This is Sarah. She actually worked as a high-level security officer on Earth.
+      She joined the ship to protect us from "external threats").
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Bu g\xF6rev u\u011Fruna d\xFCnyam\u0131zdan ayr\u0131ld\u0131k. B\xF6yle bir
-      kutsal g\xF6revde var oldu\u011Fum i\xE7in gurur duyuyorum."
-    - "Her ne kadar yemekler berbat olsa da akademide daha k\xF6t\xFC g\xFCnlerden
-      ge\xE7mi\u015Ftim."
-  - Name: Kaptan
+    - We left our world for the sake of this mission. I am proud to be involved in
+      such a sacred mission.
+    - Even though the food is terrible, I've been through worse days at the academy.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Biraz rahat ol Sarah.
+    - Take it easy, Sarah.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Hay\u0131r kaptan! Bana verilen bu g\xF6revi lay\u0131\u011F\u0131 ile yerine
-      getirece\u011Fim. Herhangi bir d\u0131\u015F etkiden sizi korumak benim hayat
-      amac\u0131md\u0131r."
-  - Name: Kaptan
+    - No, captain! I will fulfill the mission I have been entrusted with. Protecting
+      you from any outside threats is my life's purpose.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Peki, peki\u2026 Daha \u201Cd\u0131\u015F etkilerin\u201D olup olmad\u0131\u011F\u0131n\u0131
-      bile bilmiyoruz. Ama sen istedi\u011Fini yap."
+    - Okay, okay... We don't even know if there are "outside threats". But you do
+      what you want.
 --- !u!1 &1802986218
 GameObject:
   m_ObjectHideFlags: 0
@@ -20019,10 +19946,9 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Son zamanlarda Gauss'un ruh hali \xE7ok k\xF6t\xFCyd\xFC. Git gide tek ba\u015F\u0131na
-      a\u011Flamaya ba\u015Flad\u0131"
-    - "Herkes uyand\u0131\u011F\u0131nda, yerde Gauss'un cans\u0131z bedenini bulundu."
-    - "Gauss: \u0130ntihar etti. "
+    - Gauss has been in a very bad mood lately. He started to cry more and more alone
+    - When everyone woke up, they found Gauss' lifeless body on the floor.
+    - 'Gauss: Has committed suicide. '
 --- !u!1 &1847234417
 GameObject:
   m_ObjectHideFlags: 0
@@ -20214,27 +20140,24 @@ MonoBehaviour:
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Hi\xE7bir gezegen ya\u015Fanabilir de\u011Fil\u2026 Biz d\xF6nene kadar d\xFCnyan\u0131n
-      sonu gelmi\u015F olacak."
-  - Name: Kaptan
+    - No planet is habitable... By the time we return, the world will be over.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Hay\u0131r Sarah, \xF6yle d\xFC\u015F\xFCnme."
+    - No, Sarah, don't think that.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Nas\u0131l d\xFC\u015F\xFCneyim o zaman ha! Zaten k\u0131s\u0131tl\u0131 olan
-      suyla hayatta kalan o insanlar \u015Fimdiye \xE7oktan \xF6lm\xFC\u015Ft\xFCr."
-  - Name: Kaptan
+    - How am I supposed to think then? Those people who survive with limited water
+      will be dead by now.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Bizim g\xF6revimizi yine de yerine getirmemiz laz\u0131m. Hep sen s\xF6ylerdin
-      bunu \xF6yle de\u011Fil mi?"
+    - We still have to fulfill our duty. You always said that, didn't you?
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "San\u0131r\u0131m art\u0131k \xF6yle de\u011Fil Kaptan\u2026  Art\u0131k g\xF6rev
-      yok."
+    - I guess not anymore, Captain... There is no mission anymore.
 --- !u!1 &1861530853
 GameObject:
   m_ObjectHideFlags: 0
@@ -21806,17 +21729,15 @@ MonoBehaviour:
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Kaptan elimdeki anti depresanlar ve ba\u011F\u0131\u015F\u0131kl\u0131k bask\u0131lay\u0131c\u0131lar
-      yava\u015F yava\u015F t\xFCkeniyor\u2026"
-  - Name: Kaptan
+    - Captain I am slowly running out of anti depressants and immunosuppressants...
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Bu b\xFCy\xFCk bir s\u0131k\u0131nt\u0131. Gauss nerede o bu konuda sana yard\u0131mc\u0131
-      olamaz m\u0131?"
+    - This is a big problem. Where's Gauss? Can't he help you with that?
   - Name: Caitlin
     sprite: {fileID: 21300000, guid: 540698277dfa2e74cac1c1c5feecee93, type: 3}
     sentences:
-    - "Kaptan, t\xFCkenmenin ba\u015F nedenlerinden birisi O..."
+    - Captain, he's the reason we ran out of them...
 --- !u!1 &1967334831
 GameObject:
   m_ObjectHideFlags: 0
@@ -21947,35 +21868,33 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter motor ya\u011F\u0131 ile dola\u015F\u0131yor."
-  - Name: Kaptan
+    - Peter walks around with engine oil.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - Nereye Peter?
+    - Where are you going, Peter?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Motorun ya\u011F\u0131 bitmi\u015F mi onu kontrol etmeye gidiyorum."
-  - Name: Kaptan
+    - I'm going to check if the engine is out of oil.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "\u0130yi de motor orada de\u011Fil ki? Yemek alan\u0131na do\u011Fru gidiyorsun."
+    - But the engine's not there. You're heading to the food court.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "A-aa\u2026 \u015Eey\u2026 evet. Do\u011Fru!"
-    - "\xD6nce motor ya\u011F\u0131n\u0131n d\xFCzg\xFCn olup olmad\u0131\u011F\u0131n\u0131
-      test etmem laz\u0131m. E\u011Fer kalitesi bozulmu\u015Fsa uzayda kal\u0131r\u0131z
-      aman dikkat."
-  - Name: Kaptan
+    - Uh... well... yeah. That's right.
+    - First I have to test the engine oil to make sure it's OK. If the quality is
+      bad, we'll be stuck in space.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Peki\u2026 Sen \xF6yle diyorsan \xF6yledir."
+    - Okay... If you say so.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter\u2019\u0131n y\xFCz\xFCnde \u015Feytani bir g\xFCl\xFCmseme belirdi
-      ve Peter yava\u015F yava\u015F uzakla\u015Ft\u0131."
+    - An evil smile appeared on Peter's face and he slowly walked away.
 --- !u!1 &1994612809
 GameObject:
   m_ObjectHideFlags: 0
@@ -22366,46 +22285,42 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter tek ba\u015F\u0131na oturuyor."
-  - Name: Kaptan
+    - Peter is sitting alone.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Nas\u0131ls\u0131n Peter?"
+    - How are you Peter?
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Kaptan\u2026 Uzaya \xE7\u0131kmak en b\xFCy\xFCk hayalimdi. \u015Eimdi g\xFCnlerdir
-      uzayday\u0131z ve yapacak hi\xE7bir \u015Fey bulam\u0131yorum."
-    - "Ya\u015Famam\u0131z\u0131n ne anlam\u0131 var ki? "
-  - Name: Kaptan
+    - Captain... It was my biggest dream to go into space. Now we've been in space
+      for days and I can't find anything to do.
+    - 'What''s the point of living? '
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Hey, hey sakin ol. Bizim hayatlar\u0131m\u0131z\u0131n veya ne kadar s\u0131k\u0131l\u0131p
-      s\u0131k\u0131lmad\u0131\u011F\u0131m\u0131z\u0131n bir \xF6nemi yok. Bu g\xF6revi
-      t\xFCm insanl\u0131k i\xE7in yap\u0131yoruz."
+    - Hey, hey, hey, calm down. It doesn't matter our lives or how bored we are.
+      We are doing this mission for all of humanity.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "\u0130nsanl\u0131k m\u0131? \u0130nsanl\u0131k umurumda de\u011Fil. \xC7ok
-      farkl\u0131 \u015Feyler olmal\u0131yd\u0131. \xC7ok g\xFCzel yarat\u0131klar
-      g\xF6rmeliydik."
-    - "Bize vadedilen hi\xE7bir \u015Feyi g\xF6rmedik. Yak\u0131t\u0131m\u0131z veya
-      erza\u011F\u0131m\u0131z bitene kadar uzayda s\xFCr\xFCklenece\u011Fiz ve hep
-      beraber \xF6l\xFCp gidicez."
-    - Tabii birbirimizi yemezsek.
-  - Name: Kaptan
+    - Humanity? I don't care about humanity. It should have been so different. We
+      should have seen beautiful creatures.
+    - We have seen nothing that was promised to us. We will drift in space until
+      we run out of fuel or supplies and we will all die together.
+    - Unless we eat each other.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Sakin ol Peter. E\u011Fer umudumuzu kaybetmezsek ba\u015Far\u0131ya ula\u015Faca\u011F\u0131m\u0131za
-      eminim."
+    - Calm down, Peter. If we don't lose hope, I'm sure we'll succeed.
   - Name: Peter
     sprite: {fileID: 21300000, guid: e217dad8268944f49b746f9aa402b6e0, type: 3}
     sentences:
-    - "Tabii\u2026 Kesinlikle \xF6yle olur\u2026"
+    - Sure... That's exactly what would happen...
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Peter agresif bir \u015Fekilde uzakla\u015Ft\u0131."
+    - Peter walked away aggressively.
 --- !u!1 &2059183649
 GameObject:
   m_ObjectHideFlags: 0
@@ -22460,33 +22375,32 @@ MonoBehaviour:
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Wunderbar! Bununla birlikte uyudu\u011Fumuzda daha verimli uyuyabiliriz."
-  - Name: Kaptan
+    - Wunderbar! With this, we can sleep more efficiently.
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Ne ile u\u011Fra\u015F\u0131yorsun Gauss?"
+    - What are you doing, Gauss?
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Kaptan gel bak. Bu b\xF6ce\u011Fi yutarsak, bu b\xF6cek biz uyurken bizim
-      i\xE7in v\xFCcudumuzu toksinlerden ar\u0131nd\u0131racak."
+    - Captain, come look. If we swallow this bug, it will detoxify our body for us
+      while we sleep.
   - Name: Brian
     sprite: {fileID: 21300000, guid: 3acc46d756524c5428e4d0277bfc3a37, type: 3}
     sentences:
-    - "Iyy bana o b\xF6ce\u011Fi yakla\u015Ft\u0131rmay\u0131n!"
+    - Ew, don't let that bug near me!
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "Bir hap gibi d\xFC\u015F\xFCn\xFCn. Yuttu\u011Funuz an i\u015F bitmi\u015Ftir.
-      Bak\u0131n izleyin."
+    - Think of it like a pill. The moment you swallow it, it's over. Watch this.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Gauss b\xF6ce\u011Fi ald\u0131 ve bir anda yuttu."
+    - Gauss picked up the beetle and swallowed it in an instant.
   - Name: Gauss
     sprite: {fileID: 21300000, guid: 0828d48633dab224498e9f4ff58964ef, type: 3}
     sentences:
-    - "\u015Eimdi izin verirseniz rahat bir uyku \xE7ekmeye gidiyorum. Gute Nacht!"
+    - Now, if you'll excuse me, I'm going to get a good night's sleep. Gute Nacht!
 --- !u!1 &2063148144
 GameObject:
   m_ObjectHideFlags: 0
@@ -22954,31 +22868,31 @@ MonoBehaviour:
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah g\xFCnl\xFCk antrenman\u0131n\u0131 yap\u0131yor."
+    - Sarah is doing her daily exercise.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Aah Kaptan, antrenman yapmaya m\u0131 geldin?"
-  - Name: Kaptan
+    - Aah Captain, are you here to exercise?
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Uzayda bile hi\xE7 durmadan devam ediyorsun demek, \u015Fa\u015F\u0131rt\u0131c\u0131."
+    - It's surprising that even in space you never stop going.
   - Name: Sarah
     sprite: {fileID: 21300000, guid: 4a5dbf6845d16e34b93df74d971a48f3, type: 3}
     sentences:
-    - "Evet. Yapay yer \xE7ekimi sayesinde v\xFCcut a\u011F\u0131rl\u0131\u011F\u0131m
-      ile antrenmanlar\u0131ma devam edebiliyorum."
-    - "Aaaah \xE7ok ac\u0131kt\u0131m. Yemek ne zaman?"
-  - Name: Kaptan
+    - Yes. Thanks to artificial gravity, I can continue my exercises with my body
+      weight.
+    - Aaaah, I'm so hungry. When's dinner?
+  - Name: Captain
     sprite: {fileID: 0}
     sentences:
-    - "Yemek yiyeli 1 saat oldu Sarah. Stoklar\u0131m\u0131z k\u0131s\u0131tl\u0131
-      biraz dikkatli ol."
+    - It's been an hour since we ate, Sarah. We're a little short-stocked, so be
+      careful.
   - Name: 
     sprite: {fileID: 0}
     sentences:
-    - "Sarah cebinden bir jel \xE7\u0131kard\u0131 ve onu yemeye ba\u015Flad\u0131.
-      Kaptan, elinden bir \u015Fey gelmeyece\u011Fini anlay\u0131nca uzakla\u015Ft\u0131."
+    - Sarah took a gel out of her pocket and started eating it. When the captain
+      realized there was nothing he could do, he walked away.
 --- !u!1 &2123746305
 GameObject:
   m_ObjectHideFlags: 0

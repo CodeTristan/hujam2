@@ -1,45 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
-    OptionsSave save;
-    public Pause pause;
-    public Slider soundoption;
-    public Slider musicoption;
-    public AudioSource[] audiosources;
-    public AudioSource musicsource;
-    public GameObject optionsmenu;
+    public Slider soundbar;
+    public Slider musicbar;
+    public string JSON;
+    public Sounds s;
 
     private void Start()
     {
-        save = GameObject.Find("OptionsSave").GetComponent<OptionsSave>();
-        musicoption.value = save.music;
-        soundoption.value=save.volume;
-        for (int i = 0; i < audiosources.Length; i++)
-        {
-            audiosources[i].volume = save.volume;
-        }
-        musicsource.volume = save.music;
-    }
-    public void SaveOptions()
-    {
-        save.volume = soundoption.value;
-        save.music = musicoption.value;
-        for (int i = 0; i < audiosources.Length; i++)
-        {
-            audiosources[i].volume = soundoption.value;
-        }
-        musicsource.volume = musicoption.value * pause.musicmultiplier;
+        OptionsLoad();
     }
 
-    public void Close()
+    public void OptionsSave()
     {
-        soundoption.value = save.volume;
-        musicoption.value = save.music;
-        optionsmenu.SetActive(false);
+        OptionsSave save =  optionssave();
+        string json = JsonUtility.ToJson(save);
+        StreamWriter sw = new StreamWriter(Application.dataPath + "/JSONdata.text");
+        sw.Write(json);
+        sw.Close();
+        OptionsLoad();
     }
+    public void OptionsLoad()
+    {
+        OptionsSave save = optionssave();
+        string json = JsonUtility.ToJson(save);
+        StreamReader sr = new StreamReader(Application.dataPath + "/JSONdata.text");
+        json = sr.ReadToEnd();
+        sr.Close();
+        OptionsSave saved = JsonUtility.FromJson<OptionsSave>(json);
+        soundbar.value = saved.volume;
+        musicbar.value = saved.music;
+        JSON = json;
+        s.SetVolume();
 
+    }
+    private OptionsSave optionssave()
+    {
+        OptionsSave save = new OptionsSave();
+        save.volume = soundbar.value;
+        save.music = musicbar.value;
+
+        return save;
+    }
 }

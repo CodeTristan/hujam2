@@ -62,6 +62,16 @@ public class DayManager : MonoBehaviour
 
     public bool gameFinished;
 
+    public void DayDelay()
+    {
+        StartCoroutine(DayDelayCo());
+    }
+    IEnumerator DayDelayCo()
+    {
+        yield return new WaitForSeconds(2);
+        EndDay();
+    }
+
     public void EndDay() //End of day button handling
     {
         dayCount++;

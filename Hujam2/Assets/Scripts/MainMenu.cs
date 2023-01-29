@@ -12,20 +12,10 @@ public class MainMenu : MonoBehaviour
     public GameObject credits;
     public AudioSource clickaudio;
     public AudioClip[] clips;
-    OptionsSave save;
     public Slider soundoption;
     public Slider musicoption;
     public AudioSource[] audiosources;
     public AudioSource musicsource;
-    private void Start()
-    {
-        save = GameObject.Find("OptionsSave").GetComponent<OptionsSave>();
-        for (int i = 0; i < audiosources.Length; i++)
-        {
-            audiosources[i].volume = soundoption.value;
-        }
-        musicsource.volume = musicoption.value;
-    }
     public Image Dark;
     public void Play()
     {
@@ -50,21 +40,11 @@ public class MainMenu : MonoBehaviour
     }
     public void Back()
     {
-        for (int i = 0; i < audiosources.Length; i++)
-        {
-            audiosources[i].volume = soundoption.value;
-        }
-        musicsource.volume = musicoption.value;
-        save.volume = soundoption.value;
-        save.music = musicoption.value;
         menubuttons.SetActive(true);
         backbutton.SetActive(false);
         credits.SetActive(false);
-        soundoption.value = save.volume;
-        musicoption.value = save.music;
         optionsmenu.SetActive(false);
-        
-        
+             
     }
     public void Click()
     {

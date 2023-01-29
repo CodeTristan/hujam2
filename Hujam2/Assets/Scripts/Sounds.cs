@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sounds : MonoBehaviour
 {
+    public Options o;
+    public Pause p;
     public AudioSource clickaudio;
     public AudioSource pageaudio;
     public AudioSource musicsource;
@@ -12,10 +16,11 @@ public class Sounds : MonoBehaviour
     public AudioClip[] musicclips;
     AudioClip music;
     AudioClip prevmusic;
+    public float musicmultiplier;
 
     private void Update()
     {
-        if (musicsource.isPlaying==false)
+        if (musicsource.isPlaying==false&& p != null)
         {
             Sound("music");
         }
@@ -42,6 +47,19 @@ public class Sounds : MonoBehaviour
             pageaudio.Play();
         }
 
+    }
+    public void SetVolume()
+    {
+        clickaudio.volume= JsonUtility.FromJson<OptionsSave>(o.JSON).volume;
+        pageaudio.volume= JsonUtility.FromJson<OptionsSave>(o.JSON).volume;
+        if (p!=null)
+        {
+            musicsource.volume = JsonUtility.FromJson<OptionsSave>(o.JSON).music * p.musicmultiplier;
+        }
+        else
+        {
+            musicsource.volume = JsonUtility.FromJson<OptionsSave>(o.JSON).music;
+        }
     }
 
 }

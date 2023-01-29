@@ -1,20 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     public Options options;
-    OptionsSave save;
     public GameObject optionsmenu;
     public GameObject pausescreen;
     public GameObject pausemenu;
     public float musicmultiplier;
-    private void Start()
-    {
-        save = GameObject.Find("OptionsSave").GetComponent<OptionsSave>();
-    }
     void Update()
     {
         if (Input.GetKeyDown("escape"))
@@ -24,19 +17,19 @@ public class Pause : MonoBehaviour
                 Time.timeScale = 0;
                 pausescreen.SetActive(true);
                 musicmultiplier = 0.2f;
-                options.musicsource.volume = save.music * musicmultiplier;
+                options.s.musicsource.volume = JsonUtility.FromJson<OptionsSave>(options.JSON).music * musicmultiplier;
             }
             else
             {
                 Continue();
             }
-            
+
         }
     }
     public void Continue()
     {
         musicmultiplier = 1;
-        options.musicsource.volume = save.music * musicmultiplier;
+        options.s.musicsource.volume = JsonUtility.FromJson<OptionsSave>(options.JSON).music * musicmultiplier;
         Time.timeScale = 1;
         pausescreen.SetActive(false);
     }
@@ -48,6 +41,7 @@ public class Pause : MonoBehaviour
     public void Close()
     {
         pausemenu.SetActive(true);
+        optionsmenu.SetActive(false);
     }
     public void Quit()
     {
