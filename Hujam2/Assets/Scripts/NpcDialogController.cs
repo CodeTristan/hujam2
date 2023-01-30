@@ -37,22 +37,20 @@ public class NpcDialogController : MonoBehaviour
     }
     public void StartDialog()
     {
-        if (dayManager.dayCount > crew.allCharDialogs.Length)
-            crew.allCharDialogs[0].TriggerDialog();
-        else
-        {
             checkAvailableDialogs();
             if (dialogFinished < dialogAvaliableIndex)
             {
+                Debug.Log("DialogStarted");
                 crew.allCharDialogs[dialogFinished].TriggerDialog();
                 dialogFinished++;
             }
             else //I guess s/he is busy dialog.
             {
+                Debug.Log("NO DIALOG ERROR VAR");
                 crew.allCharDialogs[0].TriggerDialog();
             }
             
-        }
+        
         Exc.SetActive(false);
     }
 }
